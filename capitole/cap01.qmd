@@ -1,39 +1,84 @@
 ---
 title: "Capitolul 1. Introducere în managementul lanțului de aprovizionare (SCM)"
+description: "Ce este un lanț de aprovizionare, cum îl descriem și de ce este greu de gestionat."
 ---
-
-::: {.callout-note appearance="minimal"}
-Pagină în lucru. Rubricile de mai jos se completează pe măsură ce materialele sunt gata.
-:::
 
 ## Întrebarea capitolului
 
-*De completat: întrebarea de la care pornește capitolul și un rezumat de 3–4 rânduri.*
+Laptele din Câmpia Transilvaniei, cablajele auto dintr-un parc industrial de lângă Cluj și cimentul pentru un șantier din zona metropolitană par să nu aibă nimic în comun. **Ce decizii iau totuși, în fiecare zi, toți cei trei manageri?**
+
+Capitolul răspunde pornind de la această întrebare și ajunge la alte trei: ce este un lanț de aprovizionare, cum îl putem descrie și de ce este dificil de gestionat. Nu conține calcule; în [Capitolul 2](cap02.qmd) aceleași decizii primesc cifre.
+
+![Lapte, cablaje auto, ciment: ce au în comun? (Fig. 1.2 din carte)](img/fig_1.2.png){fig-alt="Comparație între lanțurile de aprovizionare pentru lapte, cablaje auto și ciment"}
+
+Înainte să citești capitolul, încearcă să răspunzi singur:
+
+- Cine plătește, de fapt, pentru tot lanțul? Plățile dintre firme aduc bani noi în lanț sau doar îi împart?
+- Dacă un magazin vinde zilnic între 40 și 60 de baxuri, de ce ar primi producătorul comenzi între 0 și 400?
+- Ce se întâmplă cu o decizie când managerul primește dreptul să controleze și ce era până atunci o constrângere?
 
 ## Obiective și termeni-cheie
 
-*De completat: obiectivele de învățare și termenii-cheie, cu echivalentul englez în paranteză.*
+La finalul capitolului vei putea descrie un lanț de aprovizionare real prin fluxurile, verigile și procesele lui și vei recunoaște deciziile logistice din fiecare verigă. Concret, vei putea:
+
+- defini lanțul de aprovizionare și cele trei fluxuri ale lui: fizic, informațional și financiar;
+- deosebi logistica de managementul lanțului de aprovizionare;
+- încadra activitățile unei firme în procesele SCOR DS și în macro-procesele SRM, ISCM și CRM;
+- explica efectul de bici și diferența dintre robustețe, flexibilitate și reziliență;
+- scrie, pentru o decizie logistică, obiectivul, variabilele de decizie și constrângerile.
+
+| Termen | În engleză |
+| --- | --- |
+| lanț de aprovizionare | *supply chain* |
+| niveluri de furnizori | *tiers* |
+| amonte / aval | *upstream / downstream* |
+| surplusul lanțului | *supply chain surplus* |
+| efectul de bici | *bullwhip effect* |
+| punct de decuplare | *decoupling point*, *push–pull boundary* |
+| planificarea vânzărilor și a operațiunilor (S&OP) | *Sales and Operations Planning* |
+| compromis | *trade-off* |
+| robustețe, flexibilitate, reziliență | *robustness, flexibility, resilience* |
+| livrat la timp și complet (OTIF) | *On-Time In-Full* |
+
+## Studiul de caz: Cargo Someș
+
+Capitolul introduce firma care însoțește toată cartea: **Cargo Someș**, un operator logistic fictiv din Cluj. Păstrează în depozit mărfurile mai multor producători și le livrează pe europaleți magazinelor din Transilvania, cu 5 camioane proprii de 40 t și, la nevoie, cu transportatori terți (3PL).
+
+![Aceeași rețea Cargo Someș, privită din patru perspective (Fig. 1.4 din carte)](img/fig_1.4.png){fig-alt="Rețeaua Cargo Someș în patru perspective suprapuse: geografică, flux, procese, macro-procese"}
+
+Studiul de caz urmează patru pași: cele trei fluxuri, verigile lanțului, procesele SCOR DS și decizia „flotă proprie sau transportator terț”. Ultimul pas lasă deschisă o întrebare la care răspunde Capitolul 2: **de la ce distanță merită o cursă cu camionul propriu?**
+
+![Macro-procesele unui operator logistic: SRM, ISCM, CRM (Fig. 1.6 din carte)](img/fig_1.6.png){fig-alt="Macro-procesele relația cu furnizorii, operațiunile interne și relația cu clienții la Cargo Someș"}
 
 ## Registrul Excel
 
-Capitolul 1 nu are registru Excel; în locul lui, figurile capitolului și un exercițiu de discuție.
-
-## Figuri
-
-*De completat: figurile capitolului, la rezoluție bună.*
+Capitolul 1 nu are registru Excel, pentru că este descriptiv. Primul registru, **MLTM_C02_functii_Excel.xlsx**, însoțește [Capitolul 2](cap02.qmd).
 
 ## Prezentare
 
 *Va fi disponibilă în curând.*
 
-## Temă de laborator / seminar
+## Temă de seminar: lanțul firmei tale
 
-*Va fi disponibilă în curând.*
+Alege firma în care lucrezi sau o firmă pe care o cunoști bine și, pe cel mult două pagini, plus o schiță:
+
+1. Alege un produs sau un serviciu al firmei.
+2. Desenează lanțul ca rețea, de la furnizorii de nivel 2 până la clientul final; marchează sensul amonte–aval.
+3. Pentru o singură legătură dintre două verigi, descrie cele trei fluxuri și cât durează fiecare.
+4. Încadrează cinci activități ale firmei în procesele SCOR DS și în macro-procesele SRM, ISCM și CRM.
+5. Alege o decizie logistică reală: care sunt obiectivul, variabilele de decizie și constrângerile? Ce constrângere ar deveni variabilă dacă s-ar lărgi aria de control?
+
+Schița se poate face gratuit în [draw.io (diagrams.net)](https://app.diagrams.net/). Nu folosi date sensibile: poți schimba numele partenerilor și rotunji cifrele. Criteriile de evaluare sunt în Anexa B a cărții.
 
 ## Exerciții suplimentare
 
-*De completat: exerciții, cu răspunsurile finale.*
+Capitolul are opt întrebări grilă și o întrebare deschisă despre taxa de drum TollRo, cu răspunsurile în carte (secțiunea 4.4 și Anexa B).
+
+*De completat: exerciții suplimentare pentru Partea I.*
 
 ## Lecturi suplimentare
 
-*De completat: trimiteri bibliografice în stil IEEE.*
+1. S. Chopra, P. Meindl și D. V. Kalra, *Supply Chain Management: Strategy, Planning, and Operation*, 6th ed. Harlow, U.K.: Pearson, 2016.
+2. ASCM, „SCOR Digital Standard”, Association for Supply Chain Management. [Online]. Available: <https://www.ascm.org/corporate-solutions/standards-tools/scor-ds/>
+
+*Lista completă a surselor capitolului este în Bibliografia cărții.*
