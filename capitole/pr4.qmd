@@ -1,9 +1,43 @@
 ---
 title: "Probleme recapitulative: algoritmi, aproximări și simulare (Partea IV)"
+description: "9 exerciții care recapitulează Partea IV. Algoritmi, aproximări și simulare."
 ---
 
-Probleme care leagă capitolele 13–15. Registrul: **MLTM_PR4_exercitii.xlsx** (foile `Date_…` cu enunțurile, foile `Sol_…` cu soluțiile).
+::: {.callout-note appearance="minimal"}
+Această pagină însoțește setul de Probleme recapitulative al Părții IV din carte. Enunțurile complete se găsesc în [carte](../carte.qmd), iar soluțiile, în Anexa B și în registru.
+:::
+
+## Ce recapitulăm
+
+Setul adună **9 exerciții** pentru Partea IV. Algoritmi, aproximări și simulare, cu noțiuni din [Capitolul 13](cap13.qmd), [Capitolul 14](cap14.qmd), [Capitolul 15](cap15.qmd). Nu aduce teorie nouă: fiecare exercițiu pornește de la o întrebare concretă a firmei Cargo Someș sau a unui partener al ei și cere să alegeți singuri modelul potrivit.
+
+Tocmai aici e dificultatea: în capitole știați dinainte ce metodă se folosește. Aici, prima întrebare este întotdeauna **ce fel de problemă am în față?**
+
+## Exercițiile
+
+| Cod | Întrebarea | Capitole |
+| --- | --- | --- |
+| E1 | Drumul minim într-o rețea regională | Capitolul 13 |
+| E2 | Circuitul unui agent de vânzări: cel mai apropiat vecin și 2-opt | Capitolul 13 |
+| E3 | Traseele autoutilitarelor: Clarke–Wright și baleiaj | Capitolul 13 |
+| E4 | Estimare Fermi: camioanele cu alimente ale unui oraș | Capitolul 14 |
+| E5 | Distribuția farmaceutică într-o zonă rurală | Capitolul 14 |
+| E6 | Lăzile de pâine: testul χ² și simularea cantității livrate | Capitolul 15 |
+| E7 | Rampa de recepție: două variabile aleatoare | Capitolul 15 |
+| E8 | Validarea unui model de simulare | Capitolul 15 |
+| E9 | Traseele din E3 cu cerere aleatoare | Capitolul 15 |
+
+## Cum lucrați
+
+1. Citiți enunțul și scrieți, înainte de orice calcul, ce tip de model folosiți și de ce.
+2. Rezolvați pe foaia `Date_E…` a exercițiului, cu datele de intrare în celule separate.
+3. Abia apoi comparați cu soluția din Anexa B a cărții și din foaia `Sol_E…`.
+4. Dacă rezultatul diferă, căutați întâi ipoteza diferită, nu greșeala de calcul.
+
+Cartea dă la începutul setului un tabel cu formulele de lucru ale Părții IV (Tabelul R4.1).
+
+## Registrul Excel
+
+**MLTM_PR4_exercitii.xlsx**: foaia `0_Citiți-mă`, câte o foaie de date pentru fiecare exercițiu (`Date_E1` … `Date_E9`) și câte o foaie de soluție (`Sol_E1` … `Sol_E9`). Registrul folosește setări românești: argumentele se separă cu „;”, zecimalele cu „,”.
 
 *Linkul DOI spre Pachetul Excel (Zenodo) va fi adăugat aici.*
-
-Răspunsurile și soluțiile se găsesc în Anexa B a cărții.

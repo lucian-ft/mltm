@@ -1,9 +1,42 @@
 ---
 title: "Probleme recapitulative: modele analitice și funcții (Partea I)"
+description: "8 exerciții care recapitulează Partea I. Fundamente."
 ---
 
-Probleme care leagă capitolele 1–3. Registrul: **MLTM_PR1_exercitii.xlsx** (foile `Date_…` cu enunțurile, foile `Sol_…` cu soluțiile).
+::: {.callout-note appearance="minimal"}
+Această pagină însoțește setul de Probleme recapitulative al Părții I din carte. Enunțurile complete se găsesc în [carte](../carte.qmd), iar soluțiile, în Anexa B și în registru.
+:::
+
+## Ce recapitulăm
+
+Setul adună **8 exerciții** pentru Partea I. Fundamente, cu noțiuni din [Capitolul 2](cap02.qmd), [Capitolul 3](cap03.qmd). Nu aduce teorie nouă: fiecare exercițiu pornește de la o întrebare concretă a firmei Cargo Someș sau a unui partener al ei și cere să alegeți singuri modelul potrivit.
+
+Tocmai aici e dificultatea: în capitole știați dinainte ce metodă se folosește. Aici, prima întrebare este întotdeauna **ce fel de problemă am în față?**
+
+## Exercițiile
+
+| Cod | Întrebarea | Capitole |
+| --- | --- | --- |
+| B1 | Autoutilitara închiriată sau curierul? | Capitolul 2 |
+| B2 | Locurile de palet pentru clienții sezonieri | Capitolul 2 |
+| B3 | Zona de sortare: cost pătratic și capacitate | Capitolul 2 |
+| B4 | Trecerea la autoutilitare electrice | Capitolul 2 |
+| B5 | Orele de pregătire a comenzilor | Capitolele 2–3 |
+| B6 | Folia stretch: cât comandăm odată? | Capitolele 2–3 |
+| B7 | Rampa și stivuitoarele: ce mix de servicii? | Capitolele 2–3 |
+| B8 | Costul pe palet pentru un client: întâi verificăm datele | Capitolele 2–3 |
+
+## Cum lucrați
+
+1. Citiți enunțul și scrieți, înainte de orice calcul, ce tip de model folosiți și de ce.
+2. Rezolvați pe foaia `Date_B…` a exercițiului, cu datele de intrare în celule separate.
+3. Abia apoi comparați cu soluția din Anexa B a cărții și din foaia `Sol_B…`.
+4. Dacă rezultatul diferă, căutați întâi ipoteza diferită, nu greșeala de calcul.
+
+Cartea dă la începutul setului un tabel cu formulele de lucru ale Părții I (Tabelul R1.1).
+
+## Registrul Excel
+
+**MLTM_PR1_exercitii.xlsx**: foaia `0_Citiți-mă`, câte o foaie de date pentru fiecare exercițiu (`Date_B1` … `Date_B8`) și câte o foaie de soluție (`Sol_B1` … `Sol_B8`). Registrul folosește setări românești: argumentele se separă cu „;”, zecimalele cu „,”.
 
 *Linkul DOI spre Pachetul Excel (Zenodo) va fi adăugat aici.*
-
-Răspunsurile și soluțiile se găsesc în Anexa B a cărții.

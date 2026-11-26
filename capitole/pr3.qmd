@@ -1,9 +1,46 @@
 ---
 title: "Probleme recapitulative: optimizare (Partea III)"
+description: "12 exerciții care recapitulează Partea III. Optimizare."
 ---
 
-Probleme care leagă capitolele 9–12. Registrul: **MLTM_PR3_exercitii.xlsx** (foile `Date_…` cu enunțurile, foile `Sol_…` cu soluțiile).
+::: {.callout-note appearance="minimal"}
+Această pagină însoțește setul de Probleme recapitulative al Părții III din carte. Enunțurile complete se găsesc în [carte](../carte.qmd), iar soluțiile, în Anexa B și în registru.
+:::
+
+## Ce recapitulăm
+
+Setul adună **12 exerciții** pentru Partea III. Optimizare, cu noțiuni din [Capitolul 9](cap09.qmd), [Capitolul 10](cap10.qmd), [Capitolul 11](cap11.qmd), [Capitolul 12](cap12.qmd). Nu aduce teorie nouă: fiecare exercițiu pornește de la o întrebare concretă a firmei Cargo Someș sau a unui partener al ei și cere să alegeți singuri modelul potrivit.
+
+Tocmai aici e dificultatea: în capitole știați dinainte ce metodă se folosește. Aici, prima întrebare este întotdeauna **ce fel de problemă am în față?**
+
+## Exercițiile
+
+| Cod | Întrebarea | Capitole |
+| --- | --- | --- |
+| D1 | Prețul livrării la domiciliu | Capitolul 9 |
+| D2 | Europaleții pentru schimb: lot economic și discount | Capitolul 9 |
+| D3 | Viteza benzii de sortare | Capitolul 9 |
+| D4 | Amestecul de motorină și HVO | Capitolul 10 |
+| D5 | Mixul de servicii al depozitului | Capitolul 10 |
+| D6 | Bugetul de investiții | Capitolul 10 |
+| D7 | Vârful de Crăciun: plan pe patru luni | Capitolul 10 |
+| D8 | Vehicule închiriate pentru un contract de sezon | Capitolul 11 |
+| D9 | Vârful de Crăciun cu camioane întregi | Capitolul 11 |
+| D10 | Materiale de construcții: problema de transport | Capitolul 12 |
+| D11 | Două cross-dock-uri în vestul țării | Capitolul 12 |
+| D12 | Două depozite din cinci | Capitolul 12 |
+
+## Cum lucrați
+
+1. Citiți enunțul și scrieți, înainte de orice calcul, ce tip de model folosiți și de ce.
+2. Rezolvați pe foaia `Date_D…` a exercițiului, cu datele de intrare în celule separate.
+3. Abia apoi comparați cu soluția din Anexa B a cărții și din foaia `Sol_D…`.
+4. Dacă rezultatul diferă, căutați întâi ipoteza diferită, nu greșeala de calcul.
+
+Cartea dă la începutul setului un tabel cu formulele de lucru ale Părții III (Tabelul R3.1).
+
+## Registrul Excel
+
+**MLTM_PR3_exercitii.xlsx**: foaia `0_Citiți-mă`, câte o foaie de date pentru fiecare exercițiu (`Date_D1` … `Date_D12`) și câte o foaie de soluție (`Sol_D1` … `Sol_D12`). Registrul folosește setări românești: argumentele se separă cu „;”, zecimalele cu „,”.
 
 *Linkul DOI spre Pachetul Excel (Zenodo) va fi adăugat aici.*
-
-Răspunsurile și soluțiile se găsesc în Anexa B a cărții.

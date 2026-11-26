@@ -1,9 +1,49 @@
 ---
 title: "Probleme recapitulative: statistică (Partea II)"
+description: "15 exerciții care recapitulează Partea II. Incertitudine și inferență statistică."
 ---
 
-Probleme care leagă capitolele 4–8. Registrul: **MLTM_PR2_exercitii.xlsx** (foile `Date_…` cu enunțurile, foile `Sol_…` cu soluțiile).
+::: {.callout-note appearance="minimal"}
+Această pagină însoțește setul de Probleme recapitulative al Părții II din carte. Enunțurile complete se găsesc în [carte](../carte.qmd), iar soluțiile, în Anexa B și în registru.
+:::
+
+## Ce recapitulăm
+
+Setul adună **15 exerciții** pentru Partea II. Incertitudine și inferență statistică, cu noțiuni din [Capitolul 4](cap04.qmd), [Capitolul 5](cap05.qmd), [Capitolul 6](cap06.qmd), [Capitolul 7](cap07.qmd), [Capitolul 8](cap08.qmd). Nu aduce teorie nouă: fiecare exercițiu pornește de la o întrebare concretă a firmei Cargo Someș sau a unui partener al ei și cere să alegeți singuri modelul potrivit.
+
+Tocmai aici e dificultatea: în capitole știați dinainte ce metodă se folosește. Aici, prima întrebare este întotdeauna **ce fel de problemă am în față?**
+
+## Exercițiile
+
+| Cod | Întrebarea | Capitole |
+| --- | --- | --- |
+| C1 | Întârzierile la Napoca Market, pe vreme rea | Capitolele 4–5 |
+| C2 | Defecțiunile flotei proprii | Capitolele 4–5 |
+| C3 | Prima livrare la Bistrița | Capitolele 4–5 |
+| C4 | Încărcarea la un producător nou | Capitolele 4–5 |
+| C5 | Ambalajele returnate la magazinele Carpatin | Capitolul 6 |
+| C6 | Comenzile zilnice ale unui client nou | Capitolul 6 |
+| C7 | Întârzierile unui furnizor, din date sumare | Capitolul 6 |
+| C8 | Recepția cu scanere noi | Capitolul 7 |
+| C9 | Trei teste rapide | Capitolul 7 |
+| C10 | Formatul premium Napoca Market | Capitolul 7 |
+| C11 | Întârzierile furnizorilor după noua metodă de selecție | Capitolul 7 |
+| C12 | Pilotul cu autoutilitare electrice | Capitolul 7 |
+| C13 | Timpul de pregătire a comenzii | Capitolul 8 |
+| C14 | Programele de stimulare din depozit | Capitolul 8 |
+| C15 | Vânzările produselor noi | Capitolul 8 |
+
+## Cum lucrați
+
+1. Citiți enunțul și scrieți, înainte de orice calcul, ce tip de model folosiți și de ce.
+2. Rezolvați pe foaia `Date_C…` a exercițiului, cu datele de intrare în celule separate.
+3. Abia apoi comparați cu soluția din Anexa B a cărții și din foaia `Sol_C…`.
+4. Dacă rezultatul diferă, căutați întâi ipoteza diferită, nu greșeala de calcul.
+
+Cartea dă la începutul setului un tabel cu formulele de lucru ale Părții II (Tabelul R2.1).
+
+## Registrul Excel
+
+**MLTM_PR2_exercitii.xlsx**: foaia `0_Citiți-mă`, câte o foaie de date pentru fiecare exercițiu (`Date_C1` … `Date_C15`) și câte o foaie de soluție (`Sol_C1` … `Sol_C15`). Registrul folosește setări românești: argumentele se separă cu „;”, zecimalele cu „,”.
 
 *Linkul DOI spre Pachetul Excel (Zenodo) va fi adăugat aici.*
-
-Răspunsurile și soluțiile se găsesc în Anexa B a cărții.
