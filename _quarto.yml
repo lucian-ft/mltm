@@ -1,0 +1,74 @@
+project:
+  type: website
+  output-dir: _site
+
+lang: ro
+
+website:
+  title: "Metode analitice în managementul lanțului de aprovizionare"
+  site-url: "https://lucianfechete.eu/mltm/"
+  description: "Site-ul companion al cărții: capitole, registre Excel, prezentări și teme."
+  search: true
+  page-navigation: true
+  navbar:
+    title: "Metode analitice în SCM"
+    left:
+      - href: index.qmd
+        text: Acasă
+      - href: carte.qmd
+        text: Cartea
+      - href: resurse.qmd
+        text: Resurse
+      - href: cadre-didactice.qmd
+        text: Cadre didactice
+      - href: glosar.qmd
+        text: Glosar
+      - href: despre.qmd
+        text: Despre
+    right:
+      - href: https://lucianfechete.eu/
+        text: lucianfechete.eu
+  sidebar:
+    style: docked
+    contents:
+      - text: "Cartea"
+        href: carte.qmd
+      - section: "Partea I. Modele analitice și funcții"
+        contents:
+          - capitole/cap01.qmd
+          - capitole/cap02.qmd
+          - capitole/cap03.qmd
+          - capitole/pr1.qmd
+      - section: "Partea II. Statistică"
+        contents:
+          - capitole/cap04.qmd
+          - capitole/cap05.qmd
+          - capitole/cap06.qmd
+          - capitole/cap07.qmd
+          - capitole/cap08.qmd
+          - capitole/pr2.qmd
+      - section: "Partea III. Optimizare"
+        contents:
+          - capitole/cap09.qmd
+          - capitole/cap10.qmd
+          - capitole/cap11.qmd
+          - capitole/cap12.qmd
+          - capitole/pr3.qmd
+      - section: "Partea IV. Algoritmi, aproximări și simulare"
+        contents:
+          - capitole/cap13.qmd
+          - capitole/cap14.qmd
+          - capitole/cap15.qmd
+          - capitole/pr4.qmd
+      - resurse.qmd
+      - glosar.qmd
+  page-footer:
+    left: "© 2026 Lucian V. Fechete-Tutunaru · Conținut sub licența CC BY-NC-SA 4.0 (în afara PDF-ului cărții)"
+    right: "Inspirat de cursul MITx SC0x; conținut original."
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-title: "Pe această pagină"
+    lang: ro

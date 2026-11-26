@@ -1,0 +1,41 @@
+---
+title: "Capitolul 13. Algoritmi pentru rețele de transport: drumuri minime, circuite și rutarea vehiculelor"
+---
+
+::: {.callout-note appearance="minimal"}
+Pagină în lucru. Rubricile de mai jos se completează pe măsură ce materialele sunt gata.
+:::
+
+## Întrebarea capitolului
+
+*De completat: întrebarea de la care pornește capitolul și un rezumat de 3–4 rânduri.*
+
+## Obiective și termeni-cheie
+
+*De completat: obiectivele de învățare și termenii-cheie, cu echivalentul englez în paranteză.*
+
+## Registrul Excel
+
+Registrul capitolului: **MLTM_C13_algoritmi_VRP.xlsx**.
+
+*Linkul DOI spre Pachetul Excel (Zenodo) va fi adăugat aici.*
+
+## Figuri
+
+*De completat: figurile capitolului, la rezoluție bună.*
+
+## Prezentare
+
+*Va fi disponibilă în curând.*
+
+## Temă de laborator / seminar
+
+*Va fi disponibilă în curând.*
+
+## Exerciții suplimentare
+
+*De completat: exerciții, cu răspunsurile finale.*
+
+## Lecturi suplimentare
+
+*De completat: trimiteri bibliografice în stil IEEE.*

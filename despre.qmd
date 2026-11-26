@@ -1,0 +1,19 @@
+---
+title: "Despre"
+---
+
+## Autorul
+
+Lucian V. Fechete-Tutunaru, Universitatea Tehnică din Cluj-Napoca. Pagina personală: [lucianfechete.eu](https://lucianfechete.eu/).
+
+## Sursă de inspirație
+
+Structura cărții a fost inspirată de cursul MITx *Supply Chain Analytics* (SC0x), de Chris Caplice și Eva Ponce. Textul, exemplele, datele, figurile și registrele sunt originale. Acest site nu este afiliat la MIT.
+
+## Licență
+
+Conținutul site-ului, registrele, figurile, prezentările și temele: CC BY-NC-SA 4.0. Licența PDF-ului cărții: *de stabilit cu editura*.
+
+## Contact
+
+*De completat.*

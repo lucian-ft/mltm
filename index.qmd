@@ -1,0 +1,37 @@
+---
+title: "Metode analitice în managementul lanțului de aprovizionare"
+subtitle: "Site-ul companion al cărții"
+page-layout: full
+toc: false
+---
+
+O carte despre cum iei decizii în transportul de marfă cu modele, date și Excel: de la funcții și statistică la optimizare, rutarea vehiculelor și simulare. Exemplele urmăresc, de la un capitol la altul, o firmă de transport de marfă din Cluj.
+
+Aici găsești capitolele, registrele Excel ale cărții și, în curând, prezentări și teme de laborator și seminar.
+
+## De unde începi?
+
+::: {.grid}
+
+::: {.g-col-12 .g-col-md-4}
+### Sunt student
+Ce am de făcut săptămâna asta? Registrul, tema și exercițiile fiecărui capitol.
+
+[Traseul pentru studenți →](studenti.qmd)
+:::
+
+::: {.g-col-12 .g-col-md-4}
+### Sunt cadru didactic
+Pot folosi materialul la cursul meu? Licența, prezentările, figurile și temele.
+
+[Traseul pentru cadre didactice →](cadre-didactice.qmd)
+:::
+
+::: {.g-col-12 .g-col-md-4}
+### Lucrez în domeniu
+Ce model îmi rezolvă problema? Un index pe probleme practice.
+
+[Traseul pentru specialiști →](specialisti.qmd)
+:::
+
+:::

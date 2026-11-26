@@ -1,0 +1,16 @@
+---
+title: "Pentru specialiști"
+---
+
+Pornește de la problema pe care o ai. Fiecare rând trimite la capitolul și registrul gata de adaptat.
+
+| Problema | Unde găsești modelul |
+| --- | --- |
+| Câte camioane îmi trebuie și cum le încarc? | [Capitolul 10](capitole/cap10.qmd), [Capitolul 11](capitole/cap11.qmd) |
+| Pe ce trasee trimit marfa prin rețea? | [Capitolul 12](capitole/cap12.qmd) |
+| Cum împart clienții pe rute? | [Capitolul 13](capitole/cap13.qmd) |
+| Cât mă costă o rută, estimat rapid? | [Capitolul 14](capitole/cap14.qmd) |
+| Ce se întâmplă dacă cererea variază? | [Capitolul 15](capitole/cap15.qmd) |
+| Ce îmi spun datele istorice despre costuri? | [Capitolul 8](capitole/cap08.qmd) |
+
+*Lista se completează.*

@@ -1,0 +1,9 @@
+---
+title: "Probleme recapitulative: statistică (Partea II)"
+---
+
+Probleme care leagă capitolele 4–8. Registrul: **MLTM_PR2_exercitii.xlsx** (foile `Date_…` cu enunțurile, foile `Sol_…` cu soluțiile).
+
+*Linkul DOI spre Pachetul Excel (Zenodo) va fi adăugat aici.*
+
+Răspunsurile și soluțiile se găsesc în Anexa B a cărții.

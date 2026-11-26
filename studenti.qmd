@@ -1,0 +1,7 @@
+---
+title: "Pentru studenți"
+---
+
+*De completat: calendarul semestrului (un capitol pe săptămână), cu registrul și tema fiecărei săptămâni.*
+
+Primul pas: [pregătește Excel-ul](resurse.qmd#pregătirea-excel-ului), apoi începe cu [Capitolul 1](capitole/cap01.qmd).

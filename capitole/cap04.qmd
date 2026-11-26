@@ -1,0 +1,41 @@
+---
+title: "Capitolul 4. Probabilități și distribuții discrete în transportul de marfă"
+---
+
+::: {.callout-note appearance="minimal"}
+Pagină în lucru. Rubricile de mai jos se completează pe măsură ce materialele sunt gata.
+:::
+
+## Întrebarea capitolului
+
+*De completat: întrebarea de la care pornește capitolul și un rezumat de 3–4 rânduri.*
+
+## Obiective și termeni-cheie
+
+*De completat: obiectivele de învățare și termenii-cheie, cu echivalentul englez în paranteză.*
+
+## Registrul Excel
+
+Registrul capitolului: **MLTM_C04_probabilitati_distributii.xlsx**.
+
+*Linkul DOI spre Pachetul Excel (Zenodo) va fi adăugat aici.*
+
+## Figuri
+
+*De completat: figurile capitolului, la rezoluție bună.*
+
+## Prezentare
+
+*Va fi disponibilă în curând.*
+
+## Temă de laborator / seminar
+
+*Va fi disponibilă în curând.*
+
+## Exerciții suplimentare
+
+*De completat: exerciții, cu răspunsurile finale.*
+
+## Lecturi suplimentare
+
+*De completat: trimiteri bibliografice în stil IEEE.*

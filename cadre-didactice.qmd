@@ -1,0 +1,17 @@
+---
+title: "Pentru cadre didactice"
+---
+
+## Ce poți folosi
+
+Registrele Excel, figurile, prezentările și temele sunt publicate sub licența [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ro): le poți folosi și adapta la cursul tău, cu citarea sursei, în scop necomercial.
+
+## Prezentări și teme
+
+*Vor fi adăugate capitol cu capitol.*
+
+## Teste și soluții
+
+Testele, baremele și soluțiile temelor nu sunt publice. Le poți cere de pe o adresă instituțională; accesul se aprobă individual.
+
+*De completat: linkul spre cererea de acces (Zenodo).*

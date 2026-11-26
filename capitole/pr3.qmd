@@ -1,0 +1,9 @@
+---
+title: "Probleme recapitulative: optimizare (Partea III)"
+---
+
+Probleme care leagă capitolele 9–12. Registrul: **MLTM_PR3_exercitii.xlsx** (foile `Date_…` cu enunțurile, foile `Sol_…` cu soluțiile).
+
+*Linkul DOI spre Pachetul Excel (Zenodo) va fi adăugat aici.*
+
+Răspunsurile și soluțiile se găsesc în Anexa B a cărții.

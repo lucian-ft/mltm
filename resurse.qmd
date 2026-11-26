@@ -1,0 +1,36 @@
+---
+title: "Resurse"
+---
+
+## Registrele Excel
+
+Toate registrele folosesc setări românești: argumentele funcțiilor se separă cu „;”, zecimalele cu „,”. Datele de intrare stau în celule galbene, cu text albastru.
+
+*Linkul DOI spre Pachetul Excel (Zenodo) va fi adăugat aici.*
+
+| Capitol | Registru |
+| --- | --- |
+| 2 | MLTM_C02_functii_Excel.xlsx |
+| 3 | MLTM_C03_gestiunea_datelor.xlsx |
+| 4 | MLTM_C04_probabilitati_distributii.xlsx |
+| 5 | MLTM_C05_distributii_continue.xlsx |
+| 6 | MLTM_C06_esantionare_intervale.xlsx |
+| 7 | MLTM_C07_teste_variabile_multiple.xlsx |
+| 8 | MLTM_C08_regresie.xlsx |
+| 9 | MLTM_C09_optimizare_fara_constrangeri.xlsx |
+| 10 | MLTM_C10_programare_liniara.xlsx |
+| 11 | MLTM_C11_MILP.xlsx |
+| 12 | MLTM_C12_retele_NLP.xlsx |
+| 13 | MLTM_C13_algoritmi_VRP.xlsx |
+| 14 | MLTM_C14_aproximari.xlsx |
+| 15 | MLTM_C15_simulare.xlsx |
+
+Probleme recapitulative: MLTM_PR1_exercitii.xlsx … MLTM_PR4_exercitii.xlsx.
+
+## Pregătirea Excel-ului
+
+*De completat: activarea Solver-ului și a pachetului Analiza datelor (Data Analysis) în Excel cu interfață românească.*
+
+## Galeria de figuri
+
+*De completat.*
