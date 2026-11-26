@@ -1,41 +1,115 @@
 ---
 title: "Capitolul 11. Programarea în numere întregi: curse întregi și decizii de tip „da sau nu”"
+description: "Curse întregi, costuri fixe și reguli de afaceri scrise ca restricții, rezolvate cu Solver."
 ---
 
 ::: {.callout-note appearance="minimal"}
-Pagină în lucru. Rubricile de mai jos se completează pe măsură ce materialele sunt gata.
+Această pagină însoțește Capitolul 11 al cărții: rezumă întrebările, termenii și aplicațiile, dar nu înlocuiește textul. Textul integral, soluțiile și bibliografia se găsesc în [carte](../carte.qmd).
 :::
 
 ## Întrebarea capitolului
 
-*În pregătire.*
+Planul optim din Capitolul 10 cerea 21,25 curse regionale pe săptămână. Un dispecer nu poate trimite un sfert de camion, iar multe decizii din transport nu sunt cantități, ci alegeri: semnăm sau nu un contract, angajăm sau nu un șofer, deschidem sau nu o rută. **Cum scriem astfel de decizii într-un model și cât ne costă fiecare regulă de afaceri?**
+
+Înainte de a parcurge capitolul, încercați să răspundeți la trei întrebări:
+
+1. Programul liniar recomandă 21,25 curse regionale și 17,5 curse lungi. Rotunjiți la 21 și 18. Ce poate merge prost?
+
+    <details><summary>Indiciu</summary>
+    Verificați restricțiile: 4 · 21 + 8 · 18 = 228 de ore de condus, peste cele 225 disponibile. Rotunjirea poate da un plan *neadmisibil* sau unul mai slab decât optimul întreg.
+    </details>
+
+2. Un transportator cere un abonament lunar fix, plătit doar dacă primește cel puțin o cursă. Cum scrieți „dacă primește curse, plătim abonamentul” cu o restricție liniară?
+
+    <details><summary>Indiciu</summary>
+    Folosiți o variabilă *binară* y (0 sau 1) și o restricție de legătură: cursele transportatorului ≤ M · y. Dacă y = 0, nu primește nicio cursă; dacă primește curse, y trebuie să fie 1 și abonamentul intră în cost.
+    </details>
+
+3. Departamentul de achiziții vrea cel mult două contracte cu transportatori terți. Cât costă această regulă?
+
+    <details><summary>Indiciu</summary>
+    Rezolvați modelul cu regula și fără ea și comparați costurile. La o minimizare, o regulă nouă poate doar să crească costul, pentru că restrânge domeniul admisibil.
+    </details>
+
+### Pe scurt: ce este programarea în numere întregi?
+
+Un model de **programare liniară mixtă cu numere întregi** (*mixed-integer linear programming, MILP*) are, pe lângă variabile **continue**, și variabile **întregi** (camioane, curse, șoferi) și **binare** (0 sau 1: da sau nu). Dacă ștergem condiția de număr întreg obținem **relaxarea liniară**, a cărei valoare optimă este o limită pentru optimul întreg. Variabilele binare traduc regulile de afaceri în restricții, după trei tipare: **Dacă–atunci** (un cost fix plătit doar când o activitate are loc), **Fie–fie** (un volum minim sau nimic) și **Selecție** (cel mult N variante dintr-o listă). Constanta **M mare** (*big M*) leagă variabila binară de cantitate; aleasă prea mică, interzice planuri bune, aleasă prea mare, încetinește rezolvarea.
+
+![Planurile întregi admisibile, rotunjirile și optimul întreg (Fig. 11.2 din carte)](img/fig_11.2.png){fig-alt="Domeniul admisibil al planului flotei, cu punctele întregi admisibile, soluția fracționară a relaxării, cele trei rotunjiri, dintre care două în afara domeniului, și optimul întreg (20; 18)"}
 
 ## Obiective și termeni-cheie
 
-*În pregătire.*
+La finalul capitolului veți recunoaște deciziile de transport care cer valori întregi sau binare, veți traduce reguli de afaceri în restricții liniare și veți rezolva și depana în Excel un model MILP. Concret, veți putea:
+
+- să deosebiți variabilele continue, întregi și binare și să spuneți când programul liniar obișnuit este suficient;
+- să explicați relaxarea liniară și de ce ea dă o limită pentru optimul întreg;
+- să explicați de ce rotunjirea soluției unui program liniar nu este sigură;
+- să scrieți condițiile logice Dacă–atunci, Fie–fie și Selecție și să alegeți constanta M;
+- să găsiți optimul întreg al unui model mic prin enumerare completă și să-l comparați cu rotunjirea;
+- să rezolvați cu Solver un model cu costuri fixe și volume minime (restricțiile int și bin);
+- să calculați cât costă o regulă de afaceri și să depanați un model Solver cu o listă de verificare.
+
+| Termen | În engleză |
+| --- | --- |
+| programare liniară mixtă cu numere întregi (MILP) | *mixed-integer linear programming* |
+| variabilă continuă / întreagă / binară | *continuous / integer / binary variable* |
+| relaxarea liniară | *LP relaxation* |
+| limită, decalaj de optimalitate | *bound, optimality gap* |
+| cost fix, restricție de legătură | *fixed cost, linking constraint* |
+| constanta M mare | *big M* |
+| volum minim | *minimum volume* |
+
+## Studiul de caz: curse întregi și alegerea transportatorilor 3PL
+
+Pasul 1 reia planul flotei din Capitolul 10 și compară trei rotunjiri cu optimul întreg. Pașii 2–5 construiesc, pe rând, patru modele pentru alegerea transportatorilor terți (3PL) pe rutele de peste 250 km, grupate în trei zone: Centru-Est, Vest și Sud. Modelul 1 folosește doar tarifele; Modelul 2 adaugă abonamentul lunar (Dacă–atunci); Modelul 3, volumul minim de 15 curse (Fie–fie); Modelul 4, limita de cel mult două contracte (Selecție). Pasul 6 pune cele patru modele unul lângă altul.
+
+Comparația arată prețul fiecărei reguli: volumul minim costă circa 690 de lei pe lună, iar limitarea la două contracte încă circa 140 de lei. Cu aceste cifre, discuția cu departamentul de achiziții nu mai pornește de la impresii.
+
+## Verificați-vă
+
+<details><summary>Planul flotei: max 400R + 700L, cu 4R + 8L ≤ 225 ore de condus, 2R + L ≤ 60 ore la rampă și L ≤ 20. Planul (20; 18) este admisibil? Cât pierde față de relaxare, care dă 20.750 lei? (răspunsul se deschide la clic)</summary>
+
+Condus: 4 · 20 + 8 · 18 = 224 ≤ 225. Rampă: 2 · 20 + 18 = 58 ≤ 60. Cererea: 18 ≤ 20. Planul este admisibil. Marja: 400 · 20 + 700 · 18 = 20.600 lei, cu 150 de lei (0,7%) sub relaxare. Rotunjirea în jos, (21; 17), dă doar 20.300 lei. În Solver, condiția de număr întreg se adaugă cu Add → Cell Reference = celulele variabile → int.
+
+</details>
 
 ## Registrul Excel
 
-Registrul capitolului: **MLTM_C11_MILP.xlsx**.
+**MLTM_C11_MILP.xlsx**. Registrul folosește setări românești: argumentele se separă cu „;”, zecimalele cu „,”. Activați programul de completare Solver; metoda rămâne Simplex LP, cu restricțiile int și bin.
+
+| Foaia | Ce conține |
+| --- | --- |
+| 0_Citiți-mă | Cum se folosește registrul |
+| 1_Curse_intregi | Relaxarea, rotunjirile și optimul întreg prin enumerare |
+| 2_Model1_tarife | Modelul 1: trei transportatori, numai tarife |
+| 3_Model2_abonament | Modelul 2: abonamentul lunar (Dacă–atunci) |
+| 4_Model3_volum_minim | Modelul 3: volumul minim contractual (Fie–fie) |
+| 5_Model4_doi_transportatori | Modelul 4: cel mult două contracte (Selecție) |
+| 6_Comparatie | Costul fiecărei reguli în cele patru modele |
+| Ex_Investitii, Ex_Incarcare, Ex_Depanare | Date pentru exerciții, cu soluțiile în rândul gri de la final |
 
 *Linkul DOI spre Pachetul Excel (Zenodo) va fi adăugat aici.*
-
-## Figuri
-
-*În pregătire.*
 
 ## Prezentare
 
 *În pregătire.*
 
-## Temă de laborator / seminar
+## Temă de laborator: cât costă o regulă de afaceri?
 
-*În pregătire.*
+Alegeți o decizie de alocare cu o regulă de afaceri reală: alegerea furnizorilor, a transportatorilor, a depozitelor deschise sau a turelor de lucru.
+
+1. Scrieți modelul fără reguli: variabile, obiectiv, restricții. Ce variabile trebuie să fie întregi?
+2. Formulați o regulă Dacă–atunci (cost fix) și una Fie–fie (volum minim) și alegeți constanta M. Justificați valoarea aleasă.
+3. Rezolvați modelul cu Solver, întâi fără reguli, apoi adăugând câte o regulă.
+4. Calculați costul fiecărei reguli ca diferență față de modelul anterior.
+5. Scrieți recomandarea pentru manager: ce regulă merită păstrată și de ce, inclusiv argumente din afara modelului.
 
 ## Exerciții suplimentare
 
-*În pregătire.*
+Capitolul se încheie cu șase întrebări grilă, o întrebare deschisă și patru exerciții în Excel; răspunsurile sunt în carte, în secțiunea 5.4 și în Anexa B. Alte exerciții pentru Partea III sunt în [Problemele recapitulative III](pr3.qmd).
 
 ## Lecturi suplimentare
 
-*În pregătire.*
+1. C. Caplice and E. Ponce, *MITx MicroMasters Program in SCM Key Concepts*, Version 20 Sep. 2026. Cambridge, MA, USA: MIT Center for Transportation & Logistics, 2026.
+
+Lista completă a surselor capitolului se găsește în Bibliografia cărții.
