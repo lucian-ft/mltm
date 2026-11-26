@@ -1,41 +1,119 @@
 ---
 title: "Capitolul 6. Eșantionare și intervale de încredere în transportul de marfă"
+description: "Cât de precisă este o estimare făcută din date incomplete și câte date ne trebuie."
 ---
 
 ::: {.callout-note appearance="minimal"}
-Pagină în lucru. Rubricile de mai jos se completează pe măsură ce materialele sunt gata.
+Această pagină însoțește Capitolul 6 al cărții: rezumă întrebările, termenii și aplicațiile, dar nu înlocuiește textul. Textul integral, soluțiile și bibliografia se găsesc în [carte](../carte.qmd).
 :::
 
 ## Întrebarea capitolului
 
-*În pregătire.*
+În Capitolul 5, media și abaterea standard au fost tratate ca valori sigure. Ele vin însă din date, iar datele sunt aproape întotdeauna doar o parte din realitate. Pe ruta Cluj–Brașov, flota proprie are doar 16 curse în doi ani. **Cât de mult ne putem baza pe o medie calculată din atât de puține date și câte date ne-ar trebui pentru o estimare bună?**
+
+Înainte de a parcurge capitolul, încercați să răspundeți la trei întrebări:
+
+1. Ați calculat abaterea medie a costului din primele 30 de curse din evidență și iese mult negativă. Concluzionați că flota proprie e mai ieftină decât prevede modelul?
+
+    <details><summary>Indiciu</summary>
+    De unde vin primele 30 de curse? Dacă toate sunt din aceeași lună, eșantionul e de *comoditate*, nu aleator, iar media lui poate fi deplasată oricât de mare ar fi.
+    </details>
+
+2. Distanțele curselor nu au deloc forma unui clopot. Media a 30 de curse ar avea?
+
+    <details><summary>Indiciu</summary>
+    Da, aproape: aceasta este *teorema limită centrală*. Capitolul o arată chiar pe distanțele curselor Cargo Someș.
+    </details>
+
+3. „Costul mediu pe ruta Brașov este între 1.840 și 1.900 de lei, cu 95% încredere.” Înseamnă că 95% dintre curse costă între aceste valori?
+
+    <details><summary>Indiciu</summary>
+    Nu. Intervalul de încredere privește *media*; pentru o cursă individuală, următoarea, vă trebuie un interval de predicție, mult mai larg.
+    </details>
+
+### Pe scurt: ce este un interval de încredere?
+
+Datele de care dispunem sunt un **eșantion** dintr-o **populație** mai mare. Media eșantionului, x̄, estimează media populației, μ, dar alt eșantion ar da altă valoare. **Eroarea standard** măsoară cât de mult variază x̄ de la un eșantion la altul și scade cu rădăcina pătrată a numărului de observații. Un **interval de încredere** adaugă estimării precizia ei: un interval în jurul lui x̄, construit astfel încât, în 95% dintre eșantioane, să conțină media adevărată. Pentru eșantioane mici se folosește distribuția *t* în locul distribuției normale.
+
+![Teorema limită centrală pe distanțele curselor Cargo Someș (Fig. 6.1 din carte)](img/fig_6.1.png){fig-alt="Distribuția distanței unei curse, asimetrică, și distribuțiile mediei a 5 și a 30 de curse, tot mai apropiate de o distribuție normală"}
 
 ## Obiective și termeni-cheie
 
-*În pregătire.*
+La finalul capitolului veți estima din date incomplete mărimile din transport, veți spune cât de precisă este estimarea și veți stabili câte date trebuie colectate pentru o precizie dorită. Concret, veți putea:
+
+- să distingeți populația de eșantion și parametrul (μ, σ) de statistică (x̄, s);
+- să explicați de ce un eșantion de comoditate poate da o estimare greșită;
+- să enunțați teorema limită centrală pentru sume și pentru medii;
+- să construiți intervale de încredere cu z (CONFIDENCE.NORM) și cu t (T.INV.2T, CONFIDENCE.T);
+- să deosebiți un interval de încredere de un interval de predicție;
+- să extrageți un eșantion aleator cu RANDBETWEEN și INDEX;
+- să calculați mărimea eșantionului pentru o marjă de eroare dată.
+
+| Termen | În engleză |
+| --- | --- |
+| inferență statistică | *statistical inference* |
+| populație / eșantion | *population / sample* |
+| parametru / statistică | *parameter / statistic* |
+| teorema limită centrală (TLC) | *central limit theorem* |
+| eroare standard | *standard error* |
+| interval de încredere / de predicție | *confidence / prediction interval* |
+| distribuția t | *Student's t distribution* |
+| independente și identic distribuite (iid) | *independent and identically distributed* |
+
+## Studiul de caz: cât de sigure sunt estimările la Cargo Someș?
+
+Cele 2.401 curse proprii sunt tratate ca o populație cunoscută, din care se extrag eșantioane. Astfel se poate verifica direct ce promit formulele. Cei șase pași trec de la teorema limită centrală la încărcarea camioanelor la rampă, de la eșantionul de comoditate la 100 de intervale de încredere, apoi la ruta Brașov cu doar 16 curse și la numărul de curse care trebuie monitorizate prin GPS.
+
+![Abaterea medie a costului pe luni și intervalele celor două eșantioane (Fig. 6.4 din carte)](img/fig_6.4.png){fig-alt="Abaterea medie a costului pe luni, cu luna din care provin primele 30 de curse evidențiată, și intervalele de încredere ale eșantionului de comoditate și ale celui aleator"}
+
+Pasul 6 arată costul preciziei: o marjă de eroare de două ori mai mică cere de patru ori mai multe date.
+
+## Verificați-vă
+
+<details><summary>Un eșantion aleator de 100 de curse are abaterea standard a costului de 30,87 lei. Cât este marja de eroare a mediei, la 95% încredere? (răspunsul se deschide la clic)</summary>
+
+Eroarea standard: 30,87 / √100 = 3,09 lei. Marja de eroare: 1,96 · 3,09 ≈ 6,05 lei. Intervalul este x̄ ± 6,05 lei. În Excel: `=CONFIDENCE.NORM(0,05;30,87;100)`. Pentru o marjă de ±3 lei ar trebui de circa patru ori mai multe curse.
+
+</details>
 
 ## Registrul Excel
 
-Registrul capitolului: **MLTM_C06_esantionare_intervale.xlsx**.
+**MLTM_C06_esantionare_intervale.xlsx**. Registrul folosește setări românești: argumentele se separă cu „;”, zecimalele cu „,”.
+
+| Foaia | Ce conține |
+| --- | --- |
+| 0_Citiți-mă | Cum se folosește registrul |
+| 1_Curse_proprii | Cele 2.401 curse cu flota proprie, numerotate |
+| 2_TLC, 2b_TLC_esantioane | Teorema limită centrală pe distanțele curselor |
+| 3_Rampa | Timpul de încărcare a unui camion: TLC pentru sume |
+| 4_Esantioane | Eșantionul de comoditate și eșantionul aleator |
+| 5_100_intervale, 5b_100_esantioane | 100 de eșantioane și intervalele lor de încredere |
+| 6_Brasov_t | Ruta Cluj–Brașov: distribuția t și intervalul de predicție |
+| 7_Marime_esantion | Câte curse trebuie monitorizate |
+| Ex_Exercitii | Date pentru exerciții |
 
 *Linkul DOI spre Pachetul Excel (Zenodo) va fi adăugat aici.*
-
-## Figuri
-
-*În pregătire.*
 
 ## Prezentare
 
 *În pregătire.*
 
-## Temă de laborator / seminar
+## Temă de laborator: cât de precisă este media voastră?
 
-*În pregătire.*
+Alegeți o mărime măsurată pe care o cunoașteți: durata unei operații, costul unei livrări, timpul de așteptare la o rampă.
+
+1. Descrieți populația și explicați cum ați extrage din ea un eșantion aleator, nu unul de comoditate.
+2. Pe cel puțin 20 de observații, calculați media, abaterea standard și eroarea standard.
+3. Construiți intervalul de încredere de 95% cu t și comparați-l cu cel calculat, greșit, cu z.
+4. Calculați intervalul de predicție pentru observația următoare. De ce este mai larg?
+5. Câte observații v-ar trebui pentru o marjă de eroare de două ori mai mică?
 
 ## Exerciții suplimentare
 
-*În pregătire.*
+Capitolul se încheie cu zece întrebări grilă, o întrebare deschisă și patru exerciții în Excel; răspunsurile sunt în carte, în secțiunea 5.4 și în Anexa B. Alte exerciții pentru Partea II sunt în [Problemele recapitulative II](pr2.qmd).
 
 ## Lecturi suplimentare
 
-*În pregătire.*
+1. C. Caplice and E. Ponce, *MITx MicroMasters Program in SCM Key Concepts*, Version 20 Sep. 2026. Cambridge, MA, USA: MIT Center for Transportation & Logistics, 2026.
+
+Lista completă a surselor capitolului se găsește în Bibliografia cărții.
