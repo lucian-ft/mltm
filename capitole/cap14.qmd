@@ -1,41 +1,116 @@
 ---
 title: "Capitolul 14. Aproximări și estimări rapide: cât costă, înainte să calculăm exact"
+description: "Estimări cu date puține, care spun dacă un proiect merită o analiză detaliată."
 ---
 
 ::: {.callout-note appearance="minimal"}
-Pagină în lucru. Rubricile de mai jos se completează pe măsură ce materialele sunt gata.
+Această pagină însoțește Capitolul 14 al cărții: rezumă întrebările, termenii și aplicațiile, dar nu înlocuiește textul. Textul integral, soluțiile și bibliografia se găsesc în [carte](../carte.qmd).
 :::
 
 ## Întrebarea capitolului
 
-*În pregătire.*
+Algoritmii din Capitolul 13 au nevoie de date complete: fiecare drum, fiecare client, fiecare cerere. La începutul unui proiect, aceste date lipsesc. Un magazin online din Cluj-Napoca îi propune firmei Cargo Someș un contract pe trei ani pentru livrarea comenzilor la domiciliu, la 20 de lei pe comandă. **Putem spune, fără date detaliate, dacă oferta merită analizată mai departe?**
+
+Înainte de a parcurge capitolul, încercați să răspundeți la trei întrebări:
+
+1. Câte comenzi pe zi ar putea avea un magazin online de alimente într-un oraș de 290.000 de locuitori?
+
+    <details><summary>Indiciu</summary>
+    Descompuneți întrebarea în piese pe care le puteți estima: gospodării, ce parte cumpără online, cât de des comandă, ce cotă are clientul. Erorile pieselor se compensează parțial: aceasta este *estimarea Fermi*.
+    </details>
+
+2. Oradea este la 131 km de Cluj în linie dreaptă. Cât are drumul?
+
+    <details><summary>Indiciu</summary>
+    Drumurile ocolesc. Comparați, pentru orașele cunoscute, distanța rutieră cu cea pe glob: raportul lor este *factorul de circuitate* al rețelei.
+    </details>
+
+3. Numărul de clienți dintr-o zonă se dublează. Se dublează și kilometrii parcurși pentru livrarea locală?
+
+    <details><summary>Indiciu</summary>
+    Nu. Lungimea celui mai scurt circuit prin n puncte dintr-o zonă de arie A crește cu √(n · A). La de două ori mai mulți clienți, circuitul crește doar de √2 ≈ 1,41 ori.
+    </details>
+
+### Pe scurt: de ce aproximăm?
+
+O **aproximare** este o valoare apropiată, dar nu exactă; o **estimare** este un calcul aproximativ al unei mărimi. Aproximările sunt rapide, cer puține date și spun dacă merită să mergem mai departe. Principiul **„nici prea mult, nici prea puțin”** (*Goldilocks*) spune când: dacă estimarea arată un proiect clar bun sau clar prost, decizia se poate lua; dacă rezultatul este la limită, merită o analiză detaliată. Capitolul folosește trei instrumente: **estimarea Fermi**, cu scenarii pesimist, probabil și optimist; **factorul de circuitate**, care transformă distanța în linie dreaptă în distanță rutieră; și **formula lungimii unui circuit**, k · √(n · A), pentru o distribuție „de la un depozit la mulți clienți”.
+
+![Distanța rutieră minimă și distanța pe glob de la Cluj-Napoca la cele 16 orașe ale rețelei (Fig. 14.1 din carte)](img/fig_14.1.png){fig-alt="Diagramă de dispersie cu distanța pe glob pe axa orizontală și distanța rutieră minimă pe axa verticală pentru cele 16 orașe, cu dreapta factorului de circuitate"}
 
 ## Obiective și termeni-cheie
 
-*În pregătire.*
+La finalul capitolului veți face o estimare rapidă, cu date puține, pentru o problemă de transport și veți decide dacă problema merită o analiză detaliată. Concret, veți putea:
+
+- să explicați când și de ce se folosesc aproximările și principiul Goldilocks;
+- să descrieți cei trei pași ai unei estimări Fermi și să o construiți în Excel, cu trei scenarii;
+- să calculați în Excel distanța pe glob dintre două orașe și să estimați factorul de circuitate al unei rețele;
+- să explicați formula de aproximare a lungimii unui circuit, k · √(n · A);
+- să descrieți componentele costului unei distribuții „de la un depozit la mulți clienți”: opririle, apropierea și circuitul local;
+- să estimați costul zilnic și costul pe comandă al unei distribuții urbane;
+- să analizați sensibilitatea estimării și să recomandați dacă un proiect merită continuat.
+
+| Termen | În engleză |
+| --- | --- |
+| aproximare / estimare | *approximation / estimation* |
+| estimare rapidă „pe dosul unui plic” | *back-of-the-envelope estimate* |
+| estimare Fermi | *Fermi estimation* |
+| principiul „nici prea mult, nici prea puțin” | *Goldilocks principle* |
+| factor de circuitate | *circuity factor* |
+| distanța euclidiană / Manhattan | *Euclidean / Manhattan distance* |
+| zonă de servire | *service region* |
+| distanța de apropiere | *line-haul distance* |
+
+## Studiul de caz: estimări rapide pentru Cargo Someș
+
+Cei cinci pași răspund la oferta magazinului online. Pasul 1 estimează comenzile zilnice după extindere, în trei scenarii. Pasul 2 calculează factorul de circuitate al rețelei din Transilvania: un drum este, în medie, cu circa 40% mai lung decât linia dreaptă. Pasul 3 verifică o estimare rapidă pe ziua de marți din Capitolul 13. Pasul 4 estimează costul pe comandă al distribuției în Cluj-Napoca, iar Pasul 5 arată de ce ipoteze depinde concluzia.
+
+![Distribuția „de la un depozit la mulți clienți” în Cluj-Napoca (Fig. 14.2 din carte)](img/fig_14.2.png){fig-alt="Zona de livrare de 16 pe 10 km, cu depozitul la marginea de est, clienții răspândiți în zonă și traseul unei autoutilitare: apropierea până la primul client, livrarea locală și întoarcerea la depozit"}
+
+Rezultatul Pasului 4: circa 19,20 lei pe comandă, foarte aproape de tariful de 20 de lei. Oferta nu este nici evident bună, nici evident proastă, deci merită o analiză detaliată, începând cu datele care contează cel mai mult: volumul, timpul la oprire și circuitatea.
+
+## Verificați-vă
+
+<details><summary>În zona de 160 km² a orașului se livrează 150 de comenzi pe zi. Cu factorul de circuitate 1,3 și k = 0,8, câți km are circuitul local? Dar la 600 de comenzi? (răspunsul se deschide la clic)</summary>
+
+Km locali = 1,3 · 0,8 · √(150 · 160) = 1,04 · 154,9 ≈ 161 km pe zi. La 600 de comenzi, de 4 ori mai multe, circuitul crește de √4 = 2 ori, la circa 322 km, deci distanța pe comandă se înjumătățește: de aici vine avantajul volumului mare. În Excel: `=1,3*0,8*SQRT(150*160)`.
+
+</details>
 
 ## Registrul Excel
 
-Registrul capitolului: **MLTM_C14_aproximari.xlsx**.
+**MLTM_C14_aproximari.xlsx**. Registrul folosește setări românești: argumentele se separă cu „;”, zecimalele cu „,”.
+
+| Foaia | Ce conține |
+| --- | --- |
+| 0_Citiți-mă | Cum se folosește registrul |
+| 1_Fermi | Estimarea Fermi a comenzilor zilnice, în trei scenarii |
+| 2_Circuitate | Distanța pe glob, distanța rutieră și factorul de circuitate |
+| 3_Verificare_C13 | Estimarea rapidă pentru ziua de marți din Capitolul 13 |
+| 4_Cost_Cluj | Costul zilnic și costul pe comandă al distribuției urbane |
+| 5_Sensibilitate | Costul pe comandă în mai multe scenarii |
 
 *Linkul DOI spre Pachetul Excel (Zenodo) va fi adăugat aici.*
-
-## Figuri
-
-*În pregătire.*
 
 ## Prezentare
 
 *În pregătire.*
 
-## Temă de laborator / seminar
+## Temă de laborator: o estimare pe dosul unui plic
 
-*În pregătire.*
+Alegeți o întrebare de transport la care nu aveți încă date: costul livrărilor unui serviciu nou, numărul de vehicule pentru o zonă, cererea unui client nou.
+
+1. Descompuneți întrebarea în 4–6 piese și dați fiecăreia o valoare pesimistă, una probabilă și una optimistă.
+2. Calculați rezultatul în cele trei scenarii. Cât de larg este intervalul?
+3. Estimați distanțele cu un factor de circuitate calculat pentru zona voastră din 5–10 perechi de puncte cunoscute.
+4. Faceți analiza de sensibilitate: care piesă schimbă cel mai mult rezultatul?
+5. Aplicați principiul Goldilocks: decizia se poate lua acum sau merită o analiză detaliată? Ce date ați colecta întâi?
 
 ## Exerciții suplimentare
 
-*În pregătire.*
+Capitolul se încheie cu șase întrebări grilă, o întrebare deschisă și cinci exerciții; răspunsurile sunt în carte, în secțiunea 5.4 și în Anexa B. Alte exerciții pentru Partea IV sunt în [Problemele recapitulative IV](pr4.qmd).
 
 ## Lecturi suplimentare
 
-*În pregătire.*
+1. C. Caplice and E. Ponce, *MITx MicroMasters Program in SCM Key Concepts*, Version 20 Sep. 2026. Cambridge, MA, USA: MIT Center for Transportation & Logistics, 2026.
+
+Lista completă a surselor capitolului se găsește în Bibliografia cărții.
