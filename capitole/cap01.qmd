@@ -13,6 +13,16 @@ Laptele din Câmpia Transilvaniei, cablajele auto dintr-un parc industrial de l�
 
 Capitolul pornește de la această întrebare și ajunge la alte trei: ce este un lanț de aprovizionare, cum îl putem descrie și de ce este dificil de gestionat. Nu conține calcule; în [Capitolul 2](cap02.qmd) aceleași decizii primesc cifre.
 
+### Pe scurt: ce este un lanț de aprovizionare?
+
+Un **lanț de aprovizionare** (*supply chain*) este ansamblul de firme, locații și activități prin care un produs ajunge de la furnizorul de materie primă până la clientul final: aprovizionare, producție, stocare, transport, distribuție și retururi. Între fiecare două verigi circulă trei fluxuri:
+
+- **fizic**: marfa „coboară” spre client (în aval);
+- **informațional**: comenzile, prognozele și starea livrărilor circulă în ambele sensuri;
+- **financiar**: banii „urcă” spre furnizor (în amonte).
+
+**Managementul lanțului de aprovizionare** (SCM, *Supply Chain Management*) coordonează aceste fluxuri între parteneri, cu un singur scop: deservirea clientului final. Logistica, adică transportul, depozitarea și manipularea mărfii, este o parte a lui.
+
 ![Lapte, cablaje auto, ciment: ce au în comun? (Fig. 1.2 din carte)](img/fig_1.2.png){fig-alt="Trei lanțuri de aprovizionare din zona Clujului, pentru lapte, cablaje auto și ciment, și deciziile de management comune lor"}
 
 Înainte de a parcurge capitolul, încercați să răspundeți la trei întrebări:
@@ -50,7 +60,7 @@ La finalul capitolului veți putea descrie un lanț de aprovizionare real prin f
 | Termen | În engleză |
 | --- | --- |
 | lanț de aprovizionare | *supply chain* |
-| managementul lanțului de aprovizionare (SCM) | *Supply Chain Management* |
+| SCM, managementul lanțului de aprovizionare | *Supply Chain Management* |
 | niveluri de furnizori | *tiers* |
 | amonte / aval | *upstream / downstream* |
 | surplusul lanțului | *supply chain surplus* |

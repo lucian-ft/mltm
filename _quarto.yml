@@ -77,4 +77,6 @@ format:
     theme: cosmo
     toc: true
     toc-title: "Pe această pagină"
+    link-external-newwindow: true
+    link-external-icon: true
     lang: ro
