@@ -141,6 +141,7 @@ Capitolul se încheie cu opt întrebări grilă și o întrebare deschisă despr
 
 1. C. Caplice and E. Ponce, *MITx MicroMasters Program in SCM Key Concepts*, Version 20 Sep. 2026. Cambridge, MA, USA: MIT Center for Transportation & Logistics, 2026.
 2. S. Chopra, P. Meindl, and D. V. Kalra, *Supply Chain Management: Strategy, Planning, and Operation*, 6th ed. Noida, India: Pearson India Education Services, 2016.
-3. ASCM, "SCOR Digital Standard," Association for Supply Chain Management. [Online]. Available: <https://www.ascm.org/>. [Accessed: Nov. 26, 2026].
+3. S. Chopra, *Supply Chain Management: Strategy, Planning, and Operation*, 7th ed., Global ed. Harlow, U.K.: Pearson, 2019. Ediție mai nouă decât cea folosită în carte; disponibilă la BCU Cluj, inclusiv online, cu permis de bibliotecă.
+4. ASCM, "SCOR Digital Standard," Association for Supply Chain Management. [Online]. Available: <https://www.ascm.org/>. [Accessed: Nov. 26, 2026].
 
 Lista completă a surselor capitolului se găsește în Bibliografia cărții.
