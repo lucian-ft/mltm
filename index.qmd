@@ -7,9 +7,9 @@ toc: false
 
 O carte despre cum iei decizii în transportul de marfă cu modele, date și Excel: de la funcții și statistică la optimizare, rutarea vehiculelor și simulare. Exemplele urmăresc, de la un capitol la altul, o firmă de transport de marfă din Cluj.
 
-Aici găsești capitolele, registrele Excel ale cărții și, în curând, prezentări și teme de laborator și seminar.
+Aici găsiți capitolele, registrele Excel ale cărții și, în curând, prezentări și teme de laborator și seminar.
 
-## De unde începi?
+## De unde începeți?
 
 ::: {.grid}
 

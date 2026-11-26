@@ -2,9 +2,9 @@
 title: "Pentru specialiști"
 ---
 
-Pornește de la problema pe care o ai. Fiecare rând trimite la capitolul și registrul gata de adaptat.
+Porniți de la problema pe care o aveți. Fiecare rând trimite la capitolul și la registrul gata de adaptat.
 
-| Problema | Unde găsești modelul |
+| Problema | Unde găsiți modelul |
 | --- | --- |
 | Câte camioane îmi trebuie și cum le încarc? | [Capitolul 10](capitole/cap10.qmd), [Capitolul 11](capitole/cap11.qmd) |
 | Pe ce trasee trimit marfa prin rețea? | [Capitolul 12](capitole/cap12.qmd) |

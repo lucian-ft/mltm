@@ -8,14 +8,14 @@ title: "Cartea"
 
 ## Cuprins
 
-## Partea I. Modele analitice și funcții
+## Partea I. Fundamente {#partea-i}
 
 - [Capitolul 1. Introducere în managementul lanțului de aprovizionare (SCM)](capitole/cap01.qmd)
 - [Capitolul 2. Modele analitice și funcții în logistică](capitole/cap02.qmd)
 - [Capitolul 3. Gestiunea datelor în transportul de marfă](capitole/cap03.qmd)
 - [Probleme recapitulative (Partea I)](capitole/pr1.qmd)
 
-## Partea II. Statistică
+## Partea II. Incertitudine și inferență statistică {#partea-ii}
 
 - [Capitolul 4. Probabilități și distribuții discrete în transportul de marfă](capitole/cap04.qmd)
 - [Capitolul 5. Distribuții continue în transportul de marfă](capitole/cap05.qmd)
@@ -24,7 +24,7 @@ title: "Cartea"
 - [Capitolul 8. Regresia liniară în transportul de marfă](capitole/cap08.qmd)
 - [Probleme recapitulative (Partea II)](capitole/pr2.qmd)
 
-## Partea III. Optimizare
+## Partea III. Optimizare {#partea-iii}
 
 - [Capitolul 9. Optimizarea fără constrângeri în transportul de marfă](capitole/cap09.qmd)
 - [Capitolul 10. Programarea liniară în planificarea transportului](capitole/cap10.qmd)
@@ -32,7 +32,7 @@ title: "Cartea"
 - [Capitolul 12. Rețele și programare neliniară: drumuri, cross-dock-uri, circuite și loturi](capitole/cap12.qmd)
 - [Probleme recapitulative (Partea III)](capitole/pr3.qmd)
 
-## Partea IV. Algoritmi, aproximări și simulare
+## Partea IV. Algoritmi, aproximări și simulare {#partea-iv}
 
 - [Capitolul 13. Algoritmi pentru rețele de transport: drumuri minime, circuite și rutarea vehiculelor](capitole/cap13.qmd)
 - [Capitolul 14. Aproximări și estimări rapide: cât costă, înainte să calculăm exact](capitole/cap14.qmd)

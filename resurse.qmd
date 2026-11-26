@@ -29,8 +29,8 @@ Probleme recapitulative: MLTM_PR1_exercitii.xlsx … MLTM_PR4_exercitii.xlsx.
 
 ## Pregătirea Excel-ului
 
-*De completat: activarea Solver-ului și a pachetului Analiza datelor (Data Analysis) în Excel cu interfață românească.*
+*În pregătire.*
 
 ## Galeria de figuri
 
-*De completat.*
+*În pregătire.*

@@ -6,14 +6,14 @@ title: "Despre"
 
 Lucian V. Fechete-Tutunaru, Universitatea Tehnică din Cluj-Napoca. Pagina personală: [lucianfechete.eu](https://lucianfechete.eu/).
 
-## Sursă de inspirație
+## Surse
 
-Structura cărții a fost inspirată de cursul MITx *Supply Chain Analytics* (SC0x), de Chris Caplice și Eva Ponce. Textul, exemplele, datele, figurile și registrele sunt originale. Acest site nu este afiliat la MIT.
+Structura tematică și o parte dintre noțiunile teoretice urmează cursul MITx *Supply Chain Analytics* (SC0x) din programul MITx MicroMasters in Supply Chain Management și documentul său de sinteză *Key Concepts* (C. Caplice și E. Ponce, 2026), publicat sub licența CC BY-NC-SA 4.0. Secțiunile adaptate sunt enumerate pe pagina de copyright a cărții. Studiul de caz Cargo Someș, datele, figurile, registrele Excel și aplicațiile sunt originale. Acest site nu este afiliat la MIT.
 
 ## Licență
 
-Conținutul site-ului, registrele, figurile, prezentările și temele: CC BY-NC-SA 4.0. Licența PDF-ului cărții: *de stabilit cu editura*.
+Cartea, pachetul de registre Excel și conținutul acestui site se distribuie gratuit sub licența [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ro): pot fi copiate, distribuite și adaptate în scopuri necomerciale, cu menționarea sursei și cu păstrarea aceleiași licențe.
 
 ## Contact
 
-*De completat.*
+*În pregătire.*
