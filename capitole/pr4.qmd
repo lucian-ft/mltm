@@ -9,35 +9,67 @@ Această pagină însoțește setul de Probleme recapitulative al Părții IV di
 
 ## Ce recapitulăm
 
-Setul adună **9 exerciții** pentru Partea IV. Algoritmi, aproximări și simulare, cu noțiuni din [Capitolul 13](cap13.qmd), [Capitolul 14](cap14.qmd), [Capitolul 15](cap15.qmd). Nu aduce teorie nouă: fiecare exercițiu pornește de la o întrebare concretă a firmei Cargo Someș sau a unui partener al ei și cere să alegeți singuri modelul potrivit.
+Setul adună **9 exerciții** pentru Partea IV. Algoritmi, aproximări și simulare, cu noțiuni din [Capitolul 13](cap13.qmd), [Capitolul 14](cap14.qmd) și [Capitolul 15](cap15.qmd). Nu aduce teorie nouă: exercițiile pornesc de la întrebări concrete ale unor firme și instituții (Cargo Someș, un distribuitor, o primărie) și cer să alegeți singuri modelul potrivit. Ultimul exercițiu leagă algoritmii de simulare: verifică dacă traseele construite cu cererea medie rezistă când cererea variază.
 
-Tocmai aici este dificultatea: în capitole știați dinainte ce metodă se folosește. Aici, prima întrebare este întotdeauna **ce fel de problemă am în față?**
+În capitole știați dinainte ce metodă se folosește. Aici, prima întrebare este întotdeauna: **ce tip de problemă avem în față?** De aceea, legătura fiecărui exercițiu cu capitolele stă într-o casetă pliabilă, sub tabel. Deschideți-o abia după ce ați ales singuri modelul.
+
+Datele sunt fictive, construite pentru carte („date de exercițiu”), și nu schimbă parametrii studiului de caz Cargo Someș.
 
 ## Exercițiile
 
-| Cod | Întrebarea | Capitole |
-| --- | --- | --- |
-| E1 | Drumul minim într-o rețea regională | Capitolul 13 |
-| E2 | Circuitul unui agent de vânzări: cel mai apropiat vecin și 2-opt | Capitolul 13 |
-| E3 | Traseele autoutilitarelor: Clarke–Wright și baleiaj | Capitolul 13 |
-| E4 | Estimare Fermi: camioanele cu alimente ale unui oraș | Capitolul 14 |
-| E5 | Distribuția farmaceutică într-o zonă rurală | Capitolul 14 |
-| E6 | Lăzile de pâine: testul χ² și simularea cantității livrate | Capitolul 15 |
-| E7 | Rampa de recepție: două variabile aleatoare | Capitolul 15 |
-| E8 | Validarea unui model de simulare | Capitolul 15 |
-| E9 | Traseele din E3 cu cerere aleatoare | Capitolul 15 |
+| Cod | Exercițiul |
+| --- | --- |
+| E1 | Drumul minim într-o rețea regională (necesită registrul MLTM_PR4) |
+| E2 | Circuitul unui agent de vânzări: cel mai apropiat vecin și 2-opt |
+| E3 | Traseele autoutilitarelor: Clarke–Wright și baleiaj |
+| E4 | Estimare Fermi: camioanele cu alimente ale unui oraș |
+| E5 | Distribuția farmaceutică într-o zonă rurală |
+| E6 | Lăzile de pâine: testul χ² și simularea cantității livrate (necesită registrul MLTM_PR4) |
+| E7 | Rampa de recepție: două variabile aleatoare (necesită registrul MLTM_PR4) |
+| E8 | Validarea unui model de simulare |
+| E9 | Traseele din E3 cu cerere aleatoare (necesită registrul MLTM_PR4) |
+
+<details><summary>Legătura cu capitolele (deschideți după ce ați ales modelul)</summary>
+
+- [Capitolul 13](cap13.qmd): E1–E3.
+- [Capitolul 14](cap14.qmd): E4 și E5.
+- [Capitolul 15](cap15.qmd): E7 și E8; E6 (cu testul χ² din [Capitolul 7](cap07.qmd)); E9 (pornește de la traseele din E3, Capitolul 13, și verifică rezultatul cu aproximarea normală a sumei, Capitolul 7).
+
+</details>
+
+## Verificați-vă: ce model alegeți?
+
+Situațiile de mai jos nu sunt din carte. Pentru fiecare, decideți întâi ce tip de problemă este, apoi deschideți răspunsul.
+
+<details><summary>Un curier are 18 opriri într-un oraș și vrea un traseu bun în zece minute, cu o foaie Excel, fără Solver. Ce abordare alegeți? (răspunsul se deschide la clic)</summary>
+
+*Întrebare de ghidaj:* Câte circuite diferite prin 18 opriri există? Le-ați putea compara pe toate? Cât de bun trebuie să fie traseul?
+
+O euristică pentru problema comis-voiajorului: construiți un circuit cu cel mai apropiat vecin, apoi îl îmbunătățiți cu mutări 2-opt până nu mai scade distanța. Cu 18 opriri există 17!/2 ≈ 1,8 · 10¹⁴ circuite, deci nu le puteți enumera. Euristica nu garantează optimul, dar dă repede un traseu bun.
+
+</details>
+
+<details><summary>Directorul vrea într-o jumătate de oră o estimare a numărului de autoutilitare necesare într-o zonă nouă. Datele pe clienți vin abia peste o lună. Ce abordare alegeți? (răspunsul se deschide la clic)</summary>
+
+*Întrebare de ghidaj:* Ce mărimi cunoașteți deja (suprafața zonei, numărul aproximativ de clienți, opririle pe traseu)? Aveți nevoie de traseele exacte ca să estimați kilometrii?
+
+O aproximare continuă, ca în Capitolul 14: distanța de la depozit la zonă și distanța locală, proporțională cu √(n · A), dau kilometrii pe zi, iar din ei rezultă orele și numărul de vehicule. Faceți și un scenariu pesimist și unul optimist. Când vin datele, verificați estimarea cu trasee construite efectiv.
+
+</details>
 
 ## Cum lucrați
 
 1. Citiți enunțul și scrieți, înainte de orice calcul, ce tip de model folosiți și de ce.
-2. Rezolvați pe foaia `Date_E…` a exercițiului, cu datele de intrare în celule separate.
+2. Lucrați pe o copie a foii `Date_E…` a exercițiului. Datele de intrare nu se modifică, pentru că le folosește și foaia de soluție; în formule trimiteți la celulele cu date, nu scrieți numerele direct.
 3. Abia apoi comparați cu soluția din Anexa B a cărții și din foaia `Sol_E…`.
-4. Dacă rezultatul diferă, căutați întâi ipoteza diferită, nu greșeala de calcul.
+4. Dacă rezultatul nu se potrivește, verificați întâi ipotezele de modelare și unitățile de măsură, abia apoi calculele.
 
 Cartea dă la începutul setului un tabel cu formulele de lucru ale Părții IV (Tabelul R4.1).
 
 ## Registrul Excel
 
-**MLTM_PR4_exercitii.xlsx**: foaia `0_Citiți-mă`, câte o foaie de date pentru fiecare exercițiu (`Date_E1` … `Date_E9`) și câte o foaie de soluție (`Sol_E1` … `Sol_E9`). Registrul folosește setări românești: argumentele se separă cu „;”, zecimalele cu „,”.
+**MLTM_PR4_exercitii.xlsx**: foaia `0_Citiți-mă`, iar fiecare foaie de date `Date_E1` … `Date_E9` este urmată de foaia ei de soluție (`Sol_E1` … `Sol_E9`). Registrul folosește setări românești: argumentele se separă cu „;”, zecimalele cu „,”.
+
+Exercițiile E1, E6, E7 și E9 nu pot fi rezolvate fără registru. Numerele aleatoare din E6, E7 și E9 sunt fixate ca valori, ca rezultatele să poată fi comparate cu soluțiile. Registrul nu folosește Solver și nici tabel de date (*Data Table*): rulările sunt construite direct în foi.
 
 *Registrul va putea fi descărcat din Pachetul Excel al cărții, publicat pe Zenodo.*

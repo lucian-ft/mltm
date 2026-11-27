@@ -9,41 +9,75 @@ Această pagină însoțește setul de Probleme recapitulative al Părții II di
 
 ## Ce recapitulăm
 
-Setul adună **15 exerciții** pentru Partea II. Incertitudine și inferență statistică, cu noțiuni din [Capitolul 4](cap04.qmd), [Capitolul 5](cap05.qmd), [Capitolul 6](cap06.qmd), [Capitolul 7](cap07.qmd), [Capitolul 8](cap08.qmd). Nu aduce teorie nouă: fiecare exercițiu pornește de la o întrebare concretă a firmei Cargo Someș sau a unui partener al ei și cere să alegeți singuri modelul potrivit.
+Setul adună **15 exerciții** pentru Partea II. Incertitudine și inferență statistică, cu noțiuni din [Capitolul 4](cap04.qmd), [Capitolul 5](cap05.qmd), [Capitolul 6](cap06.qmd), [Capitolul 7](cap07.qmd) și [Capitolul 8](cap08.qmd). Nu aduce teorie nouă: fiecare exercițiu pornește de la o întrebare concretă a firmei Cargo Someș sau a unui partener al ei și cere să alegeți singuri modelul potrivit.
 
-Tocmai aici este dificultatea: în capitole știați dinainte ce metodă se folosește. Aici, prima întrebare este întotdeauna **ce fel de problemă am în față?**
+În capitole știați dinainte ce metodă se folosește. Aici, prima întrebare este întotdeauna: **ce tip de problemă avem în față?** De aceea, legătura fiecărui exercițiu cu capitolele stă într-o casetă pliabilă, sub tabel. Deschideți-o abia după ce ați ales singuri modelul.
+
+Datele sunt fictive, construite pentru carte („date de exercițiu”), și nu schimbă parametrii studiului de caz Cargo Someș.
 
 ## Exercițiile
 
-| Cod | Întrebarea | Capitole |
-| --- | --- | --- |
-| C1 | Întârzierile la Napoca Market, pe vreme rea | Capitolele 4–5 |
-| C2 | Defecțiunile flotei proprii | Capitolele 4–5 |
-| C3 | Prima livrare la Bistrița | Capitolele 4–5 |
-| C4 | Încărcarea la un producător nou | Capitolele 4–5 |
-| C5 | Ambalajele returnate la magazinele Carpatin | Capitolul 6 |
-| C6 | Comenzile zilnice ale unui client nou | Capitolul 6 |
-| C7 | Întârzierile unui furnizor, din date sumare | Capitolul 6 |
-| C8 | Recepția cu scanere noi | Capitolul 7 |
-| C9 | Trei teste rapide | Capitolul 7 |
-| C10 | Formatul premium Napoca Market | Capitolul 7 |
-| C11 | Întârzierile furnizorilor după noua metodă de selecție | Capitolul 7 |
-| C12 | Pilotul cu autoutilitare electrice | Capitolul 7 |
-| C13 | Timpul de pregătire a comenzii | Capitolul 8 |
-| C14 | Programele de stimulare din depozit | Capitolul 8 |
-| C15 | Vânzările produselor noi | Capitolul 8 |
+| Cod | Exercițiul |
+| --- | --- |
+| C1 | Întârzierile la Napoca Market, pe vreme rea |
+| C2 | Defecțiunile flotei proprii |
+| C3 | Prima livrare la Bistrița |
+| C4 | Încărcarea la un producător nou |
+| C5 | Ambalajele returnate la magazinele Carpatin |
+| C6 | Comenzile zilnice ale unui client nou |
+| C7 | Întârzierile unui furnizor, din date sumare |
+| C8 | Recepția cu scanere noi |
+| C9 | Trei teste rapide |
+| C10 | Formatul premium Napoca Market |
+| C11 | Întârzierile furnizorilor după noua metodă de selecție |
+| C12 | Pilotul cu autoutilitare electrice |
+| C13 | Timpul de pregătire a comenzii |
+| C14 | Programele de stimulare din depozit (necesită registrul MLTM_PR2) |
+| C15 | Vânzările produselor noi (necesită registrul MLTM_PR2) |
+
+<details><summary>Legătura cu capitolele (deschideți după ce ați ales modelul)</summary>
+
+- [Capitolul 4](cap04.qmd): C1 și C2 (la C2, punctul c folosește și testul χ² din [Capitolul 7](cap07.qmd)).
+- [Capitolul 5](cap05.qmd): C3 și C4.
+- [Capitolul 6](cap06.qmd): C5–C7.
+- [Capitolul 7](cap07.qmd): C8, C9, C11 și C12; C10 folosește și intervalele din Capitolul 6.
+- [Capitolul 8](cap08.qmd): C13–C15.
+
+</details>
+
+## Verificați-vă: ce model alegeți?
+
+Situațiile de mai jos nu sunt din carte. Pentru fiecare, decideți întâi ce tip de problemă este, apoi deschideți răspunsul.
+
+<details><summary>Nu aveți date despre durata descărcării la un client nou. Dispecerul spune doar că durează între 20 și 50 de minute, cel mai adesea 30. Ce distribuție folosiți? (răspunsul se deschide la clic)</summary>
+
+*Întrebare de ghidaj:* Ce informații aveți de fapt: capete, o valoare mai probabilă decât celelalte, observații?
+
+O distribuție triunghiulară T(20; 30; 50): aveți minimul, maximul și valoarea cea mai probabilă, dar nu și observații. Media este (20 + 30 + 50) / 3 ≈ 33,3 minute, peste valoarea cea mai probabilă, pentru că distribuția are coada spre dreapta. O distribuție uniformă ar ignora informația despre cele 30 de minute; după primele săptămâni, înlocuiți-o cu distribuția empirică.
+
+</details>
+
+<details><summary>Un furnizor promite livrarea în cel mult 48 de ore. Pe 12 livrări, media a fost de 51 de ore, cu abaterea standard de 6 ore. Puteți spune, la α = 5%, că promisiunea nu este respectată? (răspunsul se deschide la clic)</summary>
+
+*Întrebare de ghidaj:* Ce afirmă furnizorul și ce ar trebui să arate datele ca să-l contraziceți? Contează că aveți doar 12 livrări?
+
+Un test t unilateral pentru medie: H₀: μ ≤ 48, H₁: μ > 48. Eroarea standard este 6 / √12 ≈ 1,73, deci t = (51 – 48) / 1,73 ≈ 1,73. Valoarea critică pentru 11 grade de libertate este circa 1,80 (`=T.INV(0,95;11)`), iar valoarea p este circa 0,056 (`=T.DIST.RT(1,73;11)`). Nu respingem H₀: datele nu ajung pentru a spune că promisiunea este încălcată, deși media depășește 48 de ore. Cu mai multe livrări, aceeași diferență ar putea deveni semnificativă.
+
+</details>
 
 ## Cum lucrați
 
 1. Citiți enunțul și scrieți, înainte de orice calcul, ce tip de model folosiți și de ce.
-2. Rezolvați pe foaia `Date_C…` a exercițiului, cu datele de intrare în celule separate.
+2. Lucrați pe o copie a foii `Date_C…` a exercițiului. Datele de intrare nu se modifică, pentru că le folosește și foaia de soluție; în formule trimiteți la celulele cu date, nu scrieți numerele direct.
 3. Abia apoi comparați cu soluția din Anexa B a cărții și din foaia `Sol_C…`.
-4. Dacă rezultatul diferă, căutați întâi ipoteza diferită, nu greșeala de calcul.
+4. Dacă rezultatul nu se potrivește, verificați întâi ipotezele de modelare și unitățile de măsură, abia apoi calculele.
 
 Cartea dă la începutul setului un tabel cu formulele de lucru ale Părții II (Tabelul R2.1).
 
 ## Registrul Excel
 
-**MLTM_PR2_exercitii.xlsx**: foaia `0_Citiți-mă`, câte o foaie de date pentru fiecare exercițiu (`Date_C1` … `Date_C15`) și câte o foaie de soluție (`Sol_C1` … `Sol_C15`). Registrul folosește setări românești: argumentele se separă cu „;”, zecimalele cu „,”.
+**MLTM_PR2_exercitii.xlsx**: foaia `0_Citiți-mă`, câte o foaie de date pentru fiecare exercițiu (`Date_C1` … `Date_C15`) și, la final, foile de soluție (`Sol_C1` … `Sol_C15`). Registrul folosește setări românești: argumentele se separă cu „;”, zecimalele cu „,”.
+
+Exercițiile C14 și C15 nu pot fi rezolvate fără registru, pentru că datele lor nu sunt tipărite în carte. Pentru regresia din C13–C15 puteți folosi instrumentul Regresie din Analiză date (*Data Analysis → Regression*), care cere programul de completare Pachet instrumente analiză (*Analysis ToolPak*) din Excel pentru desktop, sau funcția LINEST; foile de soluție reproduc ieșirea ToolPak cu LINEST, deci cifrele trebuie să fie aceleași.
 
 *Registrul va putea fi descărcat din Pachetul Excel al cărții, publicat pe Zenodo.*

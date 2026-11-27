@@ -9,34 +9,65 @@ Această pagină însoțește setul de Probleme recapitulative al Părții I din
 
 ## Ce recapitulăm
 
-Setul adună **8 exerciții** pentru Partea I. Fundamente, cu noțiuni din [Capitolul 2](cap02.qmd), [Capitolul 3](cap03.qmd). Nu aduce teorie nouă: fiecare exercițiu pornește de la o întrebare concretă a firmei Cargo Someș sau a unui partener al ei și cere să alegeți singuri modelul potrivit.
+Setul adună **8 exerciții** pentru Partea I. Fundamente, cu noțiuni din [Capitolul 2](cap02.qmd) și [Capitolul 3](cap03.qmd). Nu aduce teorie nouă: fiecare exercițiu pornește de la o întrebare concretă a firmei Cargo Someș sau a unui partener al ei și cere să alegeți singuri modelul potrivit.
 
-Tocmai aici este dificultatea: în capitole știați dinainte ce metodă se folosește. Aici, prima întrebare este întotdeauna **ce fel de problemă am în față?**
+În capitole știați dinainte ce metodă se folosește. Aici, prima întrebare este întotdeauna: **ce tip de problemă avem în față?** De aceea, legătura fiecărui exercițiu cu capitolele stă într-o casetă pliabilă, sub tabel. Deschideți-o abia după ce ați ales singuri modelul.
+
+Datele sunt fictive, construite pentru carte („date de exercițiu”), și nu schimbă parametrii studiului de caz Cargo Someș.
 
 ## Exercițiile
 
-| Cod | Întrebarea | Capitole |
-| --- | --- | --- |
-| B1 | Autoutilitara închiriată sau curierul? | Capitolul 2 |
-| B2 | Locurile de palet pentru clienții sezonieri | Capitolul 2 |
-| B3 | Zona de sortare: cost pătratic și capacitate | Capitolul 2 |
-| B4 | Trecerea la autoutilitare electrice | Capitolul 2 |
-| B5 | Orele de pregătire a comenzilor | Capitolele 2–3 |
-| B6 | Folia stretch: cât comandăm o dată? | Capitolele 2–3 |
-| B7 | Rampa și stivuitoarele: ce mix de servicii? | Capitolele 2–3 |
-| B8 | Costul pe palet pentru un client: întâi verificăm datele | Capitolele 2–3 |
+| Cod | Exercițiul |
+| --- | --- |
+| B1 | Autoutilitara închiriată sau curierul? |
+| B2 | Locurile de palet pentru clienții sezonieri |
+| B3 | Zona de sortare: cost pătratic și capacitate |
+| B4 | Trecerea la autoutilitare electrice |
+| B5 | Orele de pregătire a comenzilor |
+| B6 | Folia stretch: cât comandăm o dată? |
+| B7 | Rampa și stivuitoarele: ce mix de servicii? |
+| B8 | Costul pe palet pentru un client: întâi verificăm datele |
+
+<details><summary>Legătura cu capitolele (deschideți după ce ați ales modelul)</summary>
+
+- [Capitolul 2](cap02.qmd): B1–B4, B6 și B7.
+- [Capitolul 2](cap02.qmd) și [Capitolul 3](cap03.qmd): B5 (punctul d verifică datele, ca în Capitolul 3) și B8 (verificarea datelor din Capitolul 3, cu funcția de cost a flotei proprii din Capitolul 2).
+
+</details>
+
+## Verificați-vă: ce model alegeți?
+
+Situațiile de mai jos nu sunt din carte. Pentru fiecare, decideți întâi ce tip de problemă este, apoi deschideți răspunsul.
+
+<details><summary>Un depozit poate închiria un stivuitor cu 3.000 de lei pe lună sau cu 180 de lei pe zi lucrată. Ce model folosiți ca să decideți? (răspunsul se deschide la clic)</summary>
+
+*Întrebare de ghidaj:* Ce parte a costului rămâne aceeași, oricâte zile lucrați, și ce parte crește cu fiecare zi?
+
+Două funcții liniare de cost, C₁(x) = 3.000 și C₂(x) = 180 · x, unde x este numărul de zile lucrate într-o lună, și pragul lor de indiferență: x* = 3.000 / 180 ≈ 16,7 zile. Dacă stivuitorul lucrează cel puțin 17 zile pe lună, chiria lunară este mai ieftină. Decizia depinde deci de o estimare a zilelor lucrate, nu doar de cele două tarife.
+
+</details>
+
+<details><summary>Primiți un export cu 200 de livrări, ca să calculați costul mediu pe kilometru. Două rânduri au distanța 0, iar unul are 4.800 km pentru o cursă Cluj–Oradea. Ce faceți înainte de a calcula media? (răspunsul se deschide la clic)</summary>
+
+*Întrebare de ghidaj:* Sunt toate valorile posibile pentru o cursă reală? Ce s-ar întâmpla cu media dacă le-ați lăsa în date?
+
+Întâi verificați și curățați datele. Distanța 0 și cei 4.800 km nu pot fi corecți pentru o cursă reală. Căutați cauza (o eroare de introducere, o cursă anulată, o unitate greșită), alegeți o regulă (corectați, excludeți sau cereți date noi) și notați-o, ca rezultatul să poată fi verificat. Abia apoi calculați media și spuneți câte rânduri au fost excluse.
+
+</details>
 
 ## Cum lucrați
 
 1. Citiți enunțul și scrieți, înainte de orice calcul, ce tip de model folosiți și de ce.
-2. Rezolvați pe foaia `Date_B…` a exercițiului, cu datele de intrare în celule separate.
+2. Lucrați pe o copie a foii `Date_B…` a exercițiului. Datele de intrare nu se modifică, pentru că le folosește și foaia de soluție; în formule trimiteți la celulele cu date, nu scrieți numerele direct.
 3. Abia apoi comparați cu soluția din Anexa B a cărții și din foaia `Sol_B…`.
-4. Dacă rezultatul diferă, căutați întâi ipoteza diferită, nu greșeala de calcul.
+4. Dacă rezultatul nu se potrivește, verificați întâi ipotezele de modelare și unitățile de măsură, abia apoi calculele.
 
 Cartea dă la începutul setului un tabel cu formulele de lucru ale Părții I (Tabelul R1.1).
 
 ## Registrul Excel
 
-**MLTM_PR1_exercitii.xlsx**: foaia `0_Citiți-mă`, câte o foaie de date pentru fiecare exercițiu (`Date_B1` … `Date_B8`) și câte o foaie de soluție (`Sol_B1` … `Sol_B8`). Registrul folosește setări românești: argumentele se separă cu „;”, zecimalele cu „,”.
+**MLTM_PR1_exercitii.xlsx**: foaia `0_Citiți-mă`, câte o foaie de date pentru fiecare exercițiu (`Date_B1` … `Date_B8`) și, la final, foile de soluție (`Sol_B1` … `Sol_B8`). Registrul folosește setări românești: argumentele se separă cu „;”, zecimalele cu „,”.
+
+Fiecare soluție din Anexa B are și comanda de verificare în Wolfram Alpha; Anexa A a cărții arată cum se folosește.
 
 *Registrul va putea fi descărcat din Pachetul Excel al cărții, publicat pe Zenodo.*
