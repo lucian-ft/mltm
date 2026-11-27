@@ -9,31 +9,31 @@ Această pagină însoțește Capitolul 7 al cărții: rezumă întrebările, te
 
 ## Întrebarea capitolului
 
-În Capitolul 6 am spus cât de precisă este o estimare. Managerul firmei Cargo Someș cere însă adesea un răspuns de tip da/nu: greșește modelul de cost? A crescut costul după taxa TollRo? Încarcă stivuitorul nou mai repede? **Cum transformăm întrebarea „s-a schimbat ceva?” într-o decizie, cu un risc de eroare ales dinainte?**
+În Capitolul 6 am spus cât de precisă este o estimare. Managerul firmei Cargo Someș cere însă adesea un răspuns de tip da/nu: greșește modelul de cost? A crescut costul după taxa de drum pe kilometru TollRo, aplicată din 1 octombrie 2026? Încarcă stivuitorul nou mai repede? **Cum transformăm întrebarea „s-a schimbat ceva?” într-o decizie, cu un risc de eroare ales dinainte?**
 
 Înainte de a parcurge capitolul, încercați să răspundeți la trei întrebări:
 
 1. Pe 2.401 curse, abaterea medie a costului față de model este de 4,25 lei, iar testul dă p practic zero. Trebuie schimbate tarifele?
 
     <details><summary>Indiciu</summary>
-    Cu atât de multe date, testul „vede” orice diferență, oricât de mică. 4,25 lei înseamnă 0,38% din costul unei curse. Semnificația statistică nu ține locul *relevanței practice*.
+    Raportați cei 4,25 lei la costul mediu al unei curse. De la ce diferență ar merita, economic, schimbate tarifele? Ce se întâmplă cu eroarea standard când aveți 2.401 de observații? (secțiunea 2.5)
     </details>
 
 2. Vreți să aflați dacă taxa TollRo a crescut costul în octombrie 2026. Cu ce comparați: cu media tuturor lunilor sau cu octombrie din anii trecuți?
 
     <details><summary>Indiciu</summary>
-    Abaterea costului are sezonalitate: octombrie a fost, în ambii ani, sub media generală. Cu referința greșită, același test dă concluzia opusă.
+    Este abaterea costului aceeași în toate lunile anului? Ce referință ar izola efectul taxei de celelalte motive pentru care octombrie poate diferi? (Fig. 7.2 din carte)
     </details>
 
-3. Un test pe 15 camioane dă p = 0,21 pentru stivuitorul nou. Înseamnă că stivuitorul nu este mai rapid?
+3. Un test pe 12 schimburi pentru un scanner nou de coduri de bare dă p = 0,18. Înseamnă că scannerul nu aduce nicio îmbunătățire?
 
     <details><summary>Indiciu</summary>
-    „Nu respingem H₀” nu înseamnă „H₀ este adevărată”. Pe un eșantion mic, testul are *putere* redusă și poate rata o îmbunătățire reală: eroarea de tip II.
+    Ce poate dovedi un test statistic și ce nu poate dovedi? Ce risc de eroare crește când eșantionul este mic? (secțiunile 2.1 și 2.5)
     </details>
 
 ### Pe scurt: cum funcționează un test statistic?
 
-Un test alege între două afirmații despre populație care se exclud reciproc. **Ipoteza nulă** (H₀) spune că nu s-a schimbat nimic; **ipoteza alternativă** (H₁) spune ce vrem să dovedim. Calculăm cât de departe este media eșantionului de valoarea din H₀, în număr de erori standard: statistica **z** sau **t**. **Valoarea p** este probabilitatea de a obține un rezultat cel puțin la fel de extrem dacă H₀ ar fi adevărată; dacă este sub nivelul de semnificație α ales dinainte, respingem H₀. Testul poate greși în două feluri: respinge o H₀ adevărată (**eroarea de tip I**, cu probabilitatea α) sau nu respinge o H₀ falsă (**eroarea de tip II**). Testul **χ²** compară o distribuție întreagă cu un model, iar **covarianța** și **corelația** arată cum variază două mărimi împreună.
+Un test alege între două afirmații despre populație care se exclud reciproc și acoperă împreună toate posibilitățile. **Ipoteza nulă** (H₀) spune că nu s-a schimbat nimic; **ipoteza alternativă** (H₁) spune ce vrem să dovedim. Calculăm cât de departe este media eșantionului de valoarea din H₀, în număr de erori standard: statistica **z** sau **t**. **Valoarea p** este probabilitatea de a obține un rezultat cel puțin la fel de extrem dacă H₀ ar fi adevărată; dacă este sub nivelul de semnificație α ales dinainte, respingem H₀. Testul poate greși în două feluri: respinge o H₀ adevărată (**eroarea de tip I**, cu probabilitatea α) sau nu respinge o H₀ falsă (**eroarea de tip II**, cu probabilitatea β). Probabilitatea 1 – β de a detecta o schimbare reală este **puterea testului**. Testul **χ²** compară o distribuție întreagă cu un model, iar **covarianța** și **corelația** arată cum variază două mărimi împreună; coeficientul de corelație măsoară doar legătura liniară dintre ele.
 
 ![Zona de respingere a lui H₀ la α = 5%: test bilateral, unilateral la dreapta și unilateral la stânga (Fig. 7.1 din carte)](img/fig_7.1.png){fig-alt="Trei curbe normale cu zona de respingere colorată: pe ambele cozi pentru testul bilateral, pe coada dreaptă și pe coada stângă pentru testele unilaterale"}
 
@@ -45,9 +45,11 @@ La finalul capitolului veți transforma o întrebare de management într-un test
 - să explicați valoarea p și ce înseamnă „respingem” și „nu respingem” H₀;
 - să deosebiți eroarea de tip I de eroarea de tip II și să legați α, β, mărimea eșantionului și puterea testului;
 - să deosebiți semnificația statistică de relevanța practică;
-- să faceți în Excel un test z sau t pentru medie (NORM.S.DIST, T.DIST, T.DIST.RT, T.INV);
+- să faceți în Excel un test z sau t pentru medie (NORM.S.DIST, T.DIST, T.DIST.RT, T.INV) și să comparați direct două eșantioane cu T.TEST;
+- să estimați puterea unui test și mărimea eșantionului necesară pentru a detecta o schimbare dată;
 - să faceți un test χ² de concordanță (CHISQ.DIST.RT, CHISQ.INV.RT, CHISQ.TEST) cu numărul corect de grade de libertate;
-- să calculați covarianța și corelația (COVARIANCE.S, CORREL) și abaterea standard a unei sume de variabile aleatoare.
+- să calculați covarianța și corelația (COVARIANCE.S, CORREL) și matricea de covarianță pentru mai multe variabile;
+- să calculați media și abaterea standard ale unei funcții liniare și ale unei sume de variabile aleatoare.
 
 | Termen | În engleză |
 | --- | --- |
@@ -56,25 +58,30 @@ La finalul capitolului veți transforma o întrebare de management într-un test
 | nivel de semnificație | *significance level* |
 | valoarea p | *p-value* |
 | eroarea de tip I / de tip II | *type I / type II error* |
-| puterea testului | *power of a test* |
+| puterea testului (1 – β) | *power of a test* |
+| valoare critică | *critical value* |
+| semnificație statistică / relevanță practică | *statistical / practical significance* |
 | testul χ² de concordanță | *chi-square goodness-of-fit test* |
 | covarianță / corelație | *covariance / correlation* |
+| matrice de covarianță | *covariance matrix* |
 
 ## Studiul de caz: s-a schimbat ceva la Cargo Someș?
 
-În noiembrie 2026, pe biroul managerului s-au strâns mai multe întrebări de tip „s-a schimbat ceva?”. Cei șapte pași le iau pe rând: este modelul de cost deplasat, a crescut costul după taxa TollRo, încarcă stivuitorul nou mai repede, cât de des greșește un test (pe 100 de eșantioane), sunt livrările uniforme pe zilele săptămânii, urmează paleții pe săptămână o distribuție normală și cât contează corelațiile dintre cele trei lanțuri de magazine pentru capacitatea depozitului.
+În noiembrie 2026, pe biroul managerului s-au strâns mai multe întrebări de tip „s-a schimbat ceva?”. Cei șapte pași le iau pe rând: este modelul de cost deplasat, a crescut costul după taxa TollRo, încarcă stivuitorul nou mai repede, cât de des greșește un test (pe 100 de eșantioane), sunt livrările uniforme pe zilele săptămânii, urmează paleții pe săptămână o distribuție normală și cât contează corelațiile dintre cele trei lanțuri de magazine destinatare pentru capacitatea depozitului.
 
-![Erorile de tip I și II pentru testul abaterii medii și puterea testului în funcție de efect și de mărimea eșantionului (Fig. 7.4 din carte)](img/fig_7.4.png){fig-alt="Rezultatele testului pe 100 de eșantioane, cu erorile de tip I și II marcate, și curbele puterii testului în funcție de mărimea efectului, pentru mai multe mărimi ale eșantionului"}
+![Erorile de tip I și II pentru testul abaterii medii și puterea testului în funcție de efect și de mărimea eșantionului (Fig. 7.4 din carte)](img/fig_7.4.png){fig-alt="Stânga: distribuția mediei a 50 de curse când H₀ este adevărată (μ = 4,25 lei) și când este falsă (μ = 14,25 lei), cu zonele α = 5% pe cele două cozi și β = 0,37. Dreapta: puterea testului în funcție de creșterea reală, pentru n = 25, 50, 100 și 200, cu rezultatul empiric de 68 de respingeri din 100 de eșantioane marcat pe curba n = 50"}
 
-Pasul 7 arată de ce contează variabilele multiple: dacă presupunem că lanțurile de magazine sunt independente, subestimăm variabilitatea volumului total cu 5%, iar capacitatea rezervată iese prea mică.
+Pasul 7 arată de ce contează variabilele multiple: dacă presupunem că lanțurile de magazine destinatare sunt independente, subestimăm abaterea standard a volumului total cu circa 5%, iar capacitatea rezervată iese prea mică.
 
 ## Verificați-vă
 
-<details><summary>Dispecerul planifică același număr de șoferi în fiecare zi. Din 2.813 livrări luni–vineri, lunea au fost 634, iar vinerea 495. Testul χ² dă 18,44. Sunt livrările uniforme? (răspunsul se deschide la clic)</summary>
+<details><summary>Atelierul a numărat, pe zile, defecțiunile la stivuitoare și le-a grupat în 4 categorii: 0, 1, 2 și cel puțin 3 defecțiuni pe zi. Frecvențele așteptate vin dintr-o distribuție Poisson al cărei λ a fost estimat din aceleași date. Testul χ² dă 6,2. La α = 5%, urmează defecțiunile o distribuție Poisson? Ce ar spune CHISQ.TEST? (răspunsul se deschide la clic)</summary>
 
-Sunt 5 categorii și niciun parametru estimat, deci 5 – 1 = 4 grade de libertate. Valoarea critică la α = 5% este 9,49. Cum 18,44 > 9,49, respingem distribuția uniformă: lunea are mai multe livrări, vinerea mai puține. În Excel: valoarea critică `=CHISQ.INV.RT(0,05;4)`, valoarea p `=CHISQ.DIST.RT(18,44;4)` ≈ 0,001.
+Sunt 4 categorii și un parametru estimat din date (λ), deci 4 – 1 – 1 = 2 grade de libertate. Valoarea critică este `=CHISQ.INV.RT(0,05;2)` ≈ 5,99. Cum 6,2 > 5,99, respingem distribuția Poisson; valoarea p este `=CHISQ.DIST.RT(6,2;2)` ≈ 0,045. CHISQ.TEST folosește însă 4 – 1 = 3 grade de libertate, fără să știe că λ a fost estimat, și dă p ≈ 0,10: ar duce la concluzia opusă.
 
 </details>
+
+Capitolul 8 continuă de aici: corelația spune cât de strânsă este legătura dintre km și cost, dar nu și cum arată ea. Acolo trecem la regresia liniară, cu care se poate actualiza modelul de cost, de exemplu cu un termen pentru kilometrii de autostradă.
 
 ## Registrul Excel
 
@@ -107,7 +114,7 @@ Alegeți o schimbare reală dintr-o activitate pe care o cunoașteți: un traseu
 1. Formulați H₀ și H₁ și alegeți testul (bilateral sau unilateral). Justificați alegerea.
 2. Fixați dinainte α și pragul de relevanță practică: de la ce diferență ați schimba decizia?
 3. Strângeți cel puțin 15 observații după schimbare și alegeți referința corectă pentru comparație. Ce ar putea s-o deplaseze (sezon, zi, client)?
-4. Calculați statistica t și valoarea p și scrieți decizia în două fraze: una statistică, una pentru manager.
+4. Calculați statistica t, valoarea p și intervalul de încredere pentru diferență și scrieți decizia în două fraze: una statistică, una pentru manager.
 5. Câte observații v-ar trebui ca testul să detecteze efectul ales la punctul 2 cu o putere de 80%?
 
 ## Exerciții suplimentare
