@@ -16,24 +16,24 @@ Această pagină însoțește Capitolul 10 al cărții: rezumă întrebările, t
 1. O cursă lungă aduce 700 de lei marjă, una regională 400 de lei. Planificăm doar curse lungi?
 
     <details><summary>Indiciu</summary>
-    Cursa lungă consumă de două ori mai multe ore de condus, cursa regională de două ori mai mult timp la rampă. Răspunsul depinde de resursa care se epuizează prima: de aceea avem nevoie de un model.
+    Nu comparați doar marja pe cursă. Câtă marjă aduce fiecare tip de cursă pe o oră de condus? Dar pe o oră la rampă? Rămâne același tip de cursă pe primul loc la ambele resurse?
     </details>
 
 2. Domeniul admisibil este un poligon. De ce nu trebuie căutat optimul și în interiorul lui?
 
     <details><summary>Indiciu</summary>
-    Când obiectivul și restricțiile sunt liniare, dreapta de izoprofit se poate împinge mereu mai departe, până atinge ultimul punct al poligonului: un *vârf*.
+    Luați un punct aflat strict în interiorul poligonului și faceți un pas mic în direcția în care marja crește. Vă oprește ceva înainte de a ajunge la margine? Dar după ce ați ajuns pe o latură?
     </details>
 
 3. Managerul se întreabă dacă merită să angajeze un șofer cu jumătate de normă. Trebuie rezolvat modelul din nou?
 
     <details><summary>Indiciu</summary>
-    Nu neapărat. Raportul de sensibilitate dă *prețul umbră* al orelor de condus: cât crește marja pentru fiecare oră în plus, într-un interval dat.
+    Câte ore de condus adaugă o jumătate de normă? Dacă știți cât aduce o oră în plus, puteți înmulți simplu? Ce altă resursă ar putea bloca extinderea înainte ca toate acele ore să fie folosite?
     </details>
 
 ### Pe scurt: ce este un program liniar?
 
-Un **program liniar** (*linear programming, LP*) este o problemă de optimizare cu mai multe **variabile de decizie**, în care funcția obiectiv și toate **restricțiile** sunt liniare: fiecare variabilă apare doar înmulțită cu o constantă, iar termenii se adună. Restricțiile descriu resursele limitate. Optimul se află întotdeauna într-un **vârf** al domeniului admisibil, iar metoda **Simplex LP** din Solver trece din vârf în vârf până îl găsește; spre deosebire de GRG Nonlinear, optimul găsit este global. **Analiza de sensibilitate** spune, fără o nouă rezolvare, ce se întâmplă dacă o dată se schimbă puțin: **prețul umbră** al unei resurse, **restul** (*slack*) și **costul redus** al unei variabile.
+Un **program liniar** (*linear programming, LP*) este o problemă de optimizare cu mai multe **variabile de decizie**, în care funcția obiectiv și toate constrângerile, numite în programarea liniară **restricții** (*constraints*), sunt liniare: fiecare variabilă apare doar înmulțită cu o constantă, iar termenii se adună. Restricțiile descriu resursele limitate, cerințele minime (de exemplu, un contract) sau condițiile de echilibru (cererea fiecărei regiuni). Dacă problema are o soluție optimă, cel puțin una dintre soluțiile optime se află într-un **vârf** al domeniului admisibil. Metoda **Simplex LP** din Solver trece din vârf în vârf până găsește optimul; spre deosebire de metoda gradientului redus generalizat (GRG Nonlinear) din Capitolul 9, optimul găsit este global. **Analiza de sensibilitate** spune, fără o nouă rezolvare, ce se întâmplă dacă o dată se schimbă puțin: **prețul umbră** al unei resurse, **restul** (*slack*) și **costul redus** al unei variabile.
 
 ![Trei situații speciale: optime multiple, restricție redundantă, problemă fără soluție (Fig. 10.3 din carte)](img/fig_10.3.png){fig-alt="Trei grafice cu domeniul admisibil al planului săptămânal: în primul, dreapta de izoprofit se suprapune pe o latură; în al doilea, o restricție nu atinge domeniul; în al treilea, restricțiile nu au niciun punct comun"}
 
@@ -53,25 +53,30 @@ La finalul capitolului veți formula o problemă de planificare a transportului 
 | programare liniară | *linear programming, LP* |
 | restricție / restricție activă | *constraint / binding constraint* |
 | poligon convex, vârf | *convex polygon, corner point* |
-| dreaptă de izoprofit | *isoprofit line* |
+| dreaptă de izoprofit | *iso-profit line* |
 | analiză de sensibilitate | *sensitivity analysis* |
-| rest, preț umbră, cost redus | *slack, shadow price, reduced cost* |
+| rest | *slack* |
+| preț umbră | *shadow price* |
+| cost redus | *reduced cost* |
+| creștere / scădere admisă | *allowable increase / decrease* |
 | problemă fără soluție admisibilă / nemărginită | *infeasible / unbounded problem* |
 | problema de transport | *transportation problem* |
 
 ## Studiul de caz: planul săptămânal al flotei Cargo Someș
 
-Cele 5 camioane proprii pot face curse regionale, spre Dej și Bistrița, sau curse lungi, spre Brașov. Cei șapte pași formulează problema, o rezolvă întâi grafic și apoi cu Solver, citesc raportul de sensibilitate și încearcă trei situații speciale. Pasul 6 rezolvă o problemă de transport pentru un client cu două depozite, la Bistrița și la Sebeș, iar Pasul 7 scrie modelul general cu Σ, pentru patru tipuri de curse.
+Cele 5 camioane proprii pot face curse regionale, spre Dej și Bistrița, sau curse lungi, spre Brașov. Cei șapte pași formulează problema, o rezolvă întâi grafic și apoi cu Solver, citesc raportul de sensibilitate și încearcă trei situații speciale. Pasul 6 rezolvă o problemă de transport pentru un client industrial cu două depozite, la Bistrița și la Sebeș, al cărui transport Cargo Someș îl organizează cu un transportator 3PL, iar Pasul 7 scrie modelul general cu Σ, pentru patru tipuri de curse.
 
 ![Planul optim de transport lunar și costurile pe palet (Fig. 10.4 din carte)](img/fig_10.4.png){fig-alt="Schema celor două depozite, Bistrița și Sebeș, și a celor trei regiuni aprovizionate, cu numărul de paleți pe fiecare rută folosită și costul pe palet"}
 
-Planul optim, 21,25 curse regionale și 17,5 curse lungi pe săptămână, este fracționar. Cum îl transformăm într-un plan cu curse întregi aflăm în [Capitolul 11](cap11.qmd).
+Planul optim, 21,25 curse regionale și 17,5 curse lungi pe săptămână, este fracționar. Cum îl transformăm într-un plan cu curse întregi și cum tratăm deciziile de tip „da sau nu”, cu un cost fix (angajarea unui șofer, deschiderea unei rute), aflăm în [Capitolul 11](cap11.qmd).
 
 ## Verificați-vă
 
-<details><summary>O cursă regională folosește 4 ore de condus și 2 ore de rampă; una lungă, 8 ore de condus și 1 oră de rampă. Sunt disponibile 225 de ore de condus și 60 de ore de rampă. Verificați că planul R = 21,25, L = 17,5 folosește complet ambele resurse și calculați marja. (răspunsul se deschide la clic)</summary>
+<details><summary>Un depozit pregătește comenzi mici (*M*, marjă 60 de lei) și mari (*G*, marjă 100 de lei). O comandă mică cere 1 oră de culegere și 1 oră de ambalare; una mare, 2 ore de culegere și 1 oră de ambalare. Pe săptămână sunt disponibile 40 de ore de culegere și 30 de ore de ambalare. a) Este admisibil planul *M* = 20, *G* = 10? Ce marjă aduce și ce rest rămâne la fiecare resursă? b) Raportul de sensibilitate dă pentru culegere prețul umbră 40 lei/h și creșterea admisă 20 de ore. Managerul vrea 30 de ore de culegere în plus. Cu cât crește marja? (răspunsul se deschide la clic)</summary>
 
-Condus: 4 · 21,25 + 8 · 17,5 = 85 + 140 = 225 de ore. Rampă: 2 · 21,25 + 17,5 = 60 de ore. Ambele restricții sunt active. Marja: 400 · 21,25 + 700 · 17,5 = 20.750 lei pe săptămână. În Excel: `=SUMPRODUCT(B5:C5;B7:C7)`. Prețul umbră al orelor de condus este 83,33 lei: încă 10 ore ar aduce circa 833 de lei, pentru că 10 ore se află în intervalul admis de +15 ore.
+a) Culegere: 1 · 20 + 2 · 10 = 40 de ore; ambalare: 20 + 10 = 30 de ore. Planul este admisibil, iar restul este 0 la ambele resurse. Marja: 60 · 20 + 100 · 10 = 2.200 de lei. În Excel: `=SUMPRODUCT(marje;plan)`, unde argumentele sunt cele două domenii de celule.
+
+b) Calculul 30 · 40 = 1.200 de lei este greșit, pentru că 30 de ore depășesc creșterea admisă de 20. Primele 20 de ore aduc 20 · 40 = 800 de lei: planul devine *M* = 0, *G* = 30, iar ambalarea este folosită complet. După aceea, încă o comandă mare ar cere ambalare pe care depozitul nu o mai are, deci ultimele 10 ore de culegere nu aduc nimic. Marja crește cu 800 de lei, la 3.000, iar modelul trebuie rezolvat din nou ca să vedeți asta.
 
 </details>
 
@@ -84,11 +89,11 @@ Condus: 4 · 21,25 + 8 · 17,5 = 85 + 140 = 225 de ore. Rampă: 2 · 21,25 + 17,
 | 0_Citiți-mă | Cum se folosește registrul |
 | 1_Plan_flota | Modelul planului săptămânal, pregătit pentru Solver |
 | 2_Grafic | Vârfurile domeniului admisibil și marja în fiecare |
-| 3_Sensibilitate | Raportul de sensibilitate: restricții și variabile |
+| 3_Sensibilitate | Raportul de sensibilitate (restricții și variabile) și experimentul „încă o oră” |
 | 4a_Optime_multiple, 4b_Redundanta, 4c_Infezabil | Cele trei situații speciale |
 | 5_Transport | Problema de transport: două depozite, trei regiuni |
 | 6_Formulare_generala | Modelul general cu patru tipuri de curse |
-| Ex_Atelier, Ex_Paleti | Date pentru exerciții, cu soluțiile în rândul gri de la final |
+| Ex_Atelier, Ex_Paleti | Datele și soluțiile Exercițiilor 1 și 2, în rândul gri de la final; Exercițiile 3 și 4 se rezolvă pe copii ale foilor 1_Plan_flota și 5_Transport |
 
 *Registrul va putea fi descărcat din Pachetul Excel al cărții, publicat pe Zenodo.*
 
@@ -101,7 +106,7 @@ Condus: 4 · 21,25 + 8 · 17,5 = 85 + 140 = 225 de ore. Rampă: 2 · 21,25 + 17,
 Alegeți o activitate în care două–trei tipuri de lucrări concurează pentru aceleași resurse: tipuri de curse, de comenzi pregătite în depozit, de produse pe o linie.
 
 1. Definiți variabilele de decizie și scrieți obiectivul și restricțiile, întâi în cuvinte, apoi cu formule.
-2. Verificați cele patru ipoteze ale programării liniare. Care este cea mai puțin credibilă pentru datele voastre?
+2. Verificați cele patru ipoteze ale programării liniare. Care este cea mai puțin credibilă pentru datele alese?
 3. Organizați modelul cu SUMPRODUCT și rezolvați-l cu Solver (Simplex LP).
 4. Din raportul de sensibilitate, numiți resursa cu cel mai mare preț umbră și intervalul în care el rămâne valabil.
 5. Scrieți recomandarea pentru manager: ce resursă merită mărită și cu cât?
