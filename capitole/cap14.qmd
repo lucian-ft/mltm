@@ -35,7 +35,7 @@ Algoritmii din Capitolul 13 au nevoie de date complete: fiecare drum, fiecare cl
 
 O **aproximare** este o valoare apropiată, dar nu exactă; o **estimare** este un calcul aproximativ al unei mărimi. Aproximările sunt rapide, cer puține date și spun dacă merită să mergem mai departe. Principiul **„nici prea mult, nici prea puțin”** (*Goldilocks*) spune când: dacă estimarea arată un proiect clar favorabil sau clar nefavorabil, decizia se poate lua; dacă rezultatul este la limită, merită să investim timp în date și într-un model mai exact. Capitolul folosește trei instrumente: **estimarea Fermi**, cu scenarii pesimist, probabil și optimist; **factorul de circuitate** *k*<sub>CF</sub>, care aproximează, în medie pe o rețea, distanța rutieră plecând de la distanța în linie dreaptă (pe o singură pereche de orașe poate greși mult); și **formula lungimii unui circuit**, *k*<sub>CF</sub> · *k*<sub>TSP</sub> · √(*n* · *A*), pentru *n* opriri într-o zonă de arie *A*, unde *k*<sub>TSP</sub> depinde de forma zonei și de metoda de rutare. Formula se aplică unei zone relativ compacte, cu punctele de livrare răspândite relativ uniform și multe opriri pe traseu. În modelul „de la un depozit la mulți clienți”, „client” înseamnă punctul de livrare (o gospodărie); clientul comercial al firmei Cargo Someș este magazinul online.
 
-![Distanța rutieră minimă și distanța pe glob de la Cluj-Napoca la cele 16 orașe ale rețelei (Fig. 14.1 din carte)](img/fig_14.1.png){fig-alt="Diagramă de dispersie cu distanța pe glob pe axa orizontală și distanța rutieră minimă pe axa verticală pentru cele 16 orașe, cu dreapta drumului estimat (1,41 · distanța pe glob) și, întreruptă, linia dreaptă de referință (factor 1)"}
+![Distanța rutieră minimă și distanța în linie dreaptă de la Cluj-Napoca la cele 16 orașe ale rețelei (Fig. 14.1 din carte)](img/fig_14.1.png){fig-alt="Diagramă de dispersie cu distanța în linie dreaptă pe axa orizontală și distanța rutieră minimă pe axa verticală pentru cele 16 orașe, cu dreapta drumului estimat (1,41 · distanța în linie dreaptă) și, întreruptă, linia dreaptă de referință (factor 1)"}
 
 ## Obiective și termeni-cheie
 
@@ -43,7 +43,7 @@ La finalul capitolului veți face o estimare rapidă, cu date puține, pentru o 
 
 - să explicați când și de ce se folosesc aproximările și principiul Goldilocks;
 - să descrieți cei trei pași ai unei estimări Fermi, să explicați de ce erorile componentelor se compensează parțial și să o construiți în Excel, cu trei scenarii;
-- să calculați în Excel distanța pe glob dintre două orașe și să estimați factorul de circuitate al unei rețele;
+- să calculați în Excel distanța în linie dreaptă dintre două orașe și să estimați factorul de circuitate al unei rețele;
 - să explicați formula de aproximare a lungimii unui circuit, k · √(n · A);
 - să descrieți componentele costului unei distribuții „de la un depozit la mulți clienți”: opririle, apropierea și circuitul local;
 - să estimați costul zilnic și costul pe comandă al unei distribuții urbane cu autoutilitare;
@@ -88,7 +88,7 @@ Estimările de aici folosesc valori medii. În realitate, numărul comenzilor va
 | --- | --- |
 | 0_Citiți-mă | Cum se folosește registrul |
 | 1_Fermi | Estimarea Fermi a comenzilor zilnice, în trei scenarii |
-| 2_Circuitate | Distanța pe glob, distanța rutieră și factorul de circuitate |
+| 2_Circuitate | Distanța în linie dreaptă, distanța rutieră și factorul de circuitate |
 | 3_Verificare_C13 | Estimarea rapidă pentru ziua de marți din Capitolul 13 |
 | 4_Cost_Cluj | Costul zilnic și costul pe comandă al distribuției urbane |
 | 5_Sensibilitate | Costul pe comandă în mai multe scenarii |
