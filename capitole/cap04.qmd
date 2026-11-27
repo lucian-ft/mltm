@@ -19,16 +19,16 @@ Această pagină însoțește Capitolul 4 al cărții: rezumă întrebările, te
     Comparați probabilitatea unei zile cu retur în general cu probabilitatea unei zile cu retur *știind că* este vineri. Dacă sunt egale, cele două evenimente sunt independente.
     </details>
 
-2. Media curselor 3PL este de 1,29 pe zi. Dacă rezervați zilnic un singur camion, cât de des veți rămâne fără?
+2. Media curselor 3PL este de 1,29 pe zi, iar fiecare cursă ocupă un camion. Dacă rezervați zilnic un singur camion, cât de des veți rămâne fără?
 
     <details><summary>Indiciu</summary>
-    Media nu ajunge: vă trebuie toată distribuția, adică probabilitatea fiecărui număr de curse. Pentru evenimente rare, independente, cartea folosește distribuția Poisson.
+    Media nu ajunge: vă trebuie probabilitatea fiecărui număr de curse și, din ea, probabilitatea cumulată pentru fiecare număr de camioane rezervate. Ce model teoretic se potrivește numărării unor evenimente rare și independente, cu o rată medie cunoscută?
     </details>
 
 3. Un magazin nou nu are istoric; știți doar că o comandă va avea „între 10 și 20 de paleți”. Ce probabilitate dați unei comenzi de 18 paleți sau mai mult?
 
     <details><summary>Indiciu</summary>
-    Fără alte informații, toate valorile întregi dintre 10 și 20 sunt la fel de probabile: distribuția uniformă discretă.
+    Fără istoric, nu aveți niciun motiv să preferați o valoare din interval. Câte valori întregi sunt între 10 și 20 și câte dintre ele îndeplinesc condiția?
     </details>
 
 ### Pe scurt: ce este o distribuție de probabilitate?
@@ -40,19 +40,18 @@ O **variabilă aleatoare** (*random variable*) este un număr care depinde de î
 
 Din distribuție se calculează media (valoarea așteptată), varianța și probabilitatea oricărui eveniment, cum ar fi o „zi aglomerată”.
 
-![Foaia 4_Conditionare: testul de independență pentru două perechi de evenimente (Fig. 4.4 din carte)](img/fig_4.4.png){fig-alt="Foaia 4_Conditionare din registru: tabele cu numărul de zile pentru două perechi de evenimente și testul de independență"}
-
 ## Obiective și termeni-cheie
 
 La finalul capitolului veți descrie incertitudinea din activitatea unui depozit cu probabilități și distribuții discrete și veți folosi aceste descrieri pentru decizii de capacitate. Concret, veți putea:
 
 - să definiți experimentul, evenimentul și variabila aleatoare, cu exemple din transport;
 - să aplicați cele patru legi ale probabilității și să recunoașteți evenimentele mutual exclusive și cele independente;
-- să distingeți funcția de masă a probabilității (PMF) de funcția de repartiție (CDF);
+- să distingeți funcția de masă a probabilității (PMF) de funcția de repartiție (CDF) și distribuția empirică de cea teoretică;
 - să construiți în Excel o distribuție empirică pornind de la un calendar de zile;
 - să calculați probabilități condiționate și să verificați independența cu COUNTIFS;
-- să calculați valoarea așteptată, varianța și coeficientul de variație din distribuție și din date;
-- să folosiți distribuția Poisson (POISSON.DIST) pentru a dimensiona o capacitate rezervată.
+- să calculați valoarea așteptată, varianța și coeficientul de variație din distribuție și din date, știind când lucrați cu o populație și când cu un eșantion;
+- să folosiți distribuția Poisson (funcția POISSON.DIST din Excel) pentru a dimensiona o capacitate rezervată;
+- să calculați media, varianța și probabilitățile unei distribuții uniforme discrete și să generați valori aleatoare cu RANDBETWEEN.
 
 | Termen | În engleză |
 | --- | --- |
@@ -62,6 +61,9 @@ La finalul capitolului veți descrie incertitudinea din activitatea unui depozit
 | funcția de masă a probabilității (PMF) | *probability mass function* |
 | funcția de repartiție (CDF) | *cumulative distribution function* |
 | valoare așteptată | *expected value* |
+| varianță, coeficient de variație (CV) | *variance, coefficient of variation* |
+| populație / eșantion | *population / sample* |
+| distribuție empirică / teoretică | *empirical / theoretical distribution* |
 | distribuția uniformă discretă | *discrete uniform distribution* |
 | distribuția Poisson | *Poisson distribution* |
 
@@ -71,13 +73,17 @@ Setul curat din Capitolul 3 se rezumă pe zile: 522 de zile lucrătoare, între 
 
 ![Foaia 7_Poisson_3PL: distribuția empirică și Poisson a curselor 3PL și capacitatea rezervată (Fig. 4.6 din carte)](img/fig_4.6.png){fig-alt="Foaia 7_Poisson_3PL: comparația dintre distribuția empirică și distribuția Poisson a curselor 3PL pe zi și probabilitatea cumulată pentru fiecare număr de camioane rezervate"}
 
-Decizia din Pasul 6 este una de nivel de serviciu: câte camioane rezervăm zilnic, ca să acoperim cererea în cel puțin 90% sau 95% dintre zile? Răspunsul este chiar funcția de repartiție.
+Foaia 4_Conditionare pune la încercare cele două bănuieli ale managerului: comparați probabilitatea unui eveniment în general cu probabilitatea lui știind că s-a produs celălalt.
+
+![Foaia 4_Conditionare: testul de independență pentru două perechi de evenimente (Fig. 4.4 din carte)](img/fig_4.4.png){fig-alt="Foaia 4_Conditionare din registru: tabele cu numărul de zile pentru două perechi de evenimente și testul de independență"}
+
+Decizia din Pasul 6 este una de nivel de serviciu: câte camioane rezervăm zilnic și în ce procent din zile acoperă rezervarea cererea? Răspunsul îl dă chiar funcția de repartiție. Cum numărul de camioane este întreg, procentul crește în trepte: în modelul Poisson, 2 camioane acoperă circa 86% dintre zile, iar 3 camioane circa 96%.
 
 ## Verificați-vă
 
 <details><summary>Cursele de retur urmează aproximativ o distribuție Poisson cu λ = 0,29 pe zi. Ce probabilitate are o zi fără niciun retur? (răspunsul se deschide la clic)</summary>
 
-P(X = 0) = e^(–0,29) ≈ 0,75. Cam trei zile din patru nu au niciun retur. În date, 134 din 522 de zile au avut cel puțin un retur, adică 388 de zile fără retur (74%): modelul și datele se potrivesc bine. În Excel: `=POISSON.DIST(0;0,29;FALSE)`.
+P(X = 0) = e<sup>–0,29</sup> ≈ 0,75. Cam trei zile din patru nu au niciun retur. În date, 134 din 522 de zile au avut cel puțin un retur, adică 388 de zile fără retur (74%): modelul și datele se potrivesc bine. În Excel: `=POISSON.DIST(0;0,29;FALSE)`.
 
 </details>
 
