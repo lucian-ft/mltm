@@ -16,26 +16,26 @@ Optimizarea din Partea III presupune că datele sunt cunoscute, iar aproximăril
 1. Media curselor 3PL este 1,29 pe zi. Managerul propune să rezerve un singur camion. Ce lipsește din raționament?
 
     <details><summary>Indiciu</summary>
-    Media nu este o capacitate. În zilele cu 3–6 curse, cursele peste rezervare se comandă pe piața spot, cu un supliment mare. Costul depinde de toată distribuția, nu doar de medie.
+    Ce se întâmplă în zilele în care sunt mai multe curse decât camioane rezervate și cât costă fiecare cursă în plus? Dar în zilele cu mai puține curse? Este suficientă media pentru a cântări aceste două situații?
     </details>
 
 2. Ați rulat simularea o dată, pe un an, și politica B iese mai ieftină cu 15 lei pe zi. Este mai bună?
 
     <details><summary>Indiciu</summary>
-    Rezultatul unei rulări este o variabilă aleatoare. Faceți mai multe rulări, construiți intervale de încredere (Capitolul 6) și comparați politicile cu *aceleași numere aleatoare*.
+    Dacă repetați simularea cu alte numere aleatoare, veți obține tot 15 lei? Cum ați stabili dacă diferența este mai mare decât variația de la o rulare la alta (Capitolul 6)? Și ce ar trebui să aibă în comun cele două politici, ca diferența să vină doar din politică?
     </details>
 
 3. Cum știți că modelul de simulare reproduce realitatea, înainte de a-l folosi pentru o politică nouă?
 
     <details><summary>Indiciu</summary>
-    *Validarea*: comparați rezultatul simulat al politicii actuale cu ce s-a întâmplat de fapt, cu un test de ipoteză (Capitolul 7).
+    Pentru care politică aveți deja rezultate reale, înregistrate? Ce ați aștepta să producă modelul pentru ea și cum ați decide dacă diferența este prea mare ca să fie întâmplătoare (Capitolul 7)?
     </details>
 
 ### Pe scurt: ce este simularea?
 
-**Simularea** este un model **descriptiv**: nu recomandă o soluție, ci evaluează soluțiile pe care i le propunem, imitând funcționarea sistemului zi de zi. Orice simulare pornește de la numere aleatoare uniforme între 0 și 1 (RAND în Excel), din care **transformarea inversă** obține orice distribuție: normală (NORM.INV), uniformă sau empirică (INDEX și MATCH pe funcția de repartiție). Un studiu de simulare are cinci etape: formularea problemei, colectarea datelor și definirea modelului, construirea modelului, **validarea** și **rulările experimentale**. Fiecare **rulare** dă un alt rezultat, de aceea facem mai multe și tratăm mediile lor ca un eșantion. Politicile se compară cu aceleași numere aleatoare (*common random numbers*) și cu un **test pereche**.
+**Simularea** este un model **descriptiv**: nu recomandă o soluție, ci evaluează soluțiile pe care i le propunem, imitând funcționarea sistemului zi de zi. Orice simulare pornește de la numere aleatoare uniforme între 0 și 1 (`RAND()` în Excel), din care **transformarea inversă** obține orice distribuție: normală (NORM.INV), uniformă sau empirică (INDEX și MATCH pe limitele inferioare ale funcției de repartiție). Un studiu de simulare are cinci etape: formularea problemei; colectarea datelor și definirea modelului; construirea și **validarea** modelului; **rulările experimentale**; analiza rezultatelor și decizia. Fiecare **rulare** dă un alt rezultat, de aceea facem mai multe și tratăm mediile lor ca un eșantion. Politicile se compară cu aceleași numere aleatoare (*common random numbers*) și cu un **test pereche**.
 
-![Mediile celor 40 de rulări pentru politica actuală, media lor, intervalul de încredere de 99% și valoarea raportată de contabilitate (Fig. 15.3 din carte)](img/fig_15.3.png){fig-alt="Costul mediu zilnic în fiecare dintre cele 40 de rulări ale politicii cu două camioane rezervate, media lor, banda intervalului de încredere de 99% și linia valorii raportate de contabilitate, aflată în interval"}
+![Mediile celor 40 de rulări pentru politica actuală, media lor, intervalul de încredere de 99% și valoarea raportată de contabilitate (Fig. 15.3 din carte)](img/fig_15.3.png){fig-alt="Histograma costului mediu zilnic din cele 40 de rulări ale politicii cu două camioane rezervate, cu clase între circa 690 și 830 de lei pe zi; media rulărilor, 760,4 lei pe zi, este marcată împreună cu banda intervalului de încredere de 99%, iar o linie punctată la 770 de lei pe zi arată valoarea raportată de contabilitate, aflată în interval"}
 
 ## Obiective și termeni-cheie
 
@@ -45,6 +45,7 @@ La finalul capitolului veți construi în Excel o simulare simplă a unei decizi
 - să descrieți cele cinci etape ale unui studiu de simulare și rolul validării;
 - să generați în Excel variabile aleatoare cu RAND, NORM.INV, INDEX și MATCH, prin transformarea inversă;
 - să construiți un model de simulare pe zile, cu una sau două variabile aleatoare, și să calculați indicatorii de performanță;
+- să explicați de ce o singură rulare nu ajunge și de ce politicile se compară cu aceleași numere aleatoare;
 - să validați modelul cu un test de ipoteză și să comparați politicile cu intervale de încredere și cu un test pereche;
 - să formulați o recomandare care ține cont de cost, de risc și de ipotezele modelului.
 
@@ -61,21 +62,27 @@ La finalul capitolului veți construi în Excel o simulare simplă a unei decizi
 
 ## Studiul de caz: câte camioane rezervăm zilnic la 3PL?
 
-Fiecare camion rezervat costă 250 de lei pe zi, folosit sau nu; fiecare cursă peste rezervare se comandă pe piața spot, cu un supliment între 800 și 1.600 de lei. Cei șase pași parcurg etapele studiului: formularea problemei, distribuția empirică a curselor din 522 de zile, modelul în Excel pe 10.440 de zile simulate, validarea pe politica actuală (k = 2), compararea politicilor k = 0 … 4 și o verificare analitică. Ultimul pas schimbă o ipoteză: într-o piață tensionată, suplimentul spot crește tocmai în zilele aglomerate, iar simularea arată cum se schimbă recomandarea.
+Fiecare camion rezervat costă 250 de lei pe zi, folosit sau nu; fiecare cursă peste rezervare se comandă pe piața spot, cu un supliment între 800 și 1.600 de lei. Costul pe kilometru (7,1 lei) se plătește la fel pentru cursele rezervate și pentru cele spot, deci nu influențează alegerea. Cei șase pași parcurg etapele studiului: formularea problemei, distribuția empirică a curselor din 522 de zile, modelul în Excel pe 10.440 de zile simulate, validarea pe politica actuală (k = 2), compararea politicilor k = 0 … 4 și o verificare analitică. Ultimul pas schimbă o ipoteză: într-o piață tensionată, suplimentul spot crește tocmai în zilele aglomerate, iar analiza rezultatelor simulate arată cum se schimbă alegerea prudentă.
 
 Rezultatul pentru manager: rezervarea unui singur camion, „pentru că media este 1,29”, ar costa circa 190 de lei pe zi în plus față de politica actuală.
 
 ## Verificați-vă
 
-<details><summary>Un camion rezervat costă R = 250 de lei pe zi, iar suplimentul spot mediu este 1.200 de lei. Funcția de repartiție a curselor 3PL este F(1) = 0,634 și F(2) = 0,866. Câte camioane rezervați? (răspunsul se deschide la clic)</summary>
+<details><summary>Un depozit programează operatori temporari pe tura de noapte. Fiecare operator programat costă R = 320 de lei pe tură, lucreze sau nu. Dacă la tură sunt necesari mai mulți operatori decât cei programați, fiecare operator lipsă se acoperă prin ore suplimentare, cu un cost în plus mediu E[S] = 1.000 de lei, independent de numărul de operatori lipsă. Funcția de repartiție a numărului X de operatori suplimentari necesari este F(0) = 0,22, F(1) = 0,58, F(2) = 0,68 și F(3) = 0,89. Câți operatori programați? (răspunsul se deschide la clic)</summary>
 
-Un camion în plus merită cât timp P(X > k) · 1.200 > 250. Regula: alegeți cel mai mic k pentru care F(k) ≥ 1 – R / S̄ = 1 – 250 / 1.200 ≈ 0,792 (*raportul critic*). F(1) = 0,634 < 0,792, dar F(2) = 0,866 ≥ 0,792, deci k* = 2, la fel ca în simulare. În Excel: `=1-250/1200`, apoi, cu funcția de repartiție într-o coloană, primul k pentru care F(k) depășește pragul.
+Al (k + 1)-lea operator programat merită cât timp P(X > k) · E[S] > R, adică cât timp costul evitat în medie depășește costul sigur. Regula: alegeți cel mai mic k pentru care F(k) atinge sau depășește *raportul critic* 1 – R / E[S] = 1 – 320 / 1.000 = 0,68. F(0) = 0,22 și F(1) = 0,58 sunt sub prag, iar F(2) = 0,68 îl atinge exact, deci k<sup>*</sup> = 2. La egalitate, al treilea operator ar costa în medie exact cât economisește (0,32 · 1.000 = 320 de lei), așa că 2 și 3 operatori au același cost așteptat; regula îl alege pe cel mai mic. Rezultatul se sprijină pe ipoteza că suplimentul nu depinde de câți operatori lipsesc; dacă orele suplimentare se scumpesc tocmai în nopțile aglomerate, regula nu mai este suficientă și trebuie simulat. În Excel: `=1-320/1000`, apoi comparați pragul cu coloana funcției de repartiție.
+
+</details>
+
+<details><summary>Ați simulat două politici pe aceleași 30 de rulări, cu aceleași numere aleatoare. Diferența de cost (B – A) are media –12 lei pe zi și abaterea standard 18 lei. Este B mai ieftină? (răspunsul se deschide la clic)</summary>
+
+Testul pereche lucrează pe diferențe. Eroarea standard este 18 / √30 ≈ 3,29, deci t ≈ –12 / 3,29 ≈ –3,65. Valoarea critică bilaterală pentru 29 de grade de libertate, la 95%, este circa 2,05 (`=T.INV.2T(0,05;29)`), iar |–3,65| > 2,05: diferența este semnificativă, B este mai ieftină. Dacă cele două politici ar fi fost simulate cu numere aleatoare diferite, variația dintre rulări ar fi intrat în diferență, iar aceeași diferență medie ar fi fost mai greu de deosebit de zgomot.
 
 </details>
 
 ## Registrul Excel
 
-**MLTM_C15_simulare.xlsx**. Registrul folosește setări românești: argumentele se separă cu „;”, zecimalele cu „,”. Numerele aleatoare sunt fixate în registru, ca cifrele din carte să poată fi verificate; pentru numere noi, folosiți RAND și tasta F9 pe o copie.
+**MLTM_C15_simulare.xlsx**. Registrul folosește setări românești: argumentele se separă cu „;”, zecimalele cu „,”. Numerele aleatoare sunt fixate în registru, ca cifrele din carte să poată fi verificate; pentru numere noi, lucrați pe o copie: puneți valoarea 1 în celula B14 din foaia 1_Date, care trece registrul pe `RAND()`, apoi apăsați F9. Simularea folosește doar formule; nu este nevoie de Solver sau de un tabel de date (*Data Table*).
 
 | Foaia | Ce conține |
 | --- | --- |
@@ -86,7 +93,8 @@ Un camion în plus merită cât timp P(X > k) · 1.200 > 250. Regula: alegeți c
 | 4_Rulari | Cele 40 de rulări pentru fiecare politică |
 | 5_Validare | Validarea generatorului și a politicii actuale |
 | 6_Politici | Compararea politicilor și scenariul „piață tensionată” |
-| Ex_Livrari_Cluj, Sol_Ex3 | Date pentru exerciții și soluția Exercițiului 3 |
+| Ex_Livrari_Cluj | Date pentru exerciții |
+| Sol_Ex3 | Soluția Exercițiului 3 |
 
 *Registrul va putea fi descărcat din Pachetul Excel al cărții, publicat pe Zenodo.*
 
@@ -96,17 +104,17 @@ Un camion în plus merită cât timp P(X > k) · 1.200 > 250. Regula: alegeți c
 
 ## Temă de laborator: simularea unei decizii de capacitate
 
-Alegeți o decizie de capacitate dintr-o activitate pe care o cunoașteți: câte camioane rezervați, câți operatori puneți pe tură, câte locuri de parcare păstrați la rampă.
+Alegeți o decizie de capacitate dintr-o activitate pe care o cunoașteți: câte camioane rezervați, câți operatori programați pe tură, câte locuri de parcare păstrați la rampă.
 
 1. Formulați problema: variabilele aleatoare, politicile de comparat și indicatorii de performanță.
 2. Construiți distribuția empirică a cererii din cel puțin 60 de observații și generați cererea cu transformarea inversă.
-3. Simulați cel puțin 20 de rulări pentru fiecare politică, cu aceleași numere aleatoare.
-4. Validați modelul: rezultatul simulat al politicii actuale se potrivește cu realitatea?
+3. Validați modelul: rezultatul simulat al politicii actuale se potrivește cu realitatea?
+4. Simulați cel puțin 20 de rulări pentru fiecare politică, fiecare rulare pe 100–250 de zile, cu aceleași numere aleatoare.
 5. Comparați politicile cu intervale de încredere și cu un test pereche și scrieți recomandarea, cu ipotezele de care depinde.
 
 ## Exerciții suplimentare
 
-Capitolul se încheie cu șase întrebări grilă, o întrebare deschisă și șase exerciții; răspunsurile sunt în carte, în secțiunea 5.4 și în Anexa B. Problemele recapitulative IV reiau împreună algoritmii, aproximările și simularea: [Problemele recapitulative IV](pr4.qmd).
+Capitolul se încheie cu șase întrebări grilă, o întrebare deschisă și șase exerciții; răspunsurile sunt în carte, în secțiunea 5.4 și în Anexa B. Problemele recapitulative IV reiau împreună algoritmii, aproximările și simularea: [Problemele recapitulative IV](pr4.qmd). Volumul se încheie cu Epilogul, o privire de ansamblu asupra celor patru părți și asupra ideilor care le leagă.
 
 ## Lecturi suplimentare
 
