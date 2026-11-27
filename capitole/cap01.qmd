@@ -9,7 +9,7 @@ Această pagină însoțește Capitolul 1 al cărții: rezumă întrebările, te
 
 ## Întrebarea capitolului
 
-Laptele din Câmpia Transilvaniei, cablajele auto dintr-un parc industrial de lângă Cluj și cimentul pentru un șantier din zona metropolitană par să nu aibă nimic în comun. **Ce decizii iau totuși, în fiecare zi, toți cei trei manageri?**
+Laptele de la fermele din Câmpia Transilvaniei, cablajele auto dintr-un parc industrial de lângă Cluj și cimentul pentru un șantier din zona metropolitană sunt produse fără nimic în comun. Drumul fiecăruia, de la furnizori până la client, este însă organizat de o companie, iar managerii celor trei companii au aceleași griji. **Ce decizii iau, în fiecare zi, toți trei?**
 
 Capitolul pornește de la această întrebare și ajunge la alte trei: ce este un lanț de aprovizionare, cum îl putem descrie și de ce este dificil de gestionat. Nu conține calcule; în [Capitolul 2](cap02.qmd) aceleași decizii primesc cifre.
 
@@ -23,7 +23,7 @@ Un **lanț de aprovizionare** (*supply chain*) este ansamblul de firme, locații
 
 **Managementul lanțului de aprovizionare** (SCM, *Supply Chain Management*) coordonează aceste fluxuri între parteneri, cu un singur scop: deservirea clientului final. Logistica, adică transportul, depozitarea și manipularea mărfii, este o parte a lui.
 
-![Lapte, cablaje auto, ciment: ce au în comun? (Fig. 1.2 din carte)](img/fig_1.2.png){fig-alt="Trei lanțuri de aprovizionare din zona Clujului, pentru lapte, cablaje auto și ciment, și deciziile de management comune lor"}
+![Lapte, cablaje auto, ciment: ce au în comun lanțurile lor de aprovizionare? (Fig. 1.2 din carte)](img/fig_1.2.png){fig-alt="Trei lanțuri de aprovizionare din zona Clujului, pentru lapte, cablaje auto și ciment, și deciziile de management comune lor"}
 
 Înainte de a parcurge capitolul, încercați să răspundeți la trei întrebări:
 
