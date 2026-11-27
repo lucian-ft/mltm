@@ -133,7 +133,7 @@ Alegeți firma în care lucrați sau o firmă pe care o cunoașteți bine. Pe ce
 4. Încadrați cinci activități ale firmei în procesele SCOR DS și în macro-procesele SRM, ISCM și CRM.
 5. Alegeți o decizie logistică reală și formulați obiectivul, variabilele de decizie și constrângerile. Ce constrângere ar deveni variabilă dacă s-ar lărgi aria de control?
 
-Schița se poate face gratuit în [draw.io (diagrams.net)](https://app.diagrams.net/). Nu folosiți date sensibile ale firmei: puteți schimba numele partenerilor și rotunji cifrele. Criteriile de evaluare sunt în Anexa B a cărții.
+Schița se poate face în [draw.io (diagrams.net)](https://app.diagrams.net/), o aplicație gratuită. Nu folosiți date sensibile ale firmei: puteți schimba numele partenerilor și rotunji cifrele. Criteriile de evaluare sunt în Anexa B a cărții.
 
 ## Exerciții suplimentare
 
