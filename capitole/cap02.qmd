@@ -63,7 +63,7 @@ La finalul capitolului veți alege tipul de model potrivit unei decizii logistic
 | funcție de putere | *power function* |
 | funcție convexă / concavă | *convex / concave function* |
 | cost fix / cost variabil | *fixed cost / variable cost* |
-| 3PL, operator logistic terț | *third-party logistics* |
+| 3PL, logistică terță (operator logistic terț) | *third-party logistics (provider)* |
 | „dacă intră date greșite, ies rezultate greșite” | *garbage in, garbage out* |
 
 ## Studiul de caz: distribuție din Cluj
