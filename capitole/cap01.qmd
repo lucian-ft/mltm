@@ -93,7 +93,7 @@ Observați în figură că producătorii apar în stânga, pe fluxul fizic, deș
 
 ![Macro-procesele unui operator logistic (Fig. 1.6 din carte)](img/fig_1.6.png){fig-alt="Macro-procesele la Cargo Someș: SRM (relația cu furnizorii), ISCM (operațiunile interne) și CRM (relația cu clienții), aliniate prin S&OP"}
 
-Studiul de caz urmează patru pași: cele trei fluxuri, verigile lanțului, procesele SCOR DS și macro-procesele și decizia „flotă proprie sau transportator terț”. Ultimul pas lasă deschisă întrebarea la care răspunde Capitolul 2: **de la ce distanță devine flota proprie mai avantajoasă decât transportatorul terț (3PL)?**
+Studiul de caz urmează patru pași: cele trei fluxuri, verigile lanțului, procesele SCOR DS și macro-procesele și decizia „flotă proprie sau transportator terț”. Ultimul pas lasă deschisă întrebarea la care răspunde Capitolul 2: **de la ce distanță devine utilizarea flotei proprii mai avantajoasă decât apelarea la un transportator terț (3PL)?**
 
 ## Lanțul ca „amortizor”
 
