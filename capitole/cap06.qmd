@@ -16,24 +16,24 @@ Această pagină însoțește Capitolul 6 al cărții: rezumă întrebările, te
 1. Ați calculat abaterea medie a costului din primele 30 de curse din evidență și iese mult negativă. Concluzionați că flota proprie este mai ieftină decât prevede modelul?
 
     <details><summary>Indiciu</summary>
-    De unde vin primele 30 de curse? Dacă toate sunt din aceeași lună, eșantionul este de *comoditate*, nu aleator, iar media lui poate fi deplasată oricât de mare ar fi.
+    Uitați-vă la datele primelor 30 de curse. Acoperă ele cei doi ani sau doar câteva zile dintr-o singură lună? Ar rezolva problema 300 de curse luate în același fel? (secțiunea 2.2 și Pasul 3)
     </details>
 
 2. Distanțele curselor nu au deloc forma unui clopot. Media a 30 de curse ar avea?
 
     <details><summary>Indiciu</summary>
-    Da, aproape: aceasta este *teorema limită centrală*. Capitolul o arată chiar pe distanțele curselor Cargo Someș.
+    Urmăriți în Fig. 6.1 cum se schimbă forma distribuției când treceți de la o singură cursă la media a 5 și apoi a 30 de curse. Ce se întâmplă cu asimetria? (secțiunea 2.3)
     </details>
 
-3. „Costul mediu pe ruta Brașov este între 1.840 și 1.900 de lei, cu 95% încredere.” Înseamnă că 95% dintre curse costă între aceste valori?
+3. „Costul mediu pe ruta Cluj–Brașov este între 1.839 și 1.908 lei, cu 95% încredere.” Înseamnă că 95% dintre curse costă între aceste valori?
 
     <details><summary>Indiciu</summary>
-    Nu. Intervalul de încredere privește *media*; pentru o cursă individuală, următoarea, vă trebuie un interval de predicție, mult mai larg.
+    Despre ce mărime vorbește afirmația: despre media tuturor curselor de pe rută sau despre o singură cursă viitoare? Care dintre cele două variază mai mult? (secțiunea 2.7)
     </details>
 
 ### Pe scurt: ce este un interval de încredere?
 
-Datele de care dispunem sunt un **eșantion** dintr-o **populație** mai mare. Media eșantionului, x̄, estimează media populației, μ, dar alt eșantion ar da altă valoare. **Eroarea standard** măsoară cât de mult variază x̄ de la un eșantion la altul și scade cu rădăcina pătrată a numărului de observații. Un **interval de încredere** adaugă estimării precizia ei: un interval în jurul lui x̄, construit astfel încât, în 95% dintre eșantioane, să conțină media adevărată. Pentru eșantioane mici se folosește distribuția *t* în locul distribuției normale.
+Datele de care dispunem sunt un **eșantion** dintr-o **populație** mai mare. Media eșantionului, x̄, estimează media populației, μ, dar alt eșantion ar da altă valoare. Dacă observațiile sunt independente și identic distribuite (iid), **teorema limită centrală** (TLC) spune că media lor are o distribuție apropiată de cea normală, oricare ar fi forma distribuției unei singure observații (Fig. 6.1). **Eroarea standard** măsoară cât de mult variază x̄ de la un eșantion la altul și scade cu rădăcina pătrată a numărului de observații. Un **interval de încredere** adaugă estimării precizia ei: un interval în jurul lui x̄, construit astfel încât, la un nivel de încredere ales (de obicei 95%, uneori 90% sau 99%), aceeași proporție dintre eșantioane să dea un interval care conține media adevărată. Pentru eșantioane mici se folosește distribuția *t* în locul distribuției normale.
 
 ![Teorema limită centrală pe distanțele curselor Cargo Someș (Fig. 6.1 din carte)](img/fig_6.1.png){fig-alt="Distribuția distanței unei curse, asimetrică, și distribuțiile mediei a 5 și a 30 de curse, tot mai apropiate de o distribuție normală"}
 
@@ -43,9 +43,10 @@ La finalul capitolului veți estima din date incomplete mărimile din transport,
 
 - să distingeți populația de eșantion și parametrul (μ, σ) de statistică (x̄, s);
 - să explicați de ce un eșantion de comoditate poate da o estimare greșită;
-- să enunțați teorema limită centrală pentru sume și pentru medii;
+- să enunțați teorema limită centrală pentru sume și pentru medii și să calculați cu NORM.DIST probabilități pentru sume de variabile aleatoare;
 - să construiți intervale de încredere cu z (CONFIDENCE.NORM) și cu t (T.INV.2T, CONFIDENCE.T);
-- să deosebiți un interval de încredere de un interval de predicție;
+- să explicați când se folosește distribuția t în locul distribuției normale;
+- să deosebiți un interval de încredere de un interval de predicție și să calculați un interval de predicție pentru valoarea următoare;
 - să extrageți un eșantion aleator cu RANDBETWEEN și INDEX;
 - să calculați mărimea eșantionului pentru o marjă de eroare dată.
 
@@ -57,24 +58,29 @@ La finalul capitolului veți estima din date incomplete mărimile din transport,
 | teorema limită centrală (TLC) | *central limit theorem* |
 | eroare standard | *standard error* |
 | interval de încredere / de predicție | *confidence / prediction interval* |
-| distribuția t | *Student's t distribution* |
+| distribuția t | *Student’s t-distribution* |
+| grade de libertate | *degrees of freedom* |
+| marjă de eroare | *margin of error* |
+| eșantion de comoditate | *convenience sample* |
 | independente și identic distribuite (iid) | *independent and identically distributed* |
 
 ## Studiul de caz: cât de sigure sunt estimările la Cargo Someș?
 
-Cele 2.401 curse proprii sunt tratate ca o populație cunoscută, din care se extrag eșantioane. Astfel se poate verifica direct ce promit formulele. Cei șase pași trec de la teorema limită centrală la încărcarea camioanelor la rampă, de la eșantionul de comoditate la 100 de intervale de încredere, apoi la ruta Brașov cu doar 16 curse și la numărul de curse care trebuie monitorizate prin GPS.
+Cele 2.401 curse proprii sunt tratate ca o populație cunoscută, din care se extrag eșantioane. Astfel se poate verifica direct ce promit formulele. Cei șase pași trec de la teorema limită centrală la încărcarea camioanelor la rampă, de la eșantionul de comoditate la 100 de intervale de încredere, apoi la ruta Brașov cu doar 16 curse și la numărul de curse care trebuie monitorizate prin sistemul de poziționare globală (*Global Positioning System*, GPS).
 
 ![Abaterea medie a costului pe luni și intervalele celor două eșantioane (Fig. 6.4 din carte)](img/fig_6.4.png){fig-alt="Abaterea medie a costului pe luni, cu luna din care provin primele 30 de curse evidențiată, și intervalele de încredere ale eșantionului de comoditate și ale celui aleator"}
 
-Pasul 6 arată costul preciziei: o marjă de eroare de două ori mai mică cere de patru ori mai multe date.
+Pasul 6 arată costul preciziei: cum crește numărul de curse necesar când marja de eroare se strânge?
 
 ## Verificați-vă
 
-<details><summary>Un eșantion aleator de 100 de curse are abaterea standard a costului de 30,87 lei. Cât este marja de eroare a mediei, la 95% încredere? (răspunsul se deschide la clic)</summary>
+<details><summary>Pe un eșantion aleator de 100 de curse, abaterea costului față de model are abaterea standard de 30,87 lei. Cât este marja de eroare a mediei, la 95% încredere? (răspunsul se deschide la clic)</summary>
 
-Eroarea standard: 30,87 / √100 = 3,09 lei. Marja de eroare: 1,96 · 3,09 ≈ 6,05 lei. Intervalul este x̄ ± 6,05 lei. În Excel: `=CONFIDENCE.NORM(0,05;30,87;100)`. Pentru o marjă de ±3 lei ar trebui de circa patru ori mai multe curse.
+Eroarea standard: 30,87/√100 = 3,087 lei. Marja de eroare: 1,96 · 3,087 ≈ 6,05 lei. Intervalul este x̄ ± 6,05 lei. În Excel: `=CONFIDENCE.NORM(0,05;30,87;100)`. Cu n = 100, intervalul cu t ar fi aproape la fel: `=CONFIDENCE.T(0,05;30,87;100)` ≈ 6,13 lei.
 
 </details>
+
+Capitolul 7 pornește de aici: un interval spune unde se află, probabil, o medie, dar multe decizii cer un răspuns da/nu, de exemplu „greșește modelul de cost sistematic?”. Acolo trecem de la intervale la testarea ipotezelor.
 
 ## Registrul Excel
 
@@ -103,10 +109,10 @@ Eroarea standard: 30,87 / √100 = 3,09 lei. Marja de eroare: 1,96 · 3,09 ≈ 6
 Alegeți o mărime măsurată pe care o cunoașteți: durata unei operații, costul unei livrări, timpul de așteptare la o rampă.
 
 1. Descrieți populația și explicați cum ați extrage din ea un eșantion aleator, nu unul de comoditate.
-2. Pe cel puțin 20 de observații, calculați media, abaterea standard și eroarea standard.
-3. Construiți intervalul de încredere de 95% cu t și comparați-l cu cel calculat, greșit, cu z.
+2. Pe 15–25 de observații (un eșantion mic), calculați media, abaterea standard și eroarea standard.
+3. Construiți intervalul de încredere de 95% cu t și comparați-l cu cel calculat cu z. Care este mai îngust și de ce nu este potrivit aici? De la ce număr de observații diferența ar deveni neglijabilă?
 4. Calculați intervalul de predicție pentru observația următoare. De ce este mai larg?
-5. Câte observații v-ar trebui pentru o marjă de eroare de două ori mai mică?
+5. Câte observații v-ar trebui pentru o marjă de eroare de trei ori mai mică?
 
 ## Exerciții suplimentare
 
