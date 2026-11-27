@@ -16,37 +16,37 @@ Algoritmii din Capitolul 13 au nevoie de date complete: fiecare drum, fiecare cl
 1. Câte comenzi pe zi ar putea avea un magazin online de alimente într-un oraș de 290.000 de locuitori?
 
     <details><summary>Indiciu</summary>
-    Descompuneți întrebarea în piese pe care le puteți estima: gospodării, ce parte cumpără online, cât de des comandă, ce cotă are clientul. Erorile pieselor se compensează parțial: aceasta este *estimarea Fermi*.
+    În loc să ghiciți direct un număr, porniți de la o mărime cunoscută (populația orașului) și ajungeți la comenzile zilnice ale magazinului printr-un lanț de 3–4 rapoarte plauzibile. Ce se întâmplă cu rezultatul dacă unele ipoteze sunt puțin prea mari, iar altele puțin prea mici?
     </details>
 
-2. Oradea este la 131 km de Cluj în linie dreaptă. Cât are drumul?
+2. Oradea este la 131 km de Cluj în linie dreaptă. Ce lungime are drumul rutier?
 
     <details><summary>Indiciu</summary>
-    Drumurile ocolesc. Comparați, pentru orașele cunoscute, distanța rutieră cu cea pe glob: raportul lor este *factorul de circuitate* al rețelei.
+    Luați 2–3 orașe din jurul Clujului ale căror distanțe rutiere le știți și comparați-le cu distanța în linie dreaptă, pe hartă. Cu cât la sută sunt mai lungi drumurile? Este procentul același pentru toate?
     </details>
 
-3. Numărul de clienți dintr-o zonă se dublează. Se dublează și kilometrii parcurși pentru livrarea locală?
+3. Numărul punctelor de livrare dintr-o zonă se dublează. Se dublează și kilometrii parcurși pentru livrarea locală?
 
     <details><summary>Indiciu</summary>
-    Nu. Lungimea celui mai scurt circuit prin n puncte dintr-o zonă de arie A crește cu √(n · A). La de două ori mai mulți clienți, circuitul crește doar de √2 ≈ 1,41 ori.
+    Imaginați-vă un cartier în care apar de două ori mai multe adrese de livrare. Ce se întâmplă cu distanța medie dintre două opriri vecine? Și cu numărul de opriri?
     </details>
 
 ### Pe scurt: de ce aproximăm?
 
-O **aproximare** este o valoare apropiată, dar nu exactă; o **estimare** este un calcul aproximativ al unei mărimi. Aproximările sunt rapide, cer puține date și spun dacă merită să mergem mai departe. Principiul **„nici prea mult, nici prea puțin”** (*Goldilocks*) spune când: dacă estimarea arată un proiect clar bun sau clar prost, decizia se poate lua; dacă rezultatul este la limită, merită o analiză detaliată. Capitolul folosește trei instrumente: **estimarea Fermi**, cu scenarii pesimist, probabil și optimist; **factorul de circuitate**, care transformă distanța în linie dreaptă în distanță rutieră; și **formula lungimii unui circuit**, k · √(n · A), pentru o distribuție „de la un depozit la mulți clienți”.
+O **aproximare** este o valoare apropiată, dar nu exactă; o **estimare** este un calcul aproximativ al unei mărimi. Aproximările sunt rapide, cer puține date și spun dacă merită să mergem mai departe. Principiul **„nici prea mult, nici prea puțin”** (*Goldilocks*) spune când: dacă estimarea arată un proiect clar favorabil sau clar nefavorabil, decizia se poate lua; dacă rezultatul este la limită, merită să investim timp în date și într-un model mai exact. Capitolul folosește trei instrumente: **estimarea Fermi**, cu scenarii pesimist, probabil și optimist; **factorul de circuitate** *k*<sub>CF</sub>, care aproximează, în medie pe o rețea, distanța rutieră plecând de la distanța în linie dreaptă (pe o singură pereche de orașe poate greși mult); și **formula lungimii unui circuit**, *k*<sub>CF</sub> · *k*<sub>TSP</sub> · √(*n* · *A*), pentru *n* opriri într-o zonă de arie *A*, unde *k*<sub>TSP</sub> depinde de forma zonei și de metoda de rutare. Formula se aplică unei zone relativ compacte, cu punctele de livrare răspândite relativ uniform și multe opriri pe traseu. În modelul „de la un depozit la mulți clienți”, „client” înseamnă punctul de livrare (o gospodărie); clientul comercial al firmei Cargo Someș este magazinul online.
 
-![Distanța rutieră minimă și distanța pe glob de la Cluj-Napoca la cele 16 orașe ale rețelei (Fig. 14.1 din carte)](img/fig_14.1.png){fig-alt="Diagramă de dispersie cu distanța pe glob pe axa orizontală și distanța rutieră minimă pe axa verticală pentru cele 16 orașe, cu dreapta factorului de circuitate"}
+![Distanța rutieră minimă și distanța pe glob de la Cluj-Napoca la cele 16 orașe ale rețelei (Fig. 14.1 din carte)](img/fig_14.1.png){fig-alt="Diagramă de dispersie cu distanța pe glob pe axa orizontală și distanța rutieră minimă pe axa verticală pentru cele 16 orașe, cu dreapta drumului estimat (1,41 · distanța pe glob) și, întreruptă, linia dreaptă de referință (factor 1)"}
 
 ## Obiective și termeni-cheie
 
 La finalul capitolului veți face o estimare rapidă, cu date puține, pentru o problemă de transport și veți decide dacă problema merită o analiză detaliată. Concret, veți putea:
 
 - să explicați când și de ce se folosesc aproximările și principiul Goldilocks;
-- să descrieți cei trei pași ai unei estimări Fermi și să o construiți în Excel, cu trei scenarii;
+- să descrieți cei trei pași ai unei estimări Fermi, să explicați de ce erorile componentelor se compensează parțial și să o construiți în Excel, cu trei scenarii;
 - să calculați în Excel distanța pe glob dintre două orașe și să estimați factorul de circuitate al unei rețele;
 - să explicați formula de aproximare a lungimii unui circuit, k · √(n · A);
 - să descrieți componentele costului unei distribuții „de la un depozit la mulți clienți”: opririle, apropierea și circuitul local;
-- să estimați costul zilnic și costul pe comandă al unei distribuții urbane;
+- să estimați costul zilnic și costul pe comandă al unei distribuții urbane cu autoutilitare;
 - să analizați sensibilitatea estimării și să recomandați dacă un proiect merită continuat.
 
 | Termen | În engleză |
@@ -58,27 +58,31 @@ La finalul capitolului veți face o estimare rapidă, cu date puține, pentru o 
 | factor de circuitate | *circuity factor* |
 | distanța euclidiană / Manhattan | *Euclidean / Manhattan distance* |
 | zonă de servire | *service region* |
-| distanța de apropiere | *line-haul distance* |
+| distanța de apropiere | *linehaul distance* |
+| economia de densitate | *density economy* |
+| analiza de sensibilitate | *sensitivity analysis* |
 
 ## Studiul de caz: estimări rapide pentru Cargo Someș
 
-Cei cinci pași răspund la oferta magazinului online. Pasul 1 estimează comenzile zilnice după extindere, în trei scenarii. Pasul 2 calculează factorul de circuitate al rețelei din Transilvania: un drum este, în medie, cu circa 40% mai lung decât linia dreaptă. Pasul 3 verifică o estimare rapidă pe ziua de marți din Capitolul 13. Pasul 4 estimează costul pe comandă al distribuției în Cluj-Napoca, iar Pasul 5 arată de ce ipoteze depinde concluzia.
+Cei cinci pași răspund la oferta magazinului online. Pasul 1 estimează comenzile zilnice după extindere, în trei scenarii. Pasul 2 calculează factorul de circuitate al rețelei Cargo Someș (cele 16 orașe din Capitolul 13): un drum este, în medie, cu circa 40% mai lung decât linia dreaptă. Pasul 3 verifică o estimare rapidă pe ziua de marți din Capitolul 13. Pasul 4 estimează costul pe comandă al distribuției în Cluj-Napoca, cu o flotă nouă de autoutilitare de 40 de lăzi, distinctă de cele 5 camioane de 40 t ale firmei, iar Pasul 5 arată de ce ipoteze depinde concluzia.
 
-![Distribuția „de la un depozit la mulți clienți” în Cluj-Napoca (Fig. 14.2 din carte)](img/fig_14.2.png){fig-alt="Zona de livrare de 16 pe 10 km, cu depozitul la marginea de est, clienții răspândiți în zonă și traseul unei autoutilitare: apropierea până la primul client, livrarea locală și întoarcerea la depozit"}
+![Distribuția „de la un depozit la mulți clienți” în Cluj-Napoca (Fig. 14.2 din carte)](img/fig_14.2.png){fig-alt="Zona de livrare de 16 pe 10 km, împărțită în districte, cu depozitul la mijlocul marginii de est, clienții răspândiți în zonă și traseul unei autoutilitare prin districtul ei: apropierea până la primul client, livrarea locală și întoarcerea la depozit"}
 
-Rezultatul Pasului 4: circa 19,20 lei pe comandă, foarte aproape de tariful de 20 de lei. Oferta nu este nici evident bună, nici evident proastă, deci merită o analiză detaliată, începând cu datele care contează cel mai mult: volumul, timpul la oprire și circuitatea.
+Rezultatul Pasului 4: circa 19,20 lei pe comandă, foarte aproape de tariful de 20 de lei. Oferta nu este nici evident profitabilă, nici evident neprofitabilă, deci merită o analiză detaliată, începând cu datele care contează cel mai mult: volumul, timpul la oprire și circuitatea.
+
+Estimările de aici folosesc valori medii. În realitate, numărul comenzilor variază de la o zi la alta, iar o zi aglomerată nu se compensează cu una liniștită. [Capitolul 15](cap15.qmd), ultimul al cărții, folosește simularea Monte Carlo pentru decizii în care contează întreaga distribuție, nu doar media.
 
 ## Verificați-vă
 
-<details><summary>În zona de 160 km² a orașului se livrează 150 de comenzi pe zi. Cu factorul de circuitate 1,3 și k = 0,8, câți km are circuitul local? Dar la 600 de comenzi? (răspunsul se deschide la clic)</summary>
+<details><summary>O firmă de curierat livrează 80 de colete pe zi într-o zonă de 50 km², cu *k*<sub>CF</sub> = 1,25 și *k*<sub>TSP</sub> = 0,8. Își dublează livrările, la 160 de colete pe zi, preluând un cartier vecin de aceeași suprafață, deci zona devine de 100 km². Scade distanța locală pe colet? (răspunsul se deschide la clic)</summary>
 
-Km locali = 1,3 · 0,8 · √(150 · 160) = 1,04 · 154,9 ≈ 161 km pe zi. La 600 de comenzi, de 4 ori mai multe, circuitul crește de √4 = 2 ori, la circa 322 km, deci distanța pe comandă se înjumătățește: de aici vine avantajul volumului mare. În Excel: `=1,3*0,8*SQRT(150*160)`.
+Înainte: 1,25 · 0,8 · √(80 · 50) = 1,0 · √4.000 ≈ 63,2 km pe zi, adică 0,79 km pe colet. După: 1,0 · √(160 · 100) = √16.000 ≈ 126,5 km, tot 0,79 km pe colet. Distanța pe colet nu scade, pentru că densitatea *n*/*A* a rămas aceeași, 1,6 opriri pe km². Mai mult volum aduce economie doar dacă vine din aceeași zonă. În Excel: `=1,25*0,8*SQRT(160*100)/160`.
 
 </details>
 
 ## Registrul Excel
 
-**MLTM_C14_aproximari.xlsx**. Registrul folosește setări românești: argumentele se separă cu „;”, zecimalele cu „,”.
+**MLTM_C14_aproximari.xlsx**. Registrul folosește setări românești: argumentele se separă cu „;”, zecimalele cu „,”. Registrul nu folosește Solver: toate calculele sunt formule.
 
 | Foaia | Ce conține |
 | --- | --- |
@@ -97,12 +101,12 @@ Km locali = 1,3 · 0,8 · √(150 · 160) = 1,04 · 154,9 ≈ 161 km pe zi. La 6
 
 ## Temă de laborator: o estimare pe dosul unui plic
 
-Alegeți o întrebare de transport la care nu aveți încă date: costul livrărilor unui serviciu nou, numărul de vehicule pentru o zonă, cererea unui client nou.
+Alegeți o întrebare de transport la care nu aveți încă date și care cere atât o estimare de volum, cât și una de distanțe sau cost: costul livrărilor unui serviciu nou, numărul de vehicule pentru o zonă, costul servirii unui client nou.
 
-1. Descompuneți întrebarea în 4–6 piese și dați fiecăreia o valoare pesimistă, una probabilă și una optimistă.
+1. Descompuneți întrebarea în 4–6 componente și dați fiecăreia o valoare pesimistă, una probabilă și una optimistă.
 2. Calculați rezultatul în cele trei scenarii. Cât de larg este intervalul?
-3. Estimați distanțele cu un factor de circuitate calculat pentru zona voastră din 5–10 perechi de puncte cunoscute.
-4. Faceți analiza de sensibilitate: care piesă schimbă cel mai mult rezultatul?
+3. Estimați distanțele cu un factor de circuitate calculat pentru zona aleasă din 5–10 perechi de puncte cunoscute.
+4. Faceți analiza de sensibilitate: care ipoteză influențează cel mai mult rezultatul?
 5. Aplicați principiul Goldilocks: decizia se poate lua acum sau merită o analiză detaliată? Ce date ați colecta întâi?
 
 ## Exerciții suplimentare
