@@ -9,52 +9,55 @@ Această pagină însoțește Capitolul 9 al cărții: rezumă întrebările, te
 
 ## Întrebarea capitolului
 
-Până acum am folosit modele care descriu (ce s-a întâmplat?) și modele care prevăd (ce se va întâmpla?). De aici trecem la modele care recomandă o decizie: ce tarif să cerem, cât să comandăm odată, cu ce viteză să conducem. **Cum găsim valoarea cea mai bună a unei singure decizii și cum știm că este, cu adevărat, cea mai bună?**
+Până acum am folosit modele care descriu (ce s-a întâmplat?) și modele care prevăd (ce se va întâmpla?). Din acest capitol trecem la modele care recomandă o decizie: ce tarif să cerem, cât de mare să fie o comandă, cu ce viteză să conducem. **Cum găsim valoarea cea mai bună a unei singure decizii și cum știm că este, cu adevărat, cea mai bună?**
 
 Înainte de a parcurge capitolul, încercați să răspundeți la trei întrebări:
 
 1. O comandă mare înseamnă mai puține curse pe an, dar mai mult stoc în depozit. Există o mărime a comenzii care face costul total minim?
 
     <details><summary>Indiciu</summary>
-    Două costuri variază în sens opus: costul comenzilor scade cu mărimea lotului, costul deținerii crește. Optimul este *compromisul* dintre ele: lotul economic de comandă.
+    Priviți separat cele două costuri: ce se întâmplă cu fiecare când comanda este foarte mică și când este foarte mare? Ce se întâmplă cu suma lor între cele două extreme?
     </details>
 
 2. Formula lotului economic recomandă comenzi de 165 de paleți. În camion încap 33. Ce faceți?
 
     <details><summary>Indiciu</summary>
-    Formula nu știe nimic despre camion. Verificați dacă optimul matematic se află în *domeniul admisibil* și recalculați costul cu numărul real de curse.
+    Ce presupune formula despre costul unei comenzi? Rămâne el același dacă marfa cere cinci camioane în loc de unul? Cât costă, de fapt, o comandă de 165 de paleți?
     </details>
 
 3. Solver afișează „Solver has converged to the current solution”. Ați găsit cel mai bun tarif?
 
     <details><summary>Indiciu</summary>
-    Mesajul spune doar că profitul nu mai crește de la un pas la altul. Dacă funcția are două vârfuri, Solver poate rămâne pe cel mai mic: un *optim local*. Încercați mai multe puncte de pornire.
+    Cum caută Solver soluția? Pornește dintr-un punct și urcă atât timp cât panta arată o îmbunătățire. Ce s-ar întâmpla dacă graficul profitului ar avea două „dealuri” de înălțimi diferite, iar căutarea ar începe lângă cel mai mic?
     </details>
 
 ### Pe scurt: ce este o problemă de optimizare?
 
-Un **model prescriptiv** răspunde la întrebarea „ce ar trebui să facem?”. El are trei elemente: **variabila de decizie** (tariful, mărimea comenzii, viteza), **funcția obiectiv** pe care o maximizăm sau o minimizăm (profitul, costul) și **domeniul admisibil**, adică valorile pe care decizia le poate lua în realitate. Într-un optim interior, panta funcției este zero; dacă funcția este **concavă** (pentru un maxim) sau **convexă** (pentru un minim), optimul găsit este **global**. Altfel, pot exista mai multe **optime locale**, iar un instrument ca Solver poate să se oprească pe unul dintre ele.
+Un **model prescriptiv** răspunde la întrebarea „ce ar trebui să facem?”. El are trei elemente: **variabila de decizie** (tariful, mărimea comenzii, viteza), **funcția obiectiv** pe care o maximizăm sau o minimizăm (profitul, costul) și **domeniul admisibil**, adică valorile pe care decizia le poate lua în realitate. Pentru o funcție netedă (fără colțuri sau salturi), panta este zero în orice optim interior. Condiția este necesară, dar nu și suficientă: și un **punct de inflexiune** cu tangentă orizontală are panta zero. Dacă funcția este **concavă** (pentru un maxim) sau **convexă** (pentru un minim) pe tot domeniul, punctul cu panta zero este optimul **global**. Altfel, pot exista mai multe **optime locale**, iar un instrument ca Solver poate să se oprească pe unul dintre ele.
 
-![Tipuri de puncte extreme ale unei funcții (Fig. 9.1 din carte)](img/fig_9.1.png){fig-alt="O curbă cu un maxim global, un maxim local, un minim local, un minim global și un punct de inflexiune, fiecare marcat și denumit"}
+![Tipuri de puncte extreme ale unei funcții (Fig. 9.1 din carte)](img/fig_9.1.png){fig-alt="O curbă cu un maxim global, un maxim local, un minim local, un minim global și un punct de inflexiune, fiecare marcat și denumit. Minimul global este la capătul din stânga al domeniului, unde panta nu este zero; punctul de inflexiune are panta zero, dar nu este extrem"}
 
 ## Obiective și termeni-cheie
 
 La finalul capitolului veți formula o decizie logistică simplă ca problemă de optimizare, veți găsi soluția optimă în Excel și veți judeca dacă este cea mai bună și dacă poate fi aplicată. Concret, veți putea:
 
-- să numiți elementele unei probleme de optimizare: variabila de decizie, funcția obiectiv, domeniul admisibil;
+- să deosebiți modelele prescriptive de cele descriptive și predictive și să numiți elementele unei probleme de optimizare: variabila de decizie, funcția obiectiv, domeniul admisibil;
 - să recunoașteți maximul și minimul, local și global, și punctul de inflexiune;
 - să explicați de ce panta este zero într-un optim interior și ce garantează forma concavă sau convexă a funcției;
 - să găsiți optimul cu un tabel, un grafic și panta calculată din diferențe finite;
-- să calculați lotul economic de comandă și costul total anual în Excel;
+- să explicați compromisul dintre două costuri care variază în sens opus, pe exemplul lotului economic de comandă, și să calculați lotul și costul total anual în Excel;
 - să verificați dacă optimul matematic este admisibil și să găsiți optimul practic la limită;
-- să rezolvați o problemă cu o variabilă în Solver (GRG Nonlinear) și să încercați mai multe puncte de pornire.
+- să rezolvați o problemă cu o variabilă în Solver, cu metoda gradientului redus generalizat (*Generalized Reduced Gradient*, GRG Nonlinear) și cu limite pentru variabilă, și să încercați mai multe puncte de pornire.
 
 | Termen | În engleză |
 | --- | --- |
 | model prescriptiv | *prescriptive model* |
-| variabilă de decizie / funcție obiectiv | *decision variable / objective function* |
+| variabilă de decizie | *decision variable* |
+| funcție obiectiv | *objective function* |
 | domeniu admisibil | *feasible region* |
 | optim local / global | *local / global optimum* |
+| funcție concavă / convexă | *concave / convex function* |
+| punct de inflexiune | *inflection point* |
 | diferență finită | *finite difference* |
 | compromis | *trade-off* |
 | lotul economic de comandă (EOQ) | *economic order quantity* |
@@ -62,7 +65,7 @@ La finalul capitolului veți formula o decizie logistică simplă ca problemă d
 
 ## Studiul de caz: deciziile cu o singură variabilă la Cargo Someș
 
-Cei cinci pași reiau două întrebări din Capitolul 2 și adaugă trei noi. Pasul 1 regăsește tariful optim al grupajului Cluj–Brașov, 130 lei/palet, fără formula parabolei, doar din pantă. Pașii 2 și 3 calculează lotul economic de aprovizionare a depozitului și arată că optimul matematic nu încape în camion: optimul practic este un camion plin, la limita domeniului admisibil. Pasul 4 caută viteza economică pe autostradă, iar Pasul 5 arată capcana unui profit cu două vârfuri.
+Cei cinci pași reiau două probleme din Capitolul 2 și adaugă două noi. Pasul 1 regăsește tariful optim al grupajului Cluj–Brașov, 130 lei/palet, fără formula parabolei, doar din pantă. Pașii 2 și 3 calculează, pentru un producător din Brașov, client al firmei, lotul economic cu care își aprovizionează depozitul din Cluj. Marfa și costul stocului sunt ale producătorului; Cargo Someș face analiza ca parte a serviciului logistic. Pasul 3 arată că optimul matematic nu încape în camion: optimul practic este un camion plin, la limita domeniului admisibil. Pasul 4 caută viteza economică pe autostradă, iar Pasul 5 arată capcana unui profit cu două vârfuri, la un serviciu nou de grupaj Cluj–Sibiu cu două segmente de clienți: magazinele și livrările urgente.
 
 ![Profitul grupajului Cluj–Sibiu cu două segmente de clienți și cele două puncte de pornire ale Solver-ului (Fig. 9.5 din carte)](img/fig_9.5.png){fig-alt="Curba profitului în funcție de tarif, cu două vârfuri de înălțimi diferite, și cele două puncte de pornire ale Solver-ului, fiecare ducând la alt vârf"}
 
@@ -70,21 +73,23 @@ Lecția Pasului 5: mesajul de reușită al Solver-ului nu garantează optimul gl
 
 ## Verificați-vă
 
-<details><summary>Depozitul primește D = 1.320 de paleți pe an, o comandă costă A = 1.865 lei, iar deținerea unui palet costă 20% din valoarea lui de 900 lei pe an. Care este lotul economic? (răspunsul se deschide la clic)</summary>
+<details><summary>Un magazin primește *D* = 600 de paleți pe an dintr-un produs. O comandă costă *A* = 400 de lei, iar deținerea unui palet costă *h* = 160 de lei pe an. Care este lotul economic? Dacă cererea crește de patru ori, de câte ori cresc lotul economic și costul anual minim al comenzilor și al deținerii? (răspunsul se deschide la clic)</summary>
 
-Costul anual de deținere pe palet este 0,2 · 900 = 180 lei. Q* = √(2 · 1.320 · 1.865 / 180) ≈ 165,4 paleți. La acest lot, costul comenzilor și costul deținerii sunt egale, câte circa 14.885 lei pe an. În Excel: `=SQRT(2*1320*1865/(0,2*900))`. Dar un camion are 33 de paleți: Pasul 3 din carte arată de ce optimul practic este, aici, un camion plin.
+*Q*<sup>\*</sup> = √(2*DA*/*h*) = √(2 · 600 · 400 / 160) = √3.000 ≈ 54,8 paleți. În Excel: `=SQRT(2*600*400/160)`. Costul anual minim este √(2*DAh*) = √(2 · 600 · 400 · 160) ≈ 8.764 lei. Ambele depind de rădăcina pătrată a cererii: la o cerere de patru ori mai mare, lotul și costul cresc doar de √4 = 2 ori (≈ 109,5 paleți și ≈ 17.527 lei). Costul pe palet se înjumătățește: o cerere mai mare aduce economii de scară.
 
 </details>
 
+Capitolul 10 continuă de aici. Deciziile reale ale dispecerului sunt legate între ele: cele 5 camioane, orele de condus ale șoferilor și rampa de încărcare sunt împărțite între toate rutele. Când mai multe decizii concurează pentru aceleași resurse, avem nevoie de programarea liniară.
+
 ## Registrul Excel
 
-**MLTM_C09_optimizare_fara_constrangeri.xlsx**. Registrul folosește setări românești: argumentele se separă cu „;”, zecimalele cu „,”. Pentru Pașii 2–5 activați programul de completare Solver.
+**MLTM_C09_optimizare_fara_constrangeri.xlsx**. Registrul folosește setări românești: argumentele se separă cu „;”, zecimalele cu „,”. Pentru toți cei cinci pași și pentru exerciții activați programul de completare Solver.
 
 | Foaia | Ce conține |
 | --- | --- |
 | 0_Citiți-mă | Cum se folosește registrul |
 | 1_Tarif | Tariful optim la grupajul Cluj–Brașov, din pantă |
-| 2_Lot_economic | Lotul economic de aprovizionare (EOQ) |
+| 2_Lot_economic | Lotul economic de comandă (EOQ) |
 | 3_Lot_camion | Costul cu numărul real de curse și optimul la limită |
 | 4_Viteza | Viteza economică pe autostradă |
 | 5_Doua_segmente | Profitul cu două vârfuri și punctele de pornire ale Solver-ului |
@@ -96,7 +101,7 @@ Costul anual de deținere pe palet este 0,2 · 900 = 180 lei. Q* = √(2 · 1.32
 
 *În pregătire.*
 
-## Temă de laborator: un compromis din activitatea voastră
+## Temă de laborator: un compromis din practică
 
 Alegeți o decizie cu o singură variabilă în care două costuri trag în sensuri opuse: mărimea lotului comandat, frecvența livrărilor la un client, numărul de operatori pe tură.
 
