@@ -88,7 +88,7 @@ Condus: 4 · 20 + 8 · 18 = 224 ≤ 225. Rampă: 2 · 20 + 18 = 58 ≤ 60. Cerer
 | 6_Comparatie | Costul fiecărei reguli în cele patru modele |
 | Ex_Investitii, Ex_Incarcare, Ex_Depanare | Date pentru exerciții, cu soluțiile în rândul gri de la final |
 
-*Linkul DOI spre Pachetul Excel (Zenodo) va fi adăugat aici.*
+*Registrul va putea fi descărcat din Pachetul Excel al cărții, publicat pe Zenodo.*
 
 ## Prezentare
 

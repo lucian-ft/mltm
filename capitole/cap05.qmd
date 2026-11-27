@@ -95,7 +95,7 @@ z = (270 – 250) / 20 = 1. P(T > 270) = 1 – Φ(1) ≈ 1 – 0,841 = 0,159: ca
 | 6_Capacitate | Capacitatea săptămânală și nivelul de serviciu |
 | 7_Triunghiulara | Ruta nouă spre Constanța |
 
-*Linkul DOI spre Pachetul Excel (Zenodo) va fi adăugat aici.*
+*Registrul va putea fi descărcat din Pachetul Excel al cărții, publicat pe Zenodo.*
 
 ## Prezentare
 

@@ -1,6 +1,6 @@
 ---
 title: "Capitolul 2. Modele analitice și funcții în logistică"
-description: "Cum transformăm o decizie logistică într-un model pe care îl putem calcula."
+description: "Cum transpunem o decizie logistică într-un model de calcul."
 ---
 
 ::: {.callout-note appearance="minimal"}
@@ -9,7 +9,7 @@ Această pagină însoțește Capitolul 2 al cărții: rezumă întrebările, te
 
 ## Întrebarea capitolului
 
-Dispecerul firmei Cargo Someș știe din Capitolul 1 *ce* are de decis: ce curse face cu camioanele proprii și ce curse dă unui transportator terț. **Cum transformăm această decizie într-un model pe care îl putem calcula?**
+Dispecerul firmei Cargo Someș știe din Capitolul 1 *ce* are de decis: ce curse face cu camioanele proprii și ce curse dă unui transportator terț (3PL, *third-party logistics*). **Cum transpunem această decizie într-un model de calcul?**
 
 Capitolul răspunde în două trepte: întâi clasifică modelele analitice, apoi construiește în Excel funcțiile de cost și de profit cu care se iau deciziile din studiul de caz.
 
@@ -18,13 +18,13 @@ Capitolul răspunde în două trepte: întâi clasifică modelele analitice, apo
 1. O cursă proprie costă o sumă fixă plus o sumă pe kilometru; transportatorul terț cere doar o sumă pe kilometru, dar mai mare. Există o distanță de la care una dintre variante devine mereu mai ieftină?
 
     <details><summary>Indiciu</summary>
-    Scrieți cele două costuri ca drepte în funcție de distanță și căutați punctul în care se intersectează: *pragul de indiferență*.
+    Scrieți cele două costuri ca drepte în funcție de distanță. Comparați punctul de pornire și panta fiecărei drepte: se intersectează undeva?
     </details>
 
 2. Dacă tariful pe palet crește, crește și profitul? Până unde?
 
     <details><summary>Indiciu</summary>
-    Un tarif mai mare aduce mai mulți bani pe palet, dar mai puțini paleți. Profitul devine o funcție pătratică de tarif, cu un maxim.
+    Urmăriți ce se întâmplă cu venitul total când tariful crește, dar numărul de paleți scade. Există un punct în care câștigul pe palet nu mai compensează paleții pierduți?
     </details>
 
 3. O simulare a rețelei de livrări ne spune care este cea mai bună rută?
@@ -37,9 +37,9 @@ Capitolul răspunde în două trepte: întâi clasifică modelele analitice, apo
 
 Un **model analitic** este o reprezentare simplificată a unei decizii, care păstrează doar ce contează pentru ea: datele de intrare, relațiile dintre ele și rezultatul urmărit. Capitolul le clasifică în trei feluri:
 
-- după **gradul de abstractizare**, de la machete și prototipuri la modele matematice;
+- după **gradul de abstractizare**, de la cel mai realist la cel mai abstract: exercițiu operațional, joc (de exemplu, jocul berii, *beer game*), simulare și model analitic;
 - după **rol**: modelul *evaluează* o strategie dată sau *generează* una, în condiții de certitudine sau de incertitudine;
-- după **întrebarea la care răspunde**: *descriptiv* (ce s-a întâmplat?), *predictiv* (ce se va întâmpla?) sau *prescriptiv* (ce ar trebui să facem?).
+- după **întrebarea la care răspunde**: *descriptiv* (ce s-a întâmplat?), *predictiv* (ce s-ar putea întâmpla?) sau *prescriptiv* (ce ar trebui să facem?).
 
 Cartea adoptă atitudinea „șofer, nu mecanic”: un profesionist în logistică trebuie să știe ce date cere un model, ce rezultat dă și unde se oprește, fără să-i demonstreze teoremele.
 
@@ -59,7 +59,8 @@ La finalul capitolului veți alege tipul de model potrivit unei decizii logistic
 | Termen | În engleză |
 | --- | --- |
 | model descriptiv / predictiv / prescriptiv | *descriptive / predictive / prescriptive model* |
-| prag de indiferență | *break-even point* |
+| prag de indiferență | *cost indifference point*; în transport, *break-even distance* |
+| prag de rentabilitate | *break-even point* |
 | funcție de putere | *power function* |
 | funcție convexă / concavă | *convex / concave function* |
 | cost fix / cost variabil | *fixed cost / variable cost* |
@@ -73,7 +74,7 @@ Studiul de caz pune cifre pe deciziile firmei Cargo Someș din Capitolul 1. Fiec
 | Pas | Întrebarea managerului | Funcția |
 | --- | --- | --- |
 | 2 | Flotă proprie sau transportator terț? | liniară |
-| 3 | Cât costă un palet, în funcție de cât de plin e camionul? | de putere |
+| 3 | Cât costă un palet, în funcție de cât de încărcat este camionul? | de putere |
 | 4 | Ce tarif pe palet maximizează profitul pe grupajul Cluj–Brașov? | pătratică |
 | 5 | Când nu mai ajung cele 5 camioane proprii? | exponențială și logaritm |
 | 6 | Cât costă aprovizionarea depozitului cu marfa unui client? | cu mai multe variabile |
@@ -83,13 +84,15 @@ Prețurile de piață sunt cele reale din septembrie 2026, iar firma și volumel
 
 ![Estimarea costului din opt curse istorice cu SLOPE, INTERCEPT și RSQ (Fig. 2.3 din carte)](img/fig_2.3.png){fig-alt="Foaia 2_Estimare din date: costul a opt curse în funcție de distanță, cu dreapta estimată și funcțiile SLOPE, INTERCEPT și RSQ"}
 
-Pasul 7 scrie decizia ca problemă de optimizare: costul total minim, cu numărul de curse proprii și 3PL ca variabile și cu capacitatea camioanelor ca restricție. Aceeași problemă se rezolvă cu Solver în [Capitolul 10](cap10.qmd).
+Pasul 7 scrie decizia ca problemă de optimizare. Obiectivul este costul total minim de transport, iar variabilele de decizie sunt numărul de curse cu flota proprie și cu 3PL, pe fiecare rută cu plecare din Cluj. Constrângerile sunt trei: toți paleții comandați se livrează, un camion duce cel mult 33 de paleți, iar pe zi sunt disponibile cel mult 5 camioane proprii. Aceeași problemă se rezolvă cu Solver în [Capitolul 10](cap10.qmd).
+
+Modelele sunt însă doar atât de bune cât datele cu care le alimentăm. Panta de 4,5 lei/km rezistă pe circa 3.000 de curse reale? Verificarea și curățarea acestor date sunt subiectul [Capitolului 3](cap03.qmd).
 
 ## Verificați-vă
 
-<details><summary>O cursă proprie costă 650 lei + 4,5 lei/km, una cu 3PL costă 7,1 lei/km. Care variantă e mai ieftină la 300 km și cu cât? (răspunsul se deschide la clic)</summary>
+<details><summary>O cursă proprie costă 650 lei + 4,5 lei/km, una cu 3PL costă 7,1 lei/km. Care variantă este mai ieftină la 300 km și cu cât? (răspunsul se deschide la clic)</summary>
 
-Flota proprie: 650 + 4,5 · 300 = 2.000 lei. Transportatorul terț: 7,1 · 300 = 2.130 lei. Flota proprie e mai ieftină cu 130 lei. Pragul de indiferență este la 650 / (7,1 – 4,5) = 250 km: sub el câștigă 3PL, peste el flota proprie.
+Flota proprie: 650 + 4,5 · 300 = 2.000 lei. Transportatorul terț: 7,1 · 300 = 2.130 lei. Flota proprie este mai ieftină cu 130 lei. Pragul de indiferență este la 650 / (7,1 – 4,5) = 250 km: sub el câștigă 3PL, peste el flota proprie.
 
 </details>
 
@@ -105,7 +108,7 @@ Flota proprie: 650 + 4,5 · 300 = 2.000 lei. Transportatorul terț: 7,1 · 300 =
 | 4_Profit | Tariful care maximizează profitul pe grupajul Cluj–Brașov |
 | 5_Capacitate | Momentul în care volumul depășește capacitatea flotei, cu Căutare rezultat (*Goal Seek*) |
 
-*Linkul DOI spre Pachetul Excel (Zenodo) va fi adăugat aici.*
+*Registrul va putea fi descărcat din Pachetul Excel al cărții, publicat pe Zenodo.*
 
 ## Prezentare
 

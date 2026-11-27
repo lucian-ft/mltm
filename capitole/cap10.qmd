@@ -90,7 +90,7 @@ Condus: 4 · 21,25 + 8 · 17,5 = 85 + 140 = 225 de ore. Rampă: 2 · 21,25 + 17,
 | 6_Formulare_generala | Modelul general cu patru tipuri de curse |
 | Ex_Atelier, Ex_Paleti | Date pentru exerciții, cu soluțiile în rândul gri de la final |
 
-*Linkul DOI spre Pachetul Excel (Zenodo) va fi adăugat aici.*
+*Registrul va putea fi descărcat din Pachetul Excel al cărții, publicat pe Zenodo.*
 
 ## Prezentare
 

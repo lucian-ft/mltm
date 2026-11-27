@@ -13,10 +13,10 @@ Această pagină însoțește Capitolul 6 al cărții: rezumă întrebările, te
 
 Înainte de a parcurge capitolul, încercați să răspundeți la trei întrebări:
 
-1. Ați calculat abaterea medie a costului din primele 30 de curse din evidență și iese mult negativă. Concluzionați că flota proprie e mai ieftină decât prevede modelul?
+1. Ați calculat abaterea medie a costului din primele 30 de curse din evidență și iese mult negativă. Concluzionați că flota proprie este mai ieftină decât prevede modelul?
 
     <details><summary>Indiciu</summary>
-    De unde vin primele 30 de curse? Dacă toate sunt din aceeași lună, eșantionul e de *comoditate*, nu aleator, iar media lui poate fi deplasată oricât de mare ar fi.
+    De unde vin primele 30 de curse? Dacă toate sunt din aceeași lună, eșantionul este de *comoditate*, nu aleator, iar media lui poate fi deplasată oricât de mare ar fi.
     </details>
 
 2. Distanțele curselor nu au deloc forma unui clopot. Media a 30 de curse ar avea?
@@ -92,7 +92,7 @@ Eroarea standard: 30,87 / √100 = 3,09 lei. Marja de eroare: 1,96 · 3,09 ≈ 6
 | 7_Marime_esantion | Câte curse trebuie monitorizate |
 | Ex_Exercitii | Date pentru exerciții |
 
-*Linkul DOI spre Pachetul Excel (Zenodo) va fi adăugat aici.*
+*Registrul va putea fi descărcat din Pachetul Excel al cărții, publicat pe Zenodo.*
 
 ## Prezentare
 

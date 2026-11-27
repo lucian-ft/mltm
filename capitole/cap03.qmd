@@ -35,7 +35,7 @@ Această pagină însoțește Capitolul 3 al cărții: rezumă întrebările, te
 
 **Gestiunea datelor** (*data management*) cuprinde tot ce facem ca datele să fie corecte, complete și ușor de interogat. Dacă datele sunt greșite, și rezultatul este greșit, oricât de bun ar fi modelul. Capitolul urmează un traseu în patru etape:
 
-- **verificăm**: statisticile descriptive (mediana, cuartilele, abaterea standard, coeficientul de variație) arată unde e ceva în neregulă;
+- **verificăm**: statisticile descriptive (mediana, cuartilele, abaterea standard, coeficientul de variație) arată unde este ceva în neregulă;
 - **validăm**: coloane de control marchează fiecare valoare invalidă, dublură sau cod negăsit;
 - **curățăm**: pentru fiecare problemă decidem dacă excludem înregistrarea, o corectăm sau o marcăm și o păstrăm, iar decizia intră într-un jurnal; datele originale rămân neatinse;
 - **interogăm**: tabelele pivot și corelația răspund la întrebările managerului.
@@ -80,7 +80,7 @@ Ultimul pas se întoarce la Capitolul 2: panta de 4,43 lei/km, estimată din opt
 | --- | --- |
 | Aceeași cursă apare de două ori, cu același cod și aceeași dată | Excludem dublura și păstrăm o singură înregistrare |
 | Un cost trecut în euro, într-o coloană în lei | Corectăm: convertim cu cursul zilei și notăm corecția |
-| O cursă de 640 km, rară, dar posibilă pe ruta respectivă | Marcăm și păstrăm: e o valoare extremă, nu o eroare |
+| O cursă de 640 km, rară, dar posibilă pe ruta respectivă | Marcăm și păstrăm: este o valoare extremă, nu o eroare |
 | Un cod de rută care nu există în fișa rutelor | Verificăm cu furnizorul datelor; până atunci, marcăm |
 
 Decizia corectă depinde de context, așa că în carte fiecare rând din jurnal spune și *cine* a confirmat-o.
@@ -105,7 +105,7 @@ Decizia corectă depinde de context, așa că în carte fiecare rând din jurnal
 
 Păstrați registrul: setul curat se folosește din nou în [Capitolul 4](cap04.qmd).
 
-*Linkul DOI spre Pachetul Excel (Zenodo) va fi adăugat aici.*
+*Registrul va putea fi descărcat din Pachetul Excel al cărții, publicat pe Zenodo.*
 
 ## Prezentare
 

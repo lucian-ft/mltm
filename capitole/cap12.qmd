@@ -1,6 +1,6 @@
 ---
 title: "Capitolul 12. Rețele și programare neliniară: drumuri, cross-dock-uri, circuite și loturi"
-description: "Modelele de rețea ale unui dispecer și primele modele neliniare: când e sigur optimul găsit?"
+description: "Modelele de rețea ale unui dispecer și primele modele neliniare: când este sigur optimul găsit?"
 ---
 
 ::: {.callout-note appearance="minimal"}
@@ -25,7 +25,7 @@ Transportul de marfă se desfășoară într-o rețea: orașe legate prin drumur
     Nu neapărat. Euristica celui mai apropiat vecin poate lăsa un oraș îndepărtat la capătul circuitului. Cu cinci noduri, toate cele 12 circuite distincte se pot enumera și compara.
     </details>
 
-3. Un operator logistic oferă un cross-dock la Brașov, pentru 2.500 de lei pe săptămână. Cum decideți dacă merită și dacă nu e mai bun unul la Sibiu?
+3. Un operator logistic oferă un cross-dock la Brașov, pentru 2.500 de lei pe săptămână. Cum decideți dacă merită și dacă nu este mai bun unul la Sibiu?
 
     <details><summary>Indiciu</summary>
     Este tiparul Dacă–atunci din Capitolul 11: o binară pentru fiecare locație, costul fix în obiectiv și o restricție de legătură care permite flux prin cross-dock doar dacă este deschis.
@@ -92,7 +92,7 @@ Pentru n noduri, cu depozitul inclus, numărul de circuite distincte este (n –
 | 7_NLP_loturi | Loturile pentru trei produse cu spațiu limitat |
 | Ex_Tur, Ex_Depanare | Date pentru exerciții |
 
-*Linkul DOI spre Pachetul Excel (Zenodo) va fi adăugat aici.*
+*Registrul va putea fi descărcat din Pachetul Excel al cărții, publicat pe Zenodo.*
 
 ## Prezentare
 

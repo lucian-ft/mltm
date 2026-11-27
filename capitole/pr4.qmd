@@ -11,7 +11,7 @@ Această pagină însoțește setul de Probleme recapitulative al Părții IV di
 
 Setul adună **9 exerciții** pentru Partea IV. Algoritmi, aproximări și simulare, cu noțiuni din [Capitolul 13](cap13.qmd), [Capitolul 14](cap14.qmd), [Capitolul 15](cap15.qmd). Nu aduce teorie nouă: fiecare exercițiu pornește de la o întrebare concretă a firmei Cargo Someș sau a unui partener al ei și cere să alegeți singuri modelul potrivit.
 
-Tocmai aici e dificultatea: în capitole știați dinainte ce metodă se folosește. Aici, prima întrebare este întotdeauna **ce fel de problemă am în față?**
+Tocmai aici este dificultatea: în capitole știați dinainte ce metodă se folosește. Aici, prima întrebare este întotdeauna **ce fel de problemă am în față?**
 
 ## Exercițiile
 
@@ -40,4 +40,4 @@ Cartea dă la începutul setului un tabel cu formulele de lucru ale Părții IV 
 
 **MLTM_PR4_exercitii.xlsx**: foaia `0_Citiți-mă`, câte o foaie de date pentru fiecare exercițiu (`Date_E1` … `Date_E9`) și câte o foaie de soluție (`Sol_E1` … `Sol_E9`). Registrul folosește setări românești: argumentele se separă cu „;”, zecimalele cu „,”.
 
-*Linkul DOI spre Pachetul Excel (Zenodo) va fi adăugat aici.*
+*Registrul va putea fi descărcat din Pachetul Excel al cărții, publicat pe Zenodo.*

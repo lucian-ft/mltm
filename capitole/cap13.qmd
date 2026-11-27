@@ -87,7 +87,7 @@ s = d(Cluj; Sibiu) + d(Cluj; Mediaș) – d(Sibiu; Mediaș) = 175 + 150 – 55 =
 | 5_Clarke_Wright | Matricea economiilor și unirea traseelor |
 | 6_MILP_tururi | Alegerea exactă a traseelor din 167 de candidați |
 
-*Linkul DOI spre Pachetul Excel (Zenodo) va fi adăugat aici.*
+*Registrul va putea fi descărcat din Pachetul Excel al cărții, publicat pe Zenodo.*
 
 ## Prezentare
 

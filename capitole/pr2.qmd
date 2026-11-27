@@ -11,7 +11,7 @@ Această pagină însoțește setul de Probleme recapitulative al Părții II di
 
 Setul adună **15 exerciții** pentru Partea II. Incertitudine și inferență statistică, cu noțiuni din [Capitolul 4](cap04.qmd), [Capitolul 5](cap05.qmd), [Capitolul 6](cap06.qmd), [Capitolul 7](cap07.qmd), [Capitolul 8](cap08.qmd). Nu aduce teorie nouă: fiecare exercițiu pornește de la o întrebare concretă a firmei Cargo Someș sau a unui partener al ei și cere să alegeți singuri modelul potrivit.
 
-Tocmai aici e dificultatea: în capitole știați dinainte ce metodă se folosește. Aici, prima întrebare este întotdeauna **ce fel de problemă am în față?**
+Tocmai aici este dificultatea: în capitole știați dinainte ce metodă se folosește. Aici, prima întrebare este întotdeauna **ce fel de problemă am în față?**
 
 ## Exercițiile
 
@@ -46,4 +46,4 @@ Cartea dă la începutul setului un tabel cu formulele de lucru ale Părții II 
 
 **MLTM_PR2_exercitii.xlsx**: foaia `0_Citiți-mă`, câte o foaie de date pentru fiecare exercițiu (`Date_C1` … `Date_C15`) și câte o foaie de soluție (`Sol_C1` … `Sol_C15`). Registrul folosește setări românești: argumentele se separă cu „;”, zecimalele cu „,”.
 
-*Linkul DOI spre Pachetul Excel (Zenodo) va fi adăugat aici.*
+*Registrul va putea fi descărcat din Pachetul Excel al cărții, publicat pe Zenodo.*

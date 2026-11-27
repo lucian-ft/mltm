@@ -6,7 +6,7 @@ title: "Resurse"
 
 Toate registrele folosesc setări românești: argumentele funcțiilor se separă cu „;”, zecimalele cu „,”. Datele de intrare stau în celule galbene, cu text albastru.
 
-*Linkul DOI spre Pachetul Excel (Zenodo) va fi adăugat aici.*
+*Registrul va putea fi descărcat din Pachetul Excel al cărții, publicat pe Zenodo.*
 
 | Capitol | Registru |
 | --- | --- |

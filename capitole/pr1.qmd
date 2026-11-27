@@ -11,7 +11,7 @@ Această pagină însoțește setul de Probleme recapitulative al Părții I din
 
 Setul adună **8 exerciții** pentru Partea I. Fundamente, cu noțiuni din [Capitolul 2](cap02.qmd), [Capitolul 3](cap03.qmd). Nu aduce teorie nouă: fiecare exercițiu pornește de la o întrebare concretă a firmei Cargo Someș sau a unui partener al ei și cere să alegeți singuri modelul potrivit.
 
-Tocmai aici e dificultatea: în capitole știați dinainte ce metodă se folosește. Aici, prima întrebare este întotdeauna **ce fel de problemă am în față?**
+Tocmai aici este dificultatea: în capitole știați dinainte ce metodă se folosește. Aici, prima întrebare este întotdeauna **ce fel de problemă am în față?**
 
 ## Exercițiile
 
@@ -39,4 +39,4 @@ Cartea dă la începutul setului un tabel cu formulele de lucru ale Părții I (
 
 **MLTM_PR1_exercitii.xlsx**: foaia `0_Citiți-mă`, câte o foaie de date pentru fiecare exercițiu (`Date_B1` … `Date_B8`) și câte o foaie de soluție (`Sol_B1` … `Sol_B8`). Registrul folosește setări românești: argumentele se separă cu „;”, zecimalele cu „,”.
 
-*Linkul DOI spre Pachetul Excel (Zenodo) va fi adăugat aici.*
+*Registrul va putea fi descărcat din Pachetul Excel al cărții, publicat pe Zenodo.*

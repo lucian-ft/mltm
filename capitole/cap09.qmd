@@ -90,7 +90,7 @@ Costul anual de deținere pe palet este 0,2 · 900 = 180 lei. Q* = √(2 · 1.32
 | 5_Doua_segmente | Profitul cu două vârfuri și punctele de pornire ale Solver-ului |
 | Ex_Exercitii | Date pentru exerciții, cu soluțiile sub fiecare exercițiu |
 
-*Linkul DOI spre Pachetul Excel (Zenodo) va fi adăugat aici.*
+*Registrul va putea fi descărcat din Pachetul Excel al cărții, publicat pe Zenodo.*
 
 ## Prezentare
 

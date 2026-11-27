@@ -88,7 +88,7 @@ Un camion în plus merită cât timp P(X > k) · 1.200 > 250. Regula: alegeți c
 | 6_Politici | Compararea politicilor și scenariul „piață tensionată” |
 | Ex_Livrari_Cluj, Sol_Ex3 | Date pentru exerciții și soluția Exercițiului 3 |
 
-*Linkul DOI spre Pachetul Excel (Zenodo) va fi adăugat aici.*
+*Registrul va putea fi descărcat din Pachetul Excel al cărții, publicat pe Zenodo.*
 
 ## Prezentare
 

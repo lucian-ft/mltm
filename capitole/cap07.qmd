@@ -25,7 +25,7 @@ Această pagină însoțește Capitolul 7 al cărții: rezumă întrebările, te
     Abaterea costului are sezonalitate: octombrie a fost, în ambii ani, sub media generală. Cu referința greșită, același test dă concluzia opusă.
     </details>
 
-3. Un test pe 15 camioane dă p = 0,21 pentru stivuitorul nou. Înseamnă că stivuitorul nu e mai rapid?
+3. Un test pe 15 camioane dă p = 0,21 pentru stivuitorul nou. Înseamnă că stivuitorul nu este mai rapid?
 
     <details><summary>Indiciu</summary>
     „Nu respingem H₀” nu înseamnă „H₀ este adevărată”. Pe un eșantion mic, testul are *putere* redusă și poate rata o îmbunătățire reală: eroarea de tip II.
@@ -33,7 +33,7 @@ Această pagină însoțește Capitolul 7 al cărții: rezumă întrebările, te
 
 ### Pe scurt: cum funcționează un test statistic?
 
-Un test alege între două afirmații despre populație care se exclud reciproc. **Ipoteza nulă** (H₀) spune că nu s-a schimbat nimic; **ipoteza alternativă** (H₁) spune ce vrem să dovedim. Calculăm cât de departe este media eșantionului de valoarea din H₀, în număr de erori standard: statistica **z** sau **t**. **Valoarea p** este probabilitatea de a obține un rezultat cel puțin la fel de extrem dacă H₀ ar fi adevărată; dacă e sub nivelul de semnificație α ales dinainte, respingem H₀. Testul poate greși în două feluri: respinge o H₀ adevărată (**eroarea de tip I**, cu probabilitatea α) sau nu respinge o H₀ falsă (**eroarea de tip II**). Testul **χ²** compară o distribuție întreagă cu un model, iar **covarianța** și **corelația** arată cum variază două mărimi împreună.
+Un test alege între două afirmații despre populație care se exclud reciproc. **Ipoteza nulă** (H₀) spune că nu s-a schimbat nimic; **ipoteza alternativă** (H₁) spune ce vrem să dovedim. Calculăm cât de departe este media eșantionului de valoarea din H₀, în număr de erori standard: statistica **z** sau **t**. **Valoarea p** este probabilitatea de a obține un rezultat cel puțin la fel de extrem dacă H₀ ar fi adevărată; dacă este sub nivelul de semnificație α ales dinainte, respingem H₀. Testul poate greși în două feluri: respinge o H₀ adevărată (**eroarea de tip I**, cu probabilitatea α) sau nu respinge o H₀ falsă (**eroarea de tip II**). Testul **χ²** compară o distribuție întreagă cu un model, iar **covarianța** și **corelația** arată cum variază două mărimi împreună.
 
 ![Zona de respingere a lui H₀ la α = 5%: test bilateral, unilateral la dreapta și unilateral la stânga (Fig. 7.1 din carte)](img/fig_7.1.png){fig-alt="Trei curbe normale cu zona de respingere colorată: pe ambele cozi pentru testul bilateral, pe coada dreaptă și pe coada stângă pentru testele unilaterale"}
 
@@ -94,7 +94,7 @@ Sunt 5 categorii și niciun parametru estimat, deci 5 – 1 = 4 grade de liberta
 | 8_Lanturi, 8b_Saptamani | Covarianța și corelația pentru cele trei lanțuri de magazine |
 | Ex_Exercitii | Date pentru exerciții |
 
-*Linkul DOI spre Pachetul Excel (Zenodo) va fi adăugat aici.*
+*Registrul va putea fi descărcat din Pachetul Excel al cărții, publicat pe Zenodo.*
 
 ## Prezentare
 

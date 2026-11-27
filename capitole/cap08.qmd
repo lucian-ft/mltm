@@ -93,7 +93,7 @@ Pasul 7 verifică modelele pe cursele din aprilie–septembrie 2026, pe care nu 
 | 8_Validare | Antrenare și testare: MAPE și RMSE |
 | Ex_Exercitii | Date pentru exerciții |
 
-*Linkul DOI spre Pachetul Excel (Zenodo) va fi adăugat aici.*
+*Registrul va putea fi descărcat din Pachetul Excel al cărții, publicat pe Zenodo.*
 
 ## Prezentare
 

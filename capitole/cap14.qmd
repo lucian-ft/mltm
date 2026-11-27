@@ -89,7 +89,7 @@ Km locali = 1,3 · 0,8 · √(150 · 160) = 1,04 · 154,9 ≈ 161 km pe zi. La 6
 | 4_Cost_Cluj | Costul zilnic și costul pe comandă al distribuției urbane |
 | 5_Sensibilitate | Costul pe comandă în mai multe scenarii |
 
-*Linkul DOI spre Pachetul Excel (Zenodo) va fi adăugat aici.*
+*Registrul va putea fi descărcat din Pachetul Excel al cărții, publicat pe Zenodo.*
 
 ## Prezentare
 

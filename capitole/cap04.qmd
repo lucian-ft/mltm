@@ -16,7 +16,7 @@ Această pagină însoțește Capitolul 4 al cărții: rezumă întrebările, te
 1. Managerul spune: „vinerea vin mai multe retururi”. Cum ați verifica afirmația cu datele din ultimii doi ani?
 
     <details><summary>Indiciu</summary>
-    Comparați probabilitatea unei zile cu retur în general cu probabilitatea unei zile cu retur *știind că* e vineri. Dacă sunt egale, cele două evenimente sunt independente.
+    Comparați probabilitatea unei zile cu retur în general cu probabilitatea unei zile cu retur *știind că* este vineri. Dacă sunt egale, cele două evenimente sunt independente.
     </details>
 
 2. Media curselor 3PL este de 1,29 pe zi. Dacă rezervați zilnic un singur camion, cât de des veți rămâne fără?
@@ -97,7 +97,7 @@ P(X = 0) = e^(–0,29) ≈ 0,75. Cam trei zile din patru nu au niciun retur. În
 | 8_Uniforma | Distribuția uniformă discretă pentru magazinul nou |
 | Ex_Comenzi_urgente | Date pentru exerciții |
 
-*Linkul DOI spre Pachetul Excel (Zenodo) va fi adăugat aici.*
+*Registrul va putea fi descărcat din Pachetul Excel al cărții, publicat pe Zenodo.*
 
 ## Prezentare
 
