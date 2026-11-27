@@ -22,7 +22,7 @@ Tocmai aici este dificultatea: în capitole știați dinainte ce metodă se folo
 | B3 | Zona de sortare: cost pătratic și capacitate | Capitolul 2 |
 | B4 | Trecerea la autoutilitare electrice | Capitolul 2 |
 | B5 | Orele de pregătire a comenzilor | Capitolele 2–3 |
-| B6 | Folia stretch: cât comandăm odată? | Capitolele 2–3 |
+| B6 | Folia stretch: cât comandăm o dată? | Capitolele 2–3 |
 | B7 | Rampa și stivuitoarele: ce mix de servicii? | Capitolele 2–3 |
 | B8 | Costul pe palet pentru un client: întâi verificăm datele | Capitolele 2–3 |
 
