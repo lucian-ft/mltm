@@ -16,7 +16,7 @@ Această pagină însoțește Capitolul 7 al cărții: rezumă întrebările, te
 1. Pe 2.401 curse, abaterea medie a costului față de model este de 4,25 lei, iar testul dă p practic zero. Trebuie schimbate tarifele?
 
     <details><summary>Indiciu</summary>
-    Raportați cei 4,25 lei la costul mediu al unei curse. De la ce diferență ar merita, economic, schimbate tarifele? Ce se întâmplă cu eroarea standard când aveți 2.401 de observații? (secțiunea 2.5)
+    Raportați cei 4,25 lei la costul mediu al unei curse. De la ce diferență ar merita, economic, schimbate tarifele? Ce se întâmplă cu eroarea standard când aveți 2.401 observații? (secțiunea 2.5)
     </details>
 
 2. Vreți să aflați dacă taxa TollRo a crescut costul în octombrie 2026. Cu ce comparați: cu media tuturor lunilor sau cu octombrie din anii trecuți?
