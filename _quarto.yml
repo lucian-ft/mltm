@@ -68,7 +68,7 @@ website:
       - glosar.qmd
   page-footer:
     left: "© 2026 Lucian V. Fechete-Tutunaru · Cartea, registrele și conținutul site-ului: [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ro)"
-    right: "Structura și o parte dintre noțiuni sunt adaptate după MITx SC0x / Key Concepts (Caplice și Ponce, 2026); studiul de caz, datele, figurile și aplicațiile sunt originale."
+    right: "Structura și o parte dintre noțiuni sunt adaptate după MITx SC0x / Key Concepts (Caplice și Ponce, 2026); studiul de caz, datele, figurile și aplicațiile sunt originale. Realizat cu asistența instrumentelor de IA (Claude, Anthropic); detalii în pagina [Despre](/despre.qmd#utilizarea-inteligenței-artificiale)."
 
 language: _language-ro.yml
 
